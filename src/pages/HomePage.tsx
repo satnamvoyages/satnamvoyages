@@ -265,7 +265,7 @@ export const HomePage: React.FC<HomePageProps> = ({
           >
             <div className="h-64 overflow-hidden relative">
               <img
-                src="https://images.unsplash.com/photo-1600100397608-f010e4293f9c?auto=format&fit=crop&w=800&q=80"
+                src="https://unsplash.com/photos/a-scenic-view-of-a-mountain-town-with-a-river-running-through-it-mxoH7NtRJA8"
                 alt="Rishikesh Ganga Aarti - Satnam Voyages"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               />
