@@ -1,0 +1,69 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --brand-orange: #EA580C;
+    --brand-orange-hover: #C2410C;
+    --brand-orange-light: #FFF7ED;
+    --brand-cream: #FAF6F0;
+    --brand-white: #FFFFFF;
+    --brand-beige: #F5EFEB;
+    --brand-border: #E8DFD3;
+    --brand-charcoal: #1C1917;
+    --brand-charcoal-dark: #141210;
+  }
+
+  body {
+    background-color: #FAF6F0;
+    color: #1C1917;
+    font-family: 'Montserrat', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+}
+
+/* Luxury travel typography classes */
+.font-headline {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.font-accent {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-style: italic;
+  font-weight: 500;
+}
+
+.font-playfair {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+.font-montserrat {
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Warm Orange card styling */
+.orange-card {
+  background-color: #FFFFFF;
+  border: 1px solid #E8DFD3;
+  box-shadow: 0 4px 20px -2px rgba(28, 25, 23, 0.05);
+}
+
+.orange-card-hover {
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.orange-card-hover:hover {
+  border-color: rgba(234, 88, 12, 0.4);
+  box-shadow: 0 12px 30px -4px rgba(234, 88, 12, 0.12);
+  transform: translateY(-2px);
+}
+
+/* Hide scrollbar for clean horizontal card scrolling */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+

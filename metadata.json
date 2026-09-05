@@ -1,0 +1,6 @@
+{
+  "name": "Satnam Voyages",
+  "description": "Premier travel agency and outstation cab provider in India. Bespoke Golden Triangle, Rajasthan, Himachal & Uttarakhand tours with verified private chauffeurs.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
