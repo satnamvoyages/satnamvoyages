@@ -236,6 +236,7 @@ export const HomePage: React.FC<HomePageProps> = ({
             <div className="h-64 overflow-hidden relative">
               <img
                 src="https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&fit=crop&w=800&q=80"
+                
                 alt="Himachal Snow Mountains - Satnam Voyages"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               />
@@ -265,7 +266,7 @@ export const HomePage: React.FC<HomePageProps> = ({
           >
             <div className="h-64 overflow-hidden relative">
               <img
-                src="https://unsplash.com/photos/a-scenic-view-of-a-mountain-town-with-a-river-running-through-it-mxoH7NtRJA8"
+                src="https://images.unsplash.com/photo-1650341259809-9314b0de9268?auto=format&fit=crop&w=800&q=80"
                 alt="Rishikesh Ganga Aarti - Satnam Voyages"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               />

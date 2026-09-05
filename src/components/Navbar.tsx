@@ -102,17 +102,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             onClick={() => handleLinkClick('/')}
             className="flex items-center space-x-3 cursor-pointer group"
           >
-            <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#EA580C] to-[#C2410C] flex items-center justify-center text-white shadow-md group-hover:scale-105 transition-transform">
-              <Compass className="w-7 h-7 text-amber-200" />
-            </div>
-            <div>
-              <span className="font-headline text-2xl sm:text-2xl font-extrabold text-[#1C1917] tracking-tight block uppercase">
-                Satnam <span className="text-[#EA580C]">Voyages</span>
-              </span>
-              <span className="text-[10px] tracking-wider uppercase font-semibold text-[#78716C] block">
-                Premier India Tours &amp; Outstation Cabs
-              </span>
-            </div>
+            <div> <img src="/assets/header_logo.png" alt="satnam voyages" className="h-16 w-auto" /> </div>
           </div>
 
           {/* Desktop Nav Items */}

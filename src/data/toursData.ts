@@ -248,10 +248,10 @@ export const ALL_TOURS: TourPackage[] = [
     startingPriceUSD: 80,
     rating: 4.82,
     reviewsCount: 174,
-    primaryImage: 'https://images.unsplash.com/photo-1603288940384-824b423c72b2?auto=format&fit=crop&w=1200&q=80', // Hawa Mahal
+    primaryImage: 'https://images.unsplash.com/photo-1603262110263-fb0112e7cc33?auto=format&fit=crop&w=1200&q=80', // Hawa Mahal
     galleryImages: [
-      'https://images.unsplash.com/photo-1603288940384-824b423c72b2?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1599661046289-e31897846e41?auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1603262110263-fb0112e7cc33?auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1603262110263-fb0112e7cc33?auto=format&fit=crop&w=800&q=80',
     ],
     route: 'Delhi ➔ Delhi-Mumbai Expressway ➔ Jaipur ➔ Delhi',
     overview: 'Take advantage of the new Delhi-Mumbai Expressway to reach Jaipur in under 3.5 hours. Explore Amber Fort, Hawa Mahal, Jal Mahal, and City Palace in a single action-packed day.',

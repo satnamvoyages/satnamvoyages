@@ -18,12 +18,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenInquiry }) => 
               onClick={() => onNavigate('/')}
               className="flex items-center space-x-3 cursor-pointer group"
             >
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#EA580C] to-[#C2410C] flex items-center justify-center text-white shadow-lg shadow-orange-600/30">
-                <Compass className="w-6 h-6" />
-              </div>
-              <span className="font-headline text-xl font-extrabold text-white tracking-tight uppercase">
-                Satnam <span className="text-[#EA580C]">Voyages</span>
-              </span>
+              <div><img src="/assets/logo_ft.png" alt="satnam voyages" className="h-24 w-auto" /></div>
             </div>
 
             <p className="text-xs text-stone-400 leading-relaxed font-montserrat">
