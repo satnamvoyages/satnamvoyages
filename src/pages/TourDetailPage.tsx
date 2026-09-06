@@ -853,7 +853,7 @@ export const TourDetailPage: React.FC<TourDetailPageProps> = ({
               <div className="space-y-1 text-xs">
                 <a href="tel:+919718450905" className="flex items-center text-stone-800 font-bold hover:text-[#EA580C]">
                   <Phone className="w-3.5 h-3.5 text-[#EA580C] mr-2 shrink-0" />
-                  +91 98117 76525 (24/7)
+                  +91 97184 50905 (24/7)
                 </a>
               </div>
             </div>

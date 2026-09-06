@@ -278,13 +278,13 @@ export const DestinationPage: React.FC<DestinationPageProps> = ({
 
                 <div className="p-5 pt-0">
                   <div className="pt-3 border-t border-[#E8DFD3] flex items-center justify-between">
-                    <div>
+                    {/* <div>
                       <span className="text-[10px] text-stone-400 uppercase font-bold block font-headline">From</span>
                       <span className="text-base font-extrabold text-[#1C1917] font-headline">
                         {formatPrice(tour.startingPriceINR, tour.startingPriceUSD)}
                       </span>
                       <span className="text-[10px] text-stone-500 ml-1">/ person</span>
-                    </div>
+                    </div> */}
 
                     <button
                       onClick={() => onNavigate(`/tours/${tour.slug}`)}
