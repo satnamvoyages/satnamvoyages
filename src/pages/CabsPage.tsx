@@ -177,10 +177,10 @@ export const CabsPage: React.FC<CabsPageProps> = ({
         </div>
       </div>
 
-      <TrustBadges />
+      {/* <TrustBadges /> */}
 
-      {/* 1. INSTANT CAB FARE ESTIMATOR CALCULATOR */}
-      <section className="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      {/* <section className="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-white rounded-3xl p-6 sm:p-10 border border-[#E8DFD3] shadow-md">
           <div className="flex items-center space-x-3 mb-6 pb-4 border-b border-stone-100">
             <div className="w-10 h-10 rounded-xl bg-orange-50 text-[#EA580C] flex items-center justify-center shrink-0">
@@ -197,9 +197,9 @@ export const CabsPage: React.FC<CabsPageProps> = ({
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {/* Input Controls */}
+           
             <div className="lg:col-span-2 space-y-5">
-              {/* Route Selector */}
+              
               <div>
                 <label className="block text-xs font-bold text-stone-700 uppercase tracking-wide mb-1.5 font-headline">
                   Select Destination Route (From Delhi)
@@ -217,7 +217,7 @@ export const CabsPage: React.FC<CabsPageProps> = ({
                 </select>
               </div>
 
-              {/* Trip Type: One Way vs Round Trip */}
+              
               <div>
                 <label className="block text-xs font-bold text-stone-700 uppercase tracking-wide mb-1.5 font-headline">
                   Trip Type
@@ -250,7 +250,7 @@ export const CabsPage: React.FC<CabsPageProps> = ({
                 </div>
               </div>
 
-              {/* Vehicle Type Selection */}
+             
               <div>
                 <label className="block text-xs font-bold text-stone-700 uppercase tracking-wide mb-1.5 font-headline">
                   Vehicle Model
@@ -280,7 +280,7 @@ export const CabsPage: React.FC<CabsPageProps> = ({
               </div>
             </div>
 
-            {/* Estimated Quote Card */}
+           
             <div className="bg-[#141210] text-white p-6 rounded-2xl border border-stone-800 flex flex-col justify-between">
               <div>
                 <span className="text-[10px] font-bold uppercase tracking-wider text-[#EA580C] block mb-1 font-headline">
@@ -338,7 +338,7 @@ export const CabsPage: React.FC<CabsPageProps> = ({
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* 2. FLEET COMPARISON GRID */}
       <section className="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -404,7 +404,7 @@ export const CabsPage: React.FC<CabsPageProps> = ({
               </div>
 
               <div className="p-6 pt-0">
-                <div className="bg-[#FAF6F0] p-3.5 rounded-xl border border-[#E8DFD3] space-y-1.5 mb-4 text-xs font-montserrat">
+                {/* <div className="bg-[#FAF6F0] p-3.5 rounded-xl border border-[#E8DFD3] space-y-1.5 mb-4 text-xs font-montserrat">
                   <div className="flex justify-between items-center">
                     <span className="text-stone-500 font-medium">Outstation Rate:</span>
                     <span className="font-extrabold text-[#1C1917] text-sm font-headline">
@@ -421,7 +421,7 @@ export const CabsPage: React.FC<CabsPageProps> = ({
                     <span>Driver Allowance / Day:</span>
                     <span>₹{vehicle.driverAllowancePerDayINR}</span>
                   </div>
-                </div>
+                </div> */}
 
                 <button
                   onClick={() => onOpenInquiry(`Outstation Cab - ${vehicle.name}`)}
@@ -437,7 +437,7 @@ export const CabsPage: React.FC<CabsPageProps> = ({
       </section>
 
       {/* 3. RATE TABLE: LOCAL VS OUTSTATION */}
-      <section className="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* <section className="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-white rounded-2xl border border-[#E8DFD3] p-6 sm:p-8 shadow-sm overflow-hidden">
           <h2 className="font-headline text-xl sm:text-2xl font-extrabold text-[#1C1917] mb-2 uppercase">
             Standard Pricing &amp; Transparent Rate Matrix
@@ -473,7 +473,7 @@ export const CabsPage: React.FC<CabsPageProps> = ({
             </table>
           </div>
         </div>
-      </section>
+      </section> */}
     </div>
   );
 };

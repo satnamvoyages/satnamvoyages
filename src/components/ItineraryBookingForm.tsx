@@ -397,13 +397,13 @@ export const ItineraryBookingForm: React.FC<ItineraryBookingFormProps> = ({
 
       {/* Price Summary & Submit CTA */}
       <div className="pt-2 border-t border-[#E8DFD3] flex flex-col sm:flex-row items-center justify-between gap-4">
-        <div>
+        {/* <div>
           <span className="text-[11px] text-stone-500 block">Est. Total for {formData.adults} Adults:</span>
           <span className="text-xl sm:text-2xl font-extrabold text-[#1C1917] font-headline">
             {formatPrice(estimatedPriceINR * formData.adults, estimatedPriceUSD * formData.adults)}
           </span>
           <span className="text-[10px] text-stone-400 block">All-inclusive (Chauffeur, AC cab, fuel, tolls, stay)</span>
-        </div>
+        </div> */}
 
         <button
           type="submit"

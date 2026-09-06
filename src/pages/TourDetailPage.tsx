@@ -253,7 +253,7 @@ export const TourDetailPage: React.FC<TourDetailPageProps> = ({
 
             {/* Quick Price Pill & CTA */}
             <div className="flex items-center sm:items-end lg:flex-col lg:items-end justify-between bg-[#FAF6F0] p-4 rounded-2xl border border-[#E8DFD3]">
-              <div>
+              {/* <div>
                 <span className="text-[10px] uppercase font-bold text-stone-400 block font-headline">
                   Starting From
                 </span>
@@ -261,7 +261,7 @@ export const TourDetailPage: React.FC<TourDetailPageProps> = ({
                   {formatPrice(calculatedPrice.inr, calculatedPrice.usd)}
                 </span>
                 <span className="text-xs text-stone-500 ml-1">/ person</span>
-              </div>
+              </div> */}
 
               <button
                 onClick={scrollToBookingForm}
@@ -803,7 +803,7 @@ export const TourDetailPage: React.FC<TourDetailPageProps> = ({
               </div>
 
               {/* Dynamic Price Display */}
-              <div className="p-4 rounded-2xl bg-[#141210] text-white space-y-1">
+              {/* <div className="p-4 rounded-2xl bg-[#141210] text-white space-y-1">
                 <div className="flex justify-between items-baseline font-headline">
                   <span className="text-xs text-stone-400 font-medium">Estimated Per Person</span>
                   <span className="text-2xl font-extrabold text-orange-400">
@@ -813,7 +813,7 @@ export const TourDetailPage: React.FC<TourDetailPageProps> = ({
                 <p className="text-[11px] text-stone-400 font-montserrat">
                   Includes private chauffeur, AC vehicle fuel, tolls, permits, and {selectedTier} category stay.
                 </p>
-              </div>
+              </div> */}
 
               {/* Primary CTAs */}
               <div className="space-y-2.5 pt-1">

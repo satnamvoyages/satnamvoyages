@@ -476,18 +476,18 @@ export const HomePage: React.FC<HomePageProps> = ({
 
               <div className="p-5 pt-0">
                 <div className="bg-[#FAF6F0] p-3 rounded-xl flex items-center justify-between mb-3 border border-[#E8DFD3]">
-                  <div>
+                  {/* <div>
                     <span className="text-[10px] text-[#78716C] uppercase font-bold block">Outstation Rate</span>
                     <span className="text-base font-extrabold text-[#1C1917] font-headline">
                       {currency === 'USD' ? `$${vehicle.perKmRateUSD}/km` : `₹${vehicle.perKmRateINR}/km`}
                     </span>
-                  </div>
-                  <div className="text-right">
+                  </div> */}
+                  {/* <div className="text-right">
                     <span className="text-[10px] text-[#78716C] uppercase font-bold block">Local 8h/80km</span>
                     <span className="text-sm font-bold text-[#EA580C] font-headline">
                       {formatPrice(vehicle.local8hr80kmRateINR, vehicle.local8hr80kmRateUSD)}
                     </span>
-                  </div>
+                  </div> */}
                 </div>
 
                 <button
