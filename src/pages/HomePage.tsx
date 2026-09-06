@@ -475,7 +475,7 @@ export const HomePage: React.FC<HomePageProps> = ({
               </div>
 
               <div className="p-5 pt-0">
-                <div className="bg-[#FAF6F0] p-3 rounded-xl flex items-center justify-between mb-3 border border-[#E8DFD3]">
+                {/* <div className="bg-[#FAF6F0] p-3 rounded-xl flex items-center justify-between mb-3 border border-[#E8DFD3]">
                   {/* <div>
                     <span className="text-[10px] text-[#78716C] uppercase font-bold block">Outstation Rate</span>
                     <span className="text-base font-extrabold text-[#1C1917] font-headline">
@@ -488,7 +488,7 @@ export const HomePage: React.FC<HomePageProps> = ({
                       {formatPrice(vehicle.local8hr80kmRateINR, vehicle.local8hr80kmRateUSD)}
                     </span>
                   </div> */}
-                </div>
+                {/* </div> */} 
 
                 <button
                   onClick={() => onOpenInquiry(`Outstation Cab - ${vehicle.name}`)}
