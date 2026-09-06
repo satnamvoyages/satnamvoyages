@@ -184,7 +184,7 @@ export const TourDetailPage: React.FC<TourDetailPageProps> = ({
       />
 
       {/* Breadcrumbs Bar */}
-      <div className="bg-white border-b border-[#E8DFD3] py-3 px-4 sm:px-6 lg:px-8">
+      {/* <div className="bg-white border-b border-[#E8DFD3] py-3 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto flex items-center justify-between text-xs text-stone-500 font-montserrat">
           <div className="flex items-center space-x-2">
             <button
@@ -211,7 +211,7 @@ export const TourDetailPage: React.FC<TourDetailPageProps> = ({
             </button>
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* Main Title & Key Specs Header */}
       <div className="bg-white border-b border-[#E8DFD3] pt-6 pb-6">
