@@ -42,7 +42,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     location: 'Jaipur, Rajasthan',
     category: 'forts',
     categoryLabel: 'Royal Forts & Palaces',
-    image: 'https://images.unsplash.com/photo-1603288967756-3c72b2207b92?auto=format&fit=crop&w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1649073868642-bcbbd06239d8?auto=format&fit=crop&w=1200&q=80',
     caption: 'Majestic Rajput hilltop citadel overlooking serene waters, featuring mirror-mosaic Sheesh Mahal.',
     tourSlug: 'delhi-agra-jaipur-udaipur-tour',
     tourName: 'Delhi • Agra • Jaipur • Udaipur Tour'
@@ -119,7 +119,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     location: 'Haridwar & Rishikesh, Uttarakhand',
     category: 'spiritual',
     categoryLabel: 'Spiritual & Sacred',
-    image: 'https://images.unsplash.com/photo-1561361513-2d000a50f0dc?auto=format&fit=crop&w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1511754863001-18d44abd0a93?auto=format&fit=crop&w=1200&q=80',
     caption: 'Thousands of floating brass oil lamps and Vedic chants harmonizing along sacred river ghats at dusk.',
     tourSlug: 'rishikesh-haridwar-tour',
     tourName: 'Rishikesh • Haridwar Tour'
@@ -130,7 +130,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     location: 'Rishikesh, Uttarakhand',
     category: 'spiritual',
     categoryLabel: 'Spiritual & Sacred',
-    image: 'https://images.unsplash.com/photo-1518002171953-a080ee817e1f?auto=format&fit=crop&w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1712510817140-917938f92e5b?auto=format&fit=crop&w=1200&q=80',
     caption: 'The tranquil foothills of the Garhwal Himalayas where river spirituality meets world meditation.',
     tourSlug: 'rishikesh-haridwar-mussoorie-tour',
     tourName: 'Rishikesh • Haridwar • Mussoorie Tour'
@@ -141,7 +141,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     location: 'Madhya Pradesh',
     category: 'spiritual',
     categoryLabel: 'Spiritual & Sacred',
-    image: 'https://images.unsplash.com/photo-1609137144820-7f28747a1656?auto=format&fit=crop&w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1606298855672-3efb63017be8?auto=format&fit=crop&w=1200&q=80',
     caption: 'Intricately sculptured sandstone nagara temples and medieval riverside palaces of Orchha.',
     tourSlug: 'gwalior-orchha-khajuraho-tour',
     tourName: 'Gwalior • Orchha • Khajuraho Tour'
