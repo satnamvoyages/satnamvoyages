@@ -55,8 +55,6 @@ export const Navbar: React.FC<NavbarProps> = ({
             >
               <Phone className="w-3 h-3 mr-1" /> +91 97184 50905
             </a>
-            <span className="hidden sm:inline text-stone-600">|</span>
-            <span className="hidden sm:inline text-stone-400">Government Approved • Verified Drivers</span>
           </div>
 
           <div className="flex items-center space-x-3 ml-auto">
@@ -238,7 +236,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               Instant Inquiry &amp; Custom Quote
             </button>
             <a
-              href="tel:+919811776525"
+              href="tel:+919718450905"
               className="w-full py-2.5 rounded-xl border border-[#E8DFD3] bg-white text-stone-800 font-semibold text-center text-sm flex items-center justify-center"
             >
               <Phone className="w-4 h-4 mr-2 text-stone-600" /> Call +91 97184 50905

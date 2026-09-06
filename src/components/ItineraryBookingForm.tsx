@@ -128,7 +128,7 @@ export const ItineraryBookingForm: React.FC<ItineraryBookingFormProps> = ({
     `\nPlease share availability and quote!`
   );
 
-  const whatsappUrl = `https://wa.me/919811776525?text=${whatsappMessage}`;
+  const whatsappUrl = `https://wa.me/919718450905?text=${whatsappMessage}`;
 
   if (submitted) {
     return (

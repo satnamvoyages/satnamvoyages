@@ -76,7 +76,7 @@ export const HomePage: React.FC<HomePageProps> = ({
         "logo": "https://satnamvoyages.com/logo.png",
         "image": "https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=1200&q=80",
         "description": "Premier travel agency and outstation cab provider in India specializing in Golden Triangle, Rajasthan, Himachal and Uttarakhand tours.",
-        "telephone": "+91-9811776525",
+        "telephone": "+91-9718450905",
         "email": "booking@satnamvoyages.com",
         "priceRange": "$$",
         "address": {
@@ -371,13 +371,13 @@ export const HomePage: React.FC<HomePageProps> = ({
                   </div>
 
                   <div className="mt-5 pt-4 border-t border-stone-100 flex items-center justify-between">
-                    <div>
+                    {/* <div>
                       <span className="text-[10px] text-stone-400 block uppercase font-bold">Starting from</span>
                       <span className="text-lg font-extrabold text-[#1C1917] font-headline">
                         {formatPrice(tour.startingPriceINR, tour.startingPriceUSD)}
                       </span>
                       <span className="text-[11px] text-stone-500 ml-1">/ person</span>
-                    </div>
+                    </div> */}
 
                     <div className="flex items-center space-x-2">
                       <button
@@ -618,7 +618,7 @@ export const HomePage: React.FC<HomePageProps> = ({
               Request Custom Itinerary Quote
             </button>
             <a
-              href="https://wa.me/919811776525?text=Hello%20Satnam%20Voyages%2C%20I%20would%20like%20to%20speak%20with%20a%20tour%20consultant."
+              href="https://wa.me/919718450905?text=Hello%20Satnam%20Voyages%2C%20I%20would%20like%20to%20speak%20with%20a%20tour%20consultant."
               target="_blank"
               rel="noopener noreferrer"
               className="px-7 py-3.5 rounded-xl bg-[#141210] hover:bg-black text-white font-bold text-xs uppercase tracking-wider shadow-lg transition-all flex items-center border border-white/20"

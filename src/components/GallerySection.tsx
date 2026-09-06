@@ -378,7 +378,7 @@ export const GallerySection: React.FC<GallerySectionProps> = ({ onNavigate, onOp
               </button>
             )}
             <a
-              href="https://wa.me/919811776525?text=Hello%20Satnam%20Voyages%2C%20I%20saw%20your%20photo%20gallery%20and%20would%20like%20to%20plan%20a%20private%20tour."
+              href="https://wa.me/919718450905?text=Hello%20Satnam%20Voyages%2C%20I%20saw%20your%20photo%20gallery%20and%20would%20like%20to%20plan%20a%20private%20tour."
               target="_blank"
               rel="noopener noreferrer"
               className="px-6 py-3 rounded-xl bg-[#EA580C] hover:bg-[#C2410C] text-white font-bold text-xs uppercase tracking-wider shadow-lg shadow-orange-600/25 flex items-center space-x-2 transition-all"
@@ -386,7 +386,7 @@ export const GallerySection: React.FC<GallerySectionProps> = ({ onNavigate, onOp
               <MessageSquare className="w-4 h-4" />
               <span>Inquire on WhatsApp</span>
             </a>
-          </div>
+          </div> 
         </div>
       </div>
 
@@ -481,7 +481,7 @@ export const GallerySection: React.FC<GallerySectionProps> = ({ onNavigate, onOp
                 </button>
 
                 <a
-                  href={`https://wa.me/919811776525?text=Hello%20Satnam%20Voyages%2C%20I%20am%20interested%20in%20visiting%20${encodeURIComponent(selectedItem.title)}%20in%20${encodeURIComponent(selectedItem.location)}.`}
+                  href={`https://wa.me/919718450905?text=Hello%20Satnam%20Voyages%2C%20I%20am%20interested%20in%20visiting%20${encodeURIComponent(selectedItem.title)}%20in%20${encodeURIComponent(selectedItem.location)}.`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full py-3 rounded-xl border border-white/20 bg-white/5 hover:bg-white/10 text-white font-semibold text-xs uppercase tracking-wider transition-colors flex items-center justify-center space-x-2"

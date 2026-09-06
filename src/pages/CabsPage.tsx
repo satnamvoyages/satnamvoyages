@@ -76,7 +76,7 @@ export const CabsPage: React.FC<CabsPageProps> = ({
     return 'Toyota Innova Crysta (SUV)';
   };
 
-  const whatsappCalculatorUrl = `https://wa.me/919811776525?text=${encodeURIComponent(
+  const whatsappCalculatorUrl = `https://wa.me/919718450905?text=${encodeURIComponent(
     `Hello Satnam Voyages! I would like to book an outstation cab for ${currentRoute.from} to ${currentRoute.to} (${tripType.toUpperCase()}) with ${getVehicleName()}. Est Distance: ${estimatedFare.totalKm} km. Please confirm availability.`
   )}`;
 
@@ -89,7 +89,7 @@ export const CabsPage: React.FC<CabsPageProps> = ({
     "provider": {
       "@type": "TravelAgency",
       "name": "Satnam Voyages",
-      "telephone": "+91-9811776525",
+      "telephone": "+91-9718450905",
       "url": "https://satnamvoyages.com/"
     },
     "serviceArea": {
@@ -137,7 +137,7 @@ export const CabsPage: React.FC<CabsPageProps> = ({
 
             <div className="mt-6 flex flex-wrap gap-3">
               <a
-                href="https://wa.me/919811776525?text=Hello%20Satnam%20Voyages%2C%20I%20need%20an%20outstation%20cab%20from%20Delhi."
+                href="https://wa.me/919718450905?text=Hello%20Satnam%20Voyages%2C%20I%20need%20an%20outstation%20cab%20from%20Delhi."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-6 py-3 rounded-xl bg-[#EA580C] hover:bg-[#C2410C] text-white font-bold text-xs uppercase tracking-wider shadow-lg shadow-orange-600/20 flex items-center space-x-2 transition-all"

@@ -69,7 +69,7 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
             "logo": "https://satnamvoyages.com/logo.png",
             "image": "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=1200",
             "description": "Premier travel agency and outstation chauffeur cab provider in India specializing in Golden Triangle, Rajasthan, Himachal and Uttarakhand tours.",
-            "telephone": "+91-9811776525",
+            "telephone": "+91-9718450905",
             "priceRange": "$$",
             "address": {
               "@type": "PostalAddress",

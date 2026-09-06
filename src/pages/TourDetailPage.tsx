@@ -167,7 +167,7 @@ export const TourDetailPage: React.FC<TourDetailPageProps> = ({
     ]
   };
 
-  const whatsappInquiryUrl = `https://wa.me/919811776525?text=${encodeURIComponent(
+  const whatsappInquiryUrl = `https://wa.me/919718450905?text=${encodeURIComponent(
     `Hello Satnam Voyages! I am interested in booking "${tour.title}" (${tour.durationLabel}) for ${selectedTier} tier with a ${selectedVehicle}. Please share availability and best price.`
   )}`;
 
@@ -851,7 +851,7 @@ export const TourDetailPage: React.FC<TourDetailPageProps> = ({
                 Speak directly with our senior tour manager for custom hotel upgrades or route modifications.
               </p>
               <div className="space-y-1 text-xs">
-                <a href="tel:+919811776525" className="flex items-center text-stone-800 font-bold hover:text-[#EA580C]">
+                <a href="tel:+919718450905" className="flex items-center text-stone-800 font-bold hover:text-[#EA580C]">
                   <Phone className="w-3.5 h-3.5 text-[#EA580C] mr-2 shrink-0" />
                   +91 98117 76525 (24/7)
                 </a>
