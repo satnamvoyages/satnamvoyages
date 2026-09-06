@@ -31,7 +31,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     location: 'Jaipur, Rajasthan',
     category: 'forts',
     categoryLabel: 'Royal Forts & Palaces',
-    image: 'https://images.unsplash.com/photo-1599661046289-e31897846e41?auto=format&fit=crop&w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1706961121783-4ae6c933983a?auto=format&fit=crop&w=1200&q=80',
     caption: '953 latticework honeycomb windows carved from pink and red sandstone in the heart of the Pink City.',
     tourSlug: 'same-day-delhi-jaipur-tour',
     tourName: 'Same Day Delhi • Jaipur Tour'
@@ -53,7 +53,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     location: 'Udaipur, Rajasthan',
     category: 'forts',
     categoryLabel: 'Royal Forts & Palaces',
-    image: 'https://images.unsplash.com/photo-1595815771614-ade9d652a65d?auto=format&fit=crop&w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1703092289078-ff03b771237c?auto=format&fit=crop&w=1200&q=80',
     caption: 'The Venice of the East bathed in afternoon Mediterranean-like golden glow over tranquil royal waters.',
     tourSlug: 'jaipur-jodhpur-udaipur-tour',
     tourName: 'Jaipur • Jodhpur • Udaipur Tour'
@@ -64,7 +64,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     location: 'Jodhpur, Rajasthan',
     category: 'forts',
     categoryLabel: 'Royal Forts & Palaces',
-    image: 'https://images.unsplash.com/photo-1588416936097-41850ab3d86d?auto=format&fit=crop&w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1566873535350-a3f5d4a804b7?auto=format&fit=crop&w=1200&q=80',
     caption: 'Towering 400 feet above the cobalt blue rooftops of Jodhpur, guarding centuries of Marwar valour.',
     tourSlug: 'jaipur-jodhpur-jaisalmer-tour',
     tourName: 'Jaipur • Jodhpur • Jaisalmer Tour'
@@ -75,7 +75,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     location: 'Jaisalmer, Thar Desert',
     category: 'forts',
     categoryLabel: 'Royal Forts & Palaces',
-    image: 'https://images.unsplash.com/photo-1509233725247-49e657c54213?auto=format&fit=crop&w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1697464025977-cde058cfce42?auto=format&fit=crop&w=1200&q=80',
     caption: 'Sunset camel caravans sweeping across the shimmering undulating ripples of Sam Sand Dunes.',
     tourSlug: 'rajasthan-heritage-tour',
     tourName: 'Rajasthan Heritage Tour'
@@ -86,7 +86,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     location: 'Manali, Himachal Pradesh',
     category: 'himalayas',
     categoryLabel: 'Himalayas & Alpine',
-    image: 'https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&fit=crop&w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1563630257272-e43377f07482?auto=format&fit=crop&w=1200&q=80',
     caption: 'Crisp alpine air, pine-scented mountain valleys, and snow-draped Pir Panjal ranges.',
     tourSlug: 'shimla-manali-tour',
     tourName: 'Shimla • Manali Tour'
@@ -97,7 +97,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     location: 'Parvati Valley, Himachal Pradesh',
     category: 'himalayas',
     categoryLabel: 'Himalayas & Alpine',
-    image: 'https://images.unsplash.com/photo-1597074866923-dc0589150358?auto=format&fit=crop&w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1652501834567-937de29c4533?auto=format&fit=crop&w=1200&q=80',
     caption: 'Turquoise glacial waters rushing through deodar forests in India’s serene bohemian mountain sanctuary.',
     tourSlug: 'shimla-manali-kasol-tour',
     tourName: 'Shimla • Manali • Kasol Tour'
@@ -108,7 +108,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     location: 'Kullu, Himachal Pradesh',
     category: 'himalayas',
     categoryLabel: 'Himalayas & Alpine',
-    image: 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1588500957263-d39151ba1a2b?auto=format&fit=crop&w=1200&q=80',
     caption: 'Centuries-old geothermal mineral springs revered in Sikh and Hindu pilgrimage traditions.',
     tourSlug: 'manali-kasol-manikaran-tour',
     tourName: 'Manali • Kasol • Manikaran Tour'
@@ -174,7 +174,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     location: 'New Delhi',
     category: 'forts',
     categoryLabel: 'Royal Forts & Palaces',
-    image: 'https://images.unsplash.com/photo-1587474260584-136574528ed5?auto=format&fit=crop&w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1609670289875-590e8ec05c88?auto=format&fit=crop&w=1200&q=80',
     caption: 'The red sandstone precursor to the Taj Mahal framed by symmetrical Mughal charbagh water channels.',
     tourSlug: 'delhi-sightseeing-old-and-new',
     tourName: 'Delhi Sightseeing Old and New'
@@ -185,7 +185,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     location: 'Mussoorie, Uttarakhand',
     category: 'himalayas',
     categoryLabel: 'Himalayas & Alpine',
-    image: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1690702812077-cc5b8ee88b01?auto=format&fit=crop&w=1200&q=80',
     caption: 'The Queen of Hills overlooking the Doon Valley and Shivalik mountain ranges under warm sunset skies.',
     tourSlug: 'rishikesh-mussoorie-tour',
     tourName: 'Rishikesh • Mussoorie Tour'
