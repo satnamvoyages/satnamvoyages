@@ -10,10 +10,10 @@ export const FloatingActions: React.FC<FloatingActionsProps> = ({ onOpenInquiry 
     <div className="fixed z-40 flex flex-col space-y-3 bottom-20 right-4 md:bottom-6 md:right-6">
       {/* Direct Call Button */}
       <a
-        href="tel:+919811776525"
+        href="tel:+919718450905"
         id="floating-call-btn"
         className="w-13 h-13 rounded-full bg-[#141210] text-[#EA580C] flex items-center justify-center shadow-xl hover:bg-black transition-all hover:scale-105 group border-2 border-[#EA580C]/40"
-        title="Call Satnam Voyages (+91 98117 76525)"
+        title="Call Satnam Voyages (+91 97184 50905)"
         aria-label="Call Satnam Voyages"
       >
         <Phone className="w-5 h-5 group-hover:animate-bounce" />
@@ -21,7 +21,7 @@ export const FloatingActions: React.FC<FloatingActionsProps> = ({ onOpenInquiry 
 
       {/* Permanent WhatsApp Chat Button */}
       <a
-        href="https://wa.me/919811776525?text=Hello%20Satnam%20Voyages%2C%20I%20am%20interested%20in%20booking%20a%20tour%20package%20or%20private%20cab%20in%20India.%20Please%20assist%20me."
+        href="https://wa.me/919718450905?text=Hello%20Satnam%20Voyages%2C%20I%20am%20interested%20in%20booking%20a%20tour%20package%20or%20private%20cab%20in%20India.%20Please%20assist%20me."
         target="_blank"
         rel="noopener noreferrer"
         id="floating-whatsapp-btn"

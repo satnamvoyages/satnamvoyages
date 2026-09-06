@@ -50,10 +50,10 @@ export const Navbar: React.FC<NavbarProps> = ({
               24/7 Live Desk:
             </span>
             <a
-              href="tel:+919811776525"
+              href="tel:+919718450905"
               className="hover:text-amber-400 font-medium tracking-wide flex items-center transition-colors"
             >
-              <Phone className="w-3 h-3 mr-1" /> +91 98117 76525
+              <Phone className="w-3 h-3 mr-1" /> +91 97184 50905
             </a>
             <span className="hidden sm:inline text-stone-600">|</span>
             <span className="hidden sm:inline text-stone-400">Government Approved • Verified Drivers</span>
@@ -61,29 +61,10 @@ export const Navbar: React.FC<NavbarProps> = ({
 
           <div className="flex items-center space-x-3 ml-auto">
             {/* Currency Selector */}
-            <div className="flex items-center bg-stone-800 rounded-lg p-0.5 border border-stone-700 text-xs">
-              <button
-                onClick={() => onToggleCurrency('INR')}
-                className={`px-2 py-0.5 rounded font-medium transition-all ${
-                  currency === 'INR' ? 'bg-[#EA580C] text-white font-bold' : 'text-stone-300 hover:text-white'
-                }`}
-                title="View prices in Indian Rupees"
-              >
-                ₹ INR
-              </button>
-              <button
-                onClick={() => onToggleCurrency('USD')}
-                className={`px-2 py-0.5 rounded font-medium transition-all ${
-                  currency === 'USD' ? 'bg-[#EA580C] text-white font-bold' : 'text-stone-300 hover:text-white'
-                }`}
-                title="View prices in US Dollars"
-              >
-                $ USD
-              </button>
-            </div>
+           
 
             <a
-              href="https://wa.me/919811776525?text=Hello%20Satnam%20Voyages%2C%20I%20would%20like%20to%20inquire%20about%20a%20tour%20package%20or%20cab%20service."
+              href="https://wa.me/919718450905?text=Hello%20Satnam%20Voyages%2C%20I%20would%20like%20to%20inquire%20about%20a%20tour%20package%20or%20cab%20service."
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center px-2.5 py-1 rounded bg-[#EA580C] hover:bg-[#C2410C] text-white font-semibold transition-colors"
@@ -260,7 +241,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               href="tel:+919811776525"
               className="w-full py-2.5 rounded-xl border border-[#E8DFD3] bg-white text-stone-800 font-semibold text-center text-sm flex items-center justify-center"
             >
-              <Phone className="w-4 h-4 mr-2 text-stone-600" /> Call +91 98117 76525
+              <Phone className="w-4 h-4 mr-2 text-stone-600" /> Call +91 97184 50905
             </a>
           </div>
         </div>

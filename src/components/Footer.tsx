@@ -24,11 +24,6 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenInquiry }) => 
             <p className="text-xs text-stone-400 leading-relaxed font-montserrat">
               India’s premier travel agency and outstation chauffeur cab service. Handcrafted Golden Triangle, royal Rajasthan, alpine Himachal, holy Uttarakhand, and Khajuraho circuits with verified English-speaking chauffeurs and sanitized fleets.
             </p>
-
-            <div className="pt-2 text-xs text-amber-400 font-medium flex items-center space-x-1.5 font-montserrat">
-              <ShieldCheck className="w-4 h-4 text-[#EA580C]" />
-              <span>Ministry of Tourism Compliant • 100% Fixed Rates</span>
-            </div>
           </div>
 
           {/* Column 2: Popular Tour Circuits */}
@@ -157,21 +152,21 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenInquiry }) => 
               </p>
               <p className="flex items-center">
                 <Phone className="w-4 h-4 text-[#EA580C] mr-2 shrink-0" />
-                <a href="tel:+919811776525" className="hover:text-[#EA580C] font-bold">
-                  +91 98117 76525
+                <a href="tel:+919718450905" className="hover:text-[#EA580C] font-bold">
+                  +91 97184 50905
                 </a>
               </p>
               <p className="flex items-center">
                 <Mail className="w-4 h-4 text-[#EA580C] mr-2 shrink-0" />
-                <a href="mailto:booking@satnamvoyages.com" className="hover:text-[#EA580C]">
-                  booking@satnamvoyages.com
+                <a href="mailto:satnamvoyages@gmail.com" className="hover:text-[#EA580C]">
+                 satnamvoyages@gmail.com
                 </a>
               </p>
             </div>
 
             <div className="pt-2">
               <a
-                href="https://wa.me/919811776525?text=Hello%20Satnam%20Voyages%2C%20I%20would%20like%20to%20plan%20a%20tour%20in%20India."
+                href="https://wa.me/919718450905?text=Hello%20Satnam%20Voyages%2C%20I%20would%20like%20to%20plan%20a%20tour%20in%20India."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center px-4 py-2.5 rounded-xl bg-[#EA580C] hover:bg-[#C2410C] text-white font-bold text-xs uppercase tracking-wider shadow transition-colors"

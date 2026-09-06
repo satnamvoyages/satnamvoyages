@@ -93,7 +93,7 @@ export const InquiryModal: React.FC<InquiryModalProps> = ({
       `⭐ *Tier:* ${tier} Category%0A` +
       (notes ? `📝 *Notes:* ${encodeURIComponent(notes)}%0A%0A` : '%0A') +
       `Please confirm quote and availability.`;
-    return `https://wa.me/919811776525?text=${messageText}`;
+    return `https://wa.me/919718450905?text=${messageText}`;
   };
 
   return (
