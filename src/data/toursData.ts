@@ -333,7 +333,7 @@ export const ALL_TOURS: TourPackage[] = [
     startingPriceUSD: 330,
     rating: 4.93,
     reviewsCount: 195,
-    primaryImage: 'https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=1200&q=80', // Jaisalmer fort & desert
+    primaryImage: 'https://images.unsplash.com/photo-1686825780583-8be7c349a4b4?auto=format&fit=crop&w=1200&q=80', // Jaisalmer fort & desert
     galleryImages: [
       'https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=800&q=80',
       'https://images.unsplash.com/photo-1599661046289-e31897846e41?auto=format&fit=crop&w=800&q=80',
@@ -503,9 +503,9 @@ export const ALL_TOURS: TourPackage[] = [
     startingPriceUSD: 290,
     rating: 4.95,
     reviewsCount: 284,
-    primaryImage: 'https://images.unsplash.com/photo-1605649487212-47bdab064df8?auto=format&fit=crop&w=1200&q=80', // Kasol Parvati Valley
+    primaryImage: 'https://images.unsplash.com/photo-1662944113366-123561a844e1?auto=format&fit=crop&w=1200&q=80', // Kasol Parvati Valley
     galleryImages: [
-      'https://images.unsplash.com/photo-1605649487212-47bdab064df8?auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1662944113366-123561a844e1?auto=format&fit=crop&w=800&q=80',
       'https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&fit=crop&w=800&q=80',
     ],
     route: 'Delhi ➔ Shimla ➔ Manali ➔ Solang Valley ➔ Kasol (Parvati Valley) ➔ Delhi',
@@ -544,7 +544,7 @@ export const ALL_TOURS: TourPackage[] = [
     startingPriceUSD: 215,
     rating: 4.9,
     reviewsCount: 310,
-    primaryImage: 'https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&fit=crop&w=1200&q=80',
+    primaryImage: 'https://images.unsplash.com/photo-1588500957263-d39151ba1a2b?auto=format&fit=crop&w=1200&q=80',
     galleryImages: [
       'https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&fit=crop&w=800&q=80',
       'https://images.unsplash.com/photo-1605649487212-47bdab064df8?auto=format&fit=crop&w=800&q=80',
@@ -583,9 +583,9 @@ export const ALL_TOURS: TourPackage[] = [
     startingPriceUSD: 120,
     rating: 4.96,
     reviewsCount: 460,
-    primaryImage: 'https://images.unsplash.com/photo-1600100397608-f010e4293f9c?auto=format&fit=crop&w=1200&q=80', // Rishikesh Ram Jhula
+    primaryImage: 'https://images.unsplash.com/photo-1511754863001-18d44abd0a93?auto=format&fit=crop&w=1200&q=80', // Rishikesh Ram Jhula
     galleryImages: [
-      'https://images.unsplash.com/photo-1600100397608-f010e4293f9c?auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1511754863001-18d44abd0a93?auto=format&fit=crop&w=800&q=80',
       'https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=800&q=80',
     ],
     route: 'Delhi ➔ Meerut Expressway ➔ Haridwar ➔ Rishikesh ➔ Delhi',
@@ -641,9 +641,9 @@ export const ALL_TOURS: TourPackage[] = [
     startingPriceUSD: 215,
     rating: 4.93,
     reviewsCount: 375,
-    primaryImage: 'https://images.unsplash.com/photo-1600100397608-f010e4293f9c?auto=format&fit=crop&w=1200&q=80',
+    primaryImage: 'https://images.unsplash.com/photo-1547106365-bb4b17f50a15?auto=format&fit=crop&w=1200&q=80',
     galleryImages: [
-      'https://images.unsplash.com/photo-1600100397608-f010e4293f9c?auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1650341259809-9314b0de9268?auto=format&fit=crop&w=800&q=80',
       'https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=800&q=80',
     ],
     route: 'Delhi ➔ Haridwar ➔ Rishikesh ➔ Dehradun ➔ Mussoorie ➔ Delhi',
@@ -680,9 +680,9 @@ export const ALL_TOURS: TourPackage[] = [
     startingPriceUSD: 175,
     rating: 4.89,
     reviewsCount: 240,
-    primaryImage: 'https://images.unsplash.com/photo-1600100397608-f010e4293f9c?auto=format&fit=crop&w=1200&q=80',
+    primaryImage: 'https://images.unsplash.com/photo-1650341259809-9314b0de9268?auto=format&fit=crop&w=1200&q=80',
     galleryImages: [
-      'https://images.unsplash.com/photo-1600100397608-f010e4293f9c?auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1650341259809-9314b0de9268?auto=format&fit=crop&w=800&q=80',
     ],
     route: 'Delhi ➔ Rishikesh (Ganga & Ashrams) ➔ Mussoorie (Queen of Hills) ➔ Delhi',
     overview: 'A tailored 4-day mountain getaway pairing the peaceful riverbanks of Rishikesh with the pleasant cool heights of Mussoorie.',
@@ -717,9 +717,9 @@ export const ALL_TOURS: TourPackage[] = [
     startingPriceUSD: 265,
     rating: 4.94,
     reviewsCount: 156,
-    primaryImage: 'https://images.unsplash.com/photo-1600100397608-f010e4293f9c?auto=format&fit=crop&w=1200&q=80', // Medieval Khajuraho
+    primaryImage: 'https://images.unsplash.com/photo-1643269877099-ea5393b80320?auto=format&fit=crop&w=1200&q=80', // Medieval Khajuraho
     galleryImages: [
-      'https://images.unsplash.com/photo-1600100397608-f010e4293f9c?auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1643269877099-ea5393b80320?auto=format&fit=crop&w=800&q=80',
       'https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=800&q=80',
     ],
     route: 'Delhi/Agra ➔ Gwalior Fort ➔ Orchha Cenotaphs ➔ Khajuraho UNESCO Temples ➔ Jhansi/Delhi',

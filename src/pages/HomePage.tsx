@@ -22,7 +22,7 @@ import { Currency, TourPackage } from '../types';
 import { TrustBadges } from '../components/TrustBadges';
 import { GallerySection } from '../components/GallerySection';
 import { SEOHead } from '../components/SEOHead';
-
+import {ClientPhotoScroller} from '../components/ClientPhotoScroller'
 interface HomePageProps {
   onNavigate: (path: string) => void;
   currency: Currency;
@@ -407,6 +407,9 @@ export const HomePage: React.FC<HomePageProps> = ({
 
       {/* 5. VISUAL GALLERY SECTION (Home Page & Navbar Anchor) */}
       <GallerySection onNavigate={onNavigate} onOpenInquiry={onOpenInquiry} />
+      
+      {/* 5b. CLIENT PHOTO SCROLLER */}
+        <ClientPhotoScroller onNavigate={onNavigate} />
 
       {/* 6. CAB FLEET SECTION */}
       <section className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

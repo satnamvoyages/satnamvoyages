@@ -1,0 +1,48 @@
+# General rule: allow all standard search engine crawlers
+User-agent: *
+Allow: /
+
+# ——— OpenAI (ChatGPT) ———
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+# ——— Anthropic (Claude) ———
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+# ——— Perplexity ———
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+# ——— Google (Gemini / AI Overviews) ———
+User-agent: Google-Extended
+Allow: /
+
+# ——— Apple Intelligence ———
+User-agent: Applebot-Extended
+Allow: /
+
+# ——— Amazon (Alexa/Rufus) ———
+User-agent: Amazonbot
+Allow: /
+
+# ——— Meta (Llama / Meta AI) ———
+User-agent: Meta-ExternalAgent
+Allow: /
+
+Sitemap: https://www.satnamvoyages.com/sitemap.xml

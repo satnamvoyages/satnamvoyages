@@ -3,22 +3,17 @@ import {
   Camera,
   Star,
   MapPin,
-  Calendar,
-  Car,
-  MessageSquare,
   Sparkles,
   ChevronLeft,
-  ChevronRight,
   X,
-  ExternalLink,
   ShieldCheck,
   UploadCloud,
   CheckCircle2,
-  Heart
 } from 'lucide-react';
 import { CLIENT_MOMENTS, ClientMoment } from '../data/clientPhotosData';
-import { GALLERY_ITEMS, GalleryItem } from '../components/GallerySection';
+import { GALLERY_ITEMS } from '../components/GallerySection';
 import { SEOHead } from '../components/SEOHead';
+
 
 interface GalleryPageProps {
   onNavigate: (path: string) => void;
@@ -27,9 +22,7 @@ interface GalleryPageProps {
 
 export const GalleryPage: React.FC<GalleryPageProps> = ({ onNavigate, onOpenInquiry }) => {
   const [activeTab, setActiveTab] = useState<'clients' | 'destinations'>('clients');
-  const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [activeModalItem, setActiveModalItem] = useState<ClientMoment | null>(null);
-  const [likedMoments, setLikedMoments] = useState<Record<string, boolean>>({});
 
   // Submission Form State for "Share Your Journey"
   const [submitSuccess, setSubmitSuccess] = useState(false);
@@ -42,24 +35,6 @@ export const GalleryPage: React.FC<GalleryPageProps> = ({ onNavigate, onOpenInqu
     story: '',
     photoUploaded: false
   });
-
-  const categories = [
-    { id: 'all', label: 'All Guest Moments' },
-    { id: 'couples', label: 'Couples & Honeymoons' },
-    { id: 'families', label: 'Families & Groups' },
-    { id: 'solo', label: 'Solo Explorers' },
-    { id: 'chauffeurs', label: 'Guests with Chauffeurs' },
-    { id: 'culture', label: 'Spiritual & Culture' },
-  ];
-
-  const filteredMoments = selectedCategory === 'all'
-    ? CLIENT_MOMENTS
-    : CLIENT_MOMENTS.filter((item) => item.category === selectedCategory);
-
-  const toggleLike = (id: string, e: React.MouseEvent) => {
-    e.stopPropagation();
-    setLikedMoments((prev) => ({ ...prev, [id]: !prev[id] }));
-  };
 
   const handleFormSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -155,10 +130,10 @@ export const GalleryPage: React.FC<GalleryPageProps> = ({ onNavigate, onOpenInqu
         </div>
       </section>
 
-      {/* Gallery Tabs & Category Filter Bar */}
+      {/* Gallery Tabs */}
       <div className="sticky top-20 z-20 bg-[#FAF6F0]/95 backdrop-blur border-b border-[#E8DFD3] shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             {/* Main Mode Toggle: Client Photos vs Scenic Highlights */}
             <div className="flex rounded-xl bg-white p-1 border border-[#E8DFD3] shadow-inner text-xs font-bold uppercase tracking-wider font-headline">
               <button
@@ -182,128 +157,29 @@ export const GalleryPage: React.FC<GalleryPageProps> = ({ onNavigate, onOpenInqu
                 🏛️ Sights &amp; Monuments ({GALLERY_ITEMS.length})
               </button>
             </div>
-
-            {/* Category Filter Pills */}
-            {activeTab === 'clients' && (
-              <div className="flex items-center space-x-1.5 overflow-x-auto max-w-full pb-1 sm:pb-0">
-                {categories.map((cat) => (
-                  <button
-                    key={cat.id}
-                    onClick={() => setSelectedCategory(cat.id)}
-                    className={`px-3 py-1.5 rounded-xl text-xs font-semibold whitespace-nowrap transition-all uppercase tracking-wide font-headline ${
-                      selectedCategory === cat.id
-                        ? 'bg-[#1C1917] text-white shadow-sm'
-                        : 'bg-white border border-[#E8DFD3] text-stone-600 hover:bg-stone-50'
-                    }`}
-                  >
-                    {cat.label}
-                  </button>
-                ))}
-              </div>
-            )}
           </div>
         </div>
       </div>
+ 
 
       {/* Main Grid View */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
         {activeTab === 'clients' ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {filteredMoments.map((moment) => {
-              const isLiked = likedMoments[moment.id];
-              return (
-                <div
-                  key={moment.id}
-                  onClick={() => setActiveModalItem(moment)}
-                  className="bg-white rounded-2xl border border-[#E8DFD3] overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between cursor-pointer group"
-                >
-                  {/* Image Card Container */}
-                  <div className="relative h-64 overflow-hidden bg-stone-900">
-                    <img
-                      src={moment.image}
-                      alt={moment.caption}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                      loading="lazy"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-stone-950/80 via-transparent to-black/20"></div>
-
-                    {/* Top Badges */}
-                    <div className="absolute top-3 left-3 flex items-center space-x-2">
-                      <span className="px-2.5 py-1 rounded-full bg-[#141210]/85 backdrop-blur text-white text-[11px] font-bold font-headline uppercase flex items-center">
-                        <MapPin className="w-3 h-3 text-[#EA580C] mr-1" />
-                        {moment.destination}
-                      </span>
-                    </div>
-
-                    <button
-                      onClick={(e) => toggleLike(moment.id, e)}
-                      aria-label="Like photo"
-                      className={`absolute top-3 right-3 p-2 rounded-full backdrop-blur transition-all ${
-                        isLiked ? 'bg-rose-500 text-white' : 'bg-black/50 text-white hover:bg-black/80'
-                      }`}
-                    >
-                      <Heart className={`w-3.5 h-3.5 ${isLiked ? 'fill-current' : ''}`} />
-                    </button>
-
-                    {/* Bottom overlay with Tour Name */}
-                    <div className="absolute bottom-3 left-3 right-3 text-white">
-                      <span className="text-[10px] text-amber-300 font-bold uppercase tracking-wider block font-headline">
-                        {moment.tourName}
-                      </span>
-                      <p className="text-xs text-stone-200 line-clamp-1 font-medium font-montserrat">
-                        "{moment.caption}"
-                      </p>
-                    </div>
-                  </div>
-
-                  {/* Client Info & Testimonial Details */}
-                  <div className="p-5 space-y-3 flex-1 flex flex-col justify-between">
-                    <div className="space-y-2">
-                      <div className="flex items-center justify-between">
-                        <div className="flex items-center space-x-2.5">
-                          <img
-                            src={moment.avatar}
-                            alt={moment.clientName}
-                            className="w-9 h-9 rounded-full object-cover border border-[#E8DFD3]"
-                          />
-                          <div>
-                            <h3 className="font-bold text-stone-900 text-sm font-headline flex items-center">
-                              {moment.clientName}
-                              <span className="ml-1.5 text-sm" title={moment.clientCountry}>{moment.clientFlag}</span>
-                            </h3>
-                            <span className="text-[11px] text-stone-500 block font-montserrat">
-                              {moment.clientCountry} • {moment.travelDate}
-                            </span>
-                          </div>
-                        </div>
-
-                        {/* Stars */}
-                        <div className="flex text-amber-400">
-                          {[...Array(moment.rating)].map((_, i) => (
-                            <Star key={i} className="w-3.5 h-3.5 fill-current" />
-                          ))}
-                        </div>
-                      </div>
-
-                      <p className="text-xs text-stone-600 italic font-montserrat line-clamp-3 bg-[#FAF6F0] p-3 rounded-xl border border-[#E8DFD3]/60">
-                        "{moment.reviewQuote}"
-                      </p>
-                    </div>
-
-                    {/* Chauffeur & Vehicle Tag */}
-                    <div className="pt-3 border-t border-[#E8DFD3] flex items-center justify-between text-[11px] text-stone-500 font-montserrat">
-                      <span className="flex items-center text-stone-700 font-medium">
-                        <Car className="w-3.5 h-3.5 text-[#EA580C] mr-1.5 shrink-0" />
-                        Chauffeur: <strong className="ml-1 text-stone-900">{moment.chauffeurName}</strong>
-                      </span>
-                      <span className="text-[#EA580C] font-bold group-hover:translate-x-0.5 transition-transform flex items-center text-xs font-headline">
-                        Details →
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+            {CLIENT_MOMENTS.map((moment) => (
+              <div
+                key={moment.id}
+                onClick={() => setActiveModalItem(moment)}
+                className="relative aspect-square rounded-2xl overflow-hidden bg-stone-900 cursor-pointer group shadow-sm hover:shadow-xl transition-all duration-300"
+              >
+                <img
+                  src={moment.image}
+                  alt="Satnam Voyages client moment"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
+                />
+              </div>
+            ))}
           </div>
         ) : (
           /* Sights & Monuments Grid */
@@ -467,21 +343,21 @@ export const GalleryPage: React.FC<GalleryPageProps> = ({ onNavigate, onOpenInqu
         </div>
       </section>
 
-      {/* Lightbox Modal for Full Image & Client Story */}
+      {/* Lightbox Modal for Full Image */}
       {activeModalItem && (
         <div
           className="fixed inset-0 z-50 bg-black/85 backdrop-blur-md flex items-center justify-center p-4"
           onClick={() => setActiveModalItem(null)}
         >
           <div
-            className="bg-white rounded-3xl max-w-3xl w-full overflow-hidden shadow-2xl border border-stone-700 animate-in fade-in zoom-in-95"
+            className="max-w-3xl w-full rounded-3xl overflow-hidden shadow-2xl"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="relative h-80 sm:h-96 bg-black">
+            <div className="relative bg-black">
               <img
                 src={activeModalItem.image}
-                alt={activeModalItem.caption}
-                className="w-full h-full object-cover"
+                alt="Satnam Voyages client moment"
+                className="w-full max-h-[85vh] object-contain mx-auto"
               />
               <button
                 onClick={() => setActiveModalItem(null)}
@@ -490,79 +366,12 @@ export const GalleryPage: React.FC<GalleryPageProps> = ({ onNavigate, onOpenInqu
               >
                 <X className="w-5 h-5" />
               </button>
-              <div className="absolute bottom-4 left-4 px-3 py-1 rounded-full bg-black/70 backdrop-blur text-white text-xs font-bold font-headline uppercase flex items-center">
-                <MapPin className="w-3.5 h-3.5 text-[#EA580C] mr-1" />
-                {activeModalItem.destination}
-              </div>
-            </div>
-
-            <div className="p-6 space-y-4">
-              <div className="flex items-center justify-between">
-                <div className="flex items-center space-x-3">
-                  <img
-                    src={activeModalItem.avatar}
-                    alt={activeModalItem.clientName}
-                    className="w-12 h-12 rounded-full object-cover border border-[#E8DFD3]"
-                  />
-                  <div>
-                    <h3 className="font-bold text-stone-900 text-lg font-headline flex items-center">
-                      {activeModalItem.clientName}
-                      <span className="ml-2">{activeModalItem.clientFlag}</span>
-                    </h3>
-                    <span className="text-xs text-stone-500 font-montserrat">
-                      {activeModalItem.clientCountry} • Tour: <strong>{activeModalItem.tourName}</strong>
-                    </span>
-                  </div>
-                </div>
-
-                <div className="flex text-amber-400">
-                  {[...Array(activeModalItem.rating)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-current" />
-                  ))}
-                </div>
-              </div>
-
-              <blockquote className="text-sm text-stone-700 italic border-l-4 border-[#EA580C] pl-4 font-montserrat leading-relaxed">
-                "{activeModalItem.reviewQuote}"
-              </blockquote>
-
-              <div className="p-3 bg-[#FAF6F0] rounded-xl border border-[#E8DFD3] flex flex-wrap items-center justify-between gap-2 text-xs font-montserrat">
-                <span>
-                  Chauffeur: <strong className="text-stone-900">{activeModalItem.chauffeurName}</strong>
-                </span>
-                <span>
-                  Vehicle: <strong className="text-stone-900">{activeModalItem.vehicleType}</strong>
-                </span>
-                <span>
-                  Date: <strong className="text-stone-900">{activeModalItem.travelDate}</strong>
-                </span>
-              </div>
-
-              <div className="pt-2 flex flex-col sm:flex-row gap-3">
-                <button
-                  onClick={() => {
-                    const slug = activeModalItem.tourSlug;
-                    setActiveModalItem(null);
-                    onNavigate(slug === 'cabs' ? '/cabs' : `/tours/${slug}`);
-                  }}
-                  className="flex-1 py-3 rounded-xl bg-[#EA580C] hover:bg-[#C2410C] text-white font-bold text-xs uppercase tracking-wider text-center font-headline shadow-md transition-all"
-                >
-                  View This Exact Itinerary
-                </button>
-                <button
-                  onClick={() => {
-                    setActiveModalItem(null);
-                    onOpenInquiry(`Inquiry about ${activeModalItem.tourName} (Inspired by ${activeModalItem.clientName})`);
-                  }}
-                  className="flex-1 py-3 rounded-xl bg-stone-900 hover:bg-black text-white font-bold text-xs uppercase tracking-wider text-center font-headline transition-all"
-                >
-                  Request Chauffeur &amp; Quote
-                </button>
-              </div>
             </div>
           </div>
         </div>
       )}
     </div>
+    
   );
+  
 };
