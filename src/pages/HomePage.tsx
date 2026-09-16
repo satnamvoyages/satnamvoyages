@@ -150,8 +150,6 @@ export const HomePage: React.FC<HomePageProps> = ({
           </video>
 
           {/* Cinematic Dark Overlays with Warm Hue */}
-          <div className="absolute inset-0 bg-gradient-to-t from-[#141210] via-[#141210]/50 to-[#141210]/40"></div>
-          <div className="absolute inset-0 bg-gradient-to-r from-[#141210]/80 via-transparent to-[#141210]/80"></div>
         </div>
 
         {/* Hero Content */}
@@ -161,7 +159,7 @@ export const HomePage: React.FC<HomePageProps> = ({
           </h1>
 
           {/* Subheading with Orange Color */}
-          <p className="mt-4 sm:mt-6 font-headline text-lg sm:text-2xl md:text-3xl font-bold text-[#EA580C] uppercase tracking-wide drop-shadow-[0_4px_16px_rgba(0,0,0,0.8)] max-w-3xl mx-auto">
+          <p className="mt-4 sm:mt-6 font-headline text-lg sm:text-2xl md:text-3xl font-bold text-white uppercase tracking-wide drop-shadow-[0_4px_16px_rgba(0,0,0,0.8)] max-w-3xl mx-auto">
             Bespoke Private Journeys &amp; Chauffeured Outstation Fleets
           </p>
 

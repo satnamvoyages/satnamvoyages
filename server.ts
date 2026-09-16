@@ -46,9 +46,8 @@ app.get('/api/health', (req, res) => {
   });
 });
 
-// API endpoints to handle booking inquiries & contact forms via Gmail SMTP
-// Supports both modern React (/api/send-inquiry) and Core PHP (send-inquiry.php) paths
-app.post(['/api/send-inquiry', '/send-inquiry.php', '/php/send-inquiry.php'], async (req, res) => {
+// API endpoint to handle booking inquiries & contact forms via Gmail SMTP (Nodemailer)
+app.post('/api/send-inquiry', async (req, res) => {
   try {
     const {
       name,
@@ -186,6 +185,68 @@ app.post(['/api/send-inquiry', '/send-inquiry.php', '/php/send-inquiry.php'], as
 
     const info = await transporter.sendMail(mailOptions);
     console.log('Email sent successfully:', info.messageId);
+
+    // Send a thank-you confirmation email to the client, if they gave a valid email
+    if (email && email.includes('@')) {
+      try {
+        const thankYouHtml = `
+          <div style="font-family: 'Segoe UI', Helvetica, Arial, sans-serif; max-width: 600px; margin: 0 auto; background-color: #FAF6F0; border: 1px solid #E8DFD3; border-radius: 12px; overflow: hidden;">
+            <div style="background-color: #141210; color: #ffffff; padding: 24px 20px; text-align: center; border-bottom: 3px solid #EA580C;">
+              <h1 style="margin: 0; font-size: 22px; text-transform: uppercase; letter-spacing: 1px; color: #FFFFFF;">Satnam Voyages</h1>
+              <p style="margin: 6px 0 0 0; color: #FDBA74; font-size: 13px; font-weight: 600;">THANK YOU FOR YOUR INQUIRY</p>
+            </div>
+            <div style="padding: 24px;">
+              <p style="font-size: 15px; color: #1C1917;">Hi ${name},</p>
+              <p style="font-size: 14px; color: #374151; line-height: 1.6;">
+                Thank you for reaching out to <strong>Satnam Voyages</strong>! We've received your inquiry and our tour manager will contact you at <strong>${phone}</strong> within 15 minutes with your custom quote and itinerary details.
+              </p>
+              <div style="background-color: #ffffff; border-radius: 8px; padding: 16px; margin: 20px 0; border: 1px solid #E8DFD3;">
+                <p style="margin: 0 0 8px 0; font-size: 12px; color: #6B7280; text-transform: uppercase; font-weight: bold;">Your Booking Reference</p>
+                <p style="margin: 0; font-size: 18px; font-weight: bold; color: #EA580C; font-family: monospace;">#${inquiryRef}</p>
+              </div>
+              <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
+                <tr style="border-bottom: 1px solid #E5E7EB;">
+                  <td style="padding: 10px 0; color: #6B7280; font-weight: 600; width: 40%;">Package / Circuit:</td>
+                  <td style="padding: 10px 0; color: #111827; font-weight: bold;">${packageName}</td>
+                </tr>
+                <tr style="border-bottom: 1px solid #E5E7EB;">
+                  <td style="padding: 10px 0; color: #6B7280; font-weight: 600;">Travel Date:</td>
+                  <td style="padding: 10px 0; color: #111827;">${travelDate || 'Flexible / To be confirmed'}</td>
+                </tr>
+                <tr style="border-bottom: 1px solid #E5E7EB;">
+                  <td style="padding: 10px 0; color: #6B7280; font-weight: 600;">Travelers:</td>
+                  <td style="padding: 10px 0; color: #111827;">${guestCount}</td>
+                </tr>
+              </table>
+              <p style="font-size: 13px; color: #6B7280; margin-top: 20px;">
+                Need to reach us sooner? Reply to this email or message us directly on WhatsApp.
+              </p>
+              <div style="margin-top: 16px; text-align: center;">
+                <a href="https://wa.me/919718450905" style="display: inline-block; background-color: #25D366; color: #ffffff; text-decoration: none; padding: 10px 20px; border-radius: 6px; font-weight: bold; font-size: 13px;">
+                  Chat on WhatsApp
+                </a>
+              </div>
+            </div>
+            <div style="background-color: #1C1917; color: #9CA3AF; padding: 14px; text-align: center; font-size: 12px;">
+              Satnam Voyages • <a href="https://satnamvoyages.com" style="color: #EA580C; text-decoration: none;">satnamvoyages.com</a>
+            </div>
+          </div>
+        `;
+
+        await transporter.sendMail({
+          from: `"Satnam Voyages" <${senderEmail}>`,
+          to: email.trim(),
+          replyTo: recipientEmail,
+          subject: `We've received your inquiry! [Ref #${inquiryRef}] - Satnam Voyages`,
+          text: `Hi ${name},\n\nThank you for reaching out to Satnam Voyages! We've received your inquiry and our tour manager will contact you at ${phone} within 15 minutes.\n\nBooking Reference: #${inquiryRef}\nPackage: ${packageName}\nTravel Date: ${travelDate || 'Flexible'}\nTravelers: ${guestCount}\n\nNeed to reach us sooner? Reply to this email or WhatsApp us at +91 97184 50905.`,
+          html: thankYouHtml,
+        });
+        console.log('Thank-you email sent to client:', email);
+      } catch (thankYouError: any) {
+        // Don't fail the whole request if just the client confirmation email fails
+        console.error('Failed to send thank-you email to client:', thankYouError.message || thankYouError);
+      }
+    }
 
     return res.status(200).json({
       success: true,
