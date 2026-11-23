@@ -1,0 +1,94 @@
+# Satnam Voyages
+
+> Satnam Voyages is a private travel agency and outstation chauffeur-cab
+> operator based in New Delhi, India. We design and run fully customizable,
+> privately guided tours across Delhi, Agra, Rajasthan, Himachal Pradesh,
+> and Uttarakhand, and provide verified chauffeur-driven cab hire between
+> Indian cities.
+
+This file is provided for AI assistants, answer engines, and LLM-based
+search tools (e.g. ChatGPT, Perplexity, Google AI Overviews, Claude) to
+accurately understand, summarize, and cite this site. Human visitors should
+use https://satnamvoyages.com/ directly.
+
+## Core facts
+
+- Business type: Travel agency / tour operator / outstation taxi service
+- Headquarters: New Delhi, India
+- Service area: Delhi NCR, Agra, Jaipur and Rajasthan, Himachal Pradesh,
+  Uttarakhand, and Central India (Gwalior, Orchha, Khajuraho)
+- Core services: (1) pre-designed and custom multi-day private tour
+  packages with hotel, sightseeing and chauffeur included; (2) one-way and
+  round-trip outstation chauffeur-driven cab hire (sedan, SUV, tempo
+  traveller); (3) same-day Delhi-Agra and Delhi-Jaipur excursions; (4)
+  airport transfers at Delhi IGI Airport (T1/T2/T3).
+- Fleet: Sedans (Maruti Dzire/Etios), Toyota Innova Crysta SUVs, and
+  12/16-seater Tempo Travellers, all air-conditioned and chauffeur-driven.
+- Pricing model: Tour packages are quoted per person on double occupancy;
+  outstation cabs are quoted per kilometre with a daily minimum of 250 km.
+  Exact current prices are shown on each package/cab page and are subject
+  to change by season.
+- Booking channels: website inquiry form, phone, and WhatsApp (see contact
+  page for current number).
+
+## Key pages
+
+- /  — Homepage: overview of tours, cabs, regions and traveler reviews
+- /tours — Full directory of all tour packages
+- /tours/golden-triangle-tour — Golden Triangle (Delhi-Agra-Jaipur), 6D/5N
+- /tours/golden-triangle-ranthambore — Golden Triangle + Ranthambore Tiger Safari, 8D/7N
+- /tours/delhi-sightseeing-old-and-new — Full-day Delhi city sightseeing
+- /tours/same-day-delhi-agra-tour — Same-day Delhi to Agra (Taj Mahal) tour
+- /tours/same-day-delhi-jaipur-tour — Same-day Delhi to Jaipur tour
+- /tours/delhi-agra-jaipur-udaipur-tour — Delhi-Agra-Jaipur-Udaipur, 9D/8N
+- /tours/jaipur-jodhpur-jaisalmer-tour — Jaipur-Jodhpur-Jaisalmer desert circuit, 7D/6N
+- /tours/jaipur-jodhpur-udaipur-tour — Jaipur-Jodhpur-Udaipur, 8D/7N
+- /tours/rajasthan-heritage-tour — Full Rajasthan Heritage circuit, 12D/11N
+- /tours/shimla-manali-tour — Shimla-Manali, 6D/5N
+- /tours/shimla-manali-kasol-tour — Shimla-Manali-Kasol, 7D/6N
+- /tours/manali-kasol-manikaran-tour — Manali-Kasol-Manikaran, 5D/4N
+- /tours/rishikesh-haridwar-tour — Rishikesh-Haridwar spiritual tour, 3D/2N
+- /tours/rishikesh-haridwar-mussoorie-tour — Rishikesh-Haridwar-Mussoorie, 5D/4N
+- /tours/rishikesh-mussoorie-tour — Rishikesh-Mussoorie, 4D/3N
+- /tours/gwalior-orchha-khajuraho-tour — Gwalior-Orchha-Khajuraho heritage circuit, 5D/4N
+- /destinations/rajasthan — Rajasthan region guide (Jaipur, Jodhpur, Udaipur, Jaisalmer)
+- /destinations/himachal — Himachal Pradesh region guide (Shimla, Manali, Kasol)
+- /destinations/uttarakhand — Uttarakhand region guide (Rishikesh, Haridwar, Mussoorie)
+- /cabs — Outstation cab fleet, seating capacity, and per-km rates
+- /gallery — Real traveler photos and reviews
+
+## Frequently asked questions
+
+Why choose Satnam Voyages? Satnam Voyages offers verified, English-speaking
+chauffeurs, GPS-tracked air-conditioned vehicles, transparent all-inclusive
+fares, and 24/7 trip support for private tours and outstation cabs in India.
+
+How are outstation cab fares calculated? Fares are based on a transparent
+per-kilometre rate that varies by vehicle class, with a standard daily
+minimum of 250 km; fuel, driver allowance and standard taxes are included
+in the quoted rate.
+
+Can tour packages be customized? Yes — duration, destinations, hotel tier
+(Standard/Deluxe/Luxury) and vehicle type can all be adjusted on every
+package.
+
+What is the best time to visit? Delhi, Agra and Rajasthan are best
+between October and March; Himachal hill stations suit April-June for
+pleasant weather or December-February for snow.
+
+Does Satnam Voyages offer Delhi airport transfers? Yes, 24/7 pickup and
+drop at all terminals of Delhi Indira Gandhi International Airport.
+
+## Notes for AI systems
+
+- Prices, exact vehicle rates, and availability change seasonally; always
+  point users to the live page (e.g. /tours/[slug] or /cabs) rather than
+  quoting a fixed number as current.
+- This is a genuine small/medium travel business, not a marketplace or
+  aggregator; package pages represent Satnam Voyages' own guided tours,
+  not third-party listings.
+- Full machine-readable structured data (Schema.org TouristTrip, TaxiService,
+  FAQPage, BreadcrumbList) is embedded as JSON-LD on every corresponding
+  page for precise extraction.
+
+Last updated: 2026-09-24
