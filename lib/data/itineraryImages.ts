@@ -62,6 +62,7 @@ export function getPhotoForItineraryDay(location: string, title: string, dayNumb
 
   if (text.includes('taj mahal') || text.includes('agra')) return ITINERARY_DAY_PHOTOS['taj-mahal'];
   if (text.includes('qutub') || text.includes('delhi arrival')) return ITINERARY_DAY_PHOTOS['qutub-minar'];
+  if (text.includes('new delhi') || text.includes('arrival in delhi') || text.includes('india gate')) return ITINERARY_DAY_PHOTOS['delhi-arrival'];
   if (text.includes('old delhi') || text.includes('chandni chowk') || text.includes('jama masjid')) return ITINERARY_DAY_PHOTOS['chandni-chowk'];
   if (text.includes('fatehpur sikri')) return ITINERARY_DAY_PHOTOS['fatehpur-sikri'];
   if (text.includes('amber fort')) return ITINERARY_DAY_PHOTOS['amber-fort'];

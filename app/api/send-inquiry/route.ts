@@ -49,8 +49,18 @@ export async function POST(req: NextRequest) {
       specialRequests,
       notes,
       refCode,
+      serviceDetails,
       source = 'Website Form',
     } = body;
+
+    // Optional extra rows from the custom-trip form: [{ label, value }]
+    const extraRows: { label: string; value: string }[] = Array.isArray(serviceDetails)
+      ? serviceDetails
+          .filter((r: unknown): r is { label: unknown; value: unknown } => typeof r === 'object' && r !== null)
+          .slice(0, 30)
+          .map((r: { label: unknown; value: unknown }) => ({ label: String(r.label ?? ''), value: String(r.value ?? '') }))
+          .filter((r: { label: string; value: string }) => r.label && r.value)
+      : [];
 
     if (!name || !phone) {
       return NextResponse.json({ success: false, error: 'Name and phone number are required.' }, { status: 400 });
@@ -131,6 +141,15 @@ export async function POST(req: NextRequest) {
               <td style="padding: 10px 0; color: #6B7280; font-weight: 600;">Source Form:</td>
               <td style="padding: 10px 0; color: #6B7280;">${e(source)}</td>
             </tr>
+            ${extraRows
+              .map(
+                (r) => `
+            <tr style="border-bottom: 1px solid #E5E7EB;">
+              <td style="padding: 10px 0; color: #6B7280; font-weight: 600;">${e(r.label)}:</td>
+              <td style="padding: 10px 0; color: #111827;">${e(r.value)}</td>
+            </tr>`
+              )
+              .join('')}
           </table>
           <div style="margin-top: 16px; padding: 14px; background-color: #ffffff; border-radius: 8px; border: 1px solid #E8DFD3;">
             <p style="margin: 0 0 6px 0; font-size: 12px; color: #6B7280; text-transform: uppercase; font-weight: bold;">Special Notes / Custom Requests:</p>

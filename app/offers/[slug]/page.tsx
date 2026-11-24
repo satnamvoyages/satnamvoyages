@@ -1,5 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
+import { CustomTripForm } from '@/components/CustomTripForm';
 import { notFound } from 'next/navigation';
 import { COUNTRY_OFFERS, getCountryOffer } from '@/lib/data/offersData';
 import { ALL_TOURS } from '@/lib/data/toursData';
@@ -98,8 +100,18 @@ export default async function CountryOfferPage({ params }: PageProps) {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
       {/* Hero */}
-      <div className="bg-[#141210] text-white py-12 px-4 sm:px-6 lg:px-8 border-b border-stone-800">
-        <div className="max-w-5xl mx-auto">
+      <div className="relative bg-[#141210] text-white py-16 px-4 sm:px-6 lg:px-8 border-b border-stone-800 overflow-hidden">
+        {tours[0] && (
+          <Image
+            src={tours[0].primaryImage}
+            alt={`${tours[0].title} for travellers ${o.label.toLowerCase()}`}
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover opacity-35"
+          />
+        )}
+        <div className="relative max-w-5xl mx-auto">
           <nav aria-label="Breadcrumb" className="text-xs text-stone-400 mb-4">
             <Link href="/" className="hover:text-white">Home</Link>
             <span className="mx-2">/</span>
@@ -127,6 +139,12 @@ export default async function CountryOfferPage({ params }: PageProps) {
             >
               Call {PHONE_DISPLAY}
             </a>
+            <a
+              href="#build-trip"
+              className="px-6 py-3 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-sm uppercase tracking-wider border border-stone-500 transition-all"
+            >
+              Customise &amp; Get a Quote
+            </a>
           </div>
         </div>
       </div>
@@ -144,12 +162,18 @@ export default async function CountryOfferPage({ params }: PageProps) {
                 <li key={t.slug}>
                   <Link
                     href={`/tours/${t.slug}`}
-                    className="block h-full bg-white border border-[#E8DFD3] rounded-2xl p-5 hover:border-[#EA580C] hover:shadow-md transition-all"
+                    className="block h-full bg-white border border-[#E8DFD3] rounded-2xl overflow-hidden hover:border-[#EA580C] hover:shadow-md transition-all"
                   >
+                    <span className="relative block h-44 bg-stone-200">
+                      <Image src={t.primaryImage} alt={t.title} fill sizes="(min-width: 640px) 50vw, 100vw" className="object-cover" />
+                      <span className="absolute top-3 left-3 px-3 py-1 rounded-full bg-[#141210]/85 text-white text-xs font-bold">{t.durationLabel}</span>
+                    </span>
+                    <span className="block p-5">
                     <span className="block font-headline font-bold text-[#1C1917] uppercase leading-snug">{t.title}</span>
                     <span className="block text-xs text-stone-500 mt-1">{t.durationLabel}</span>
                     <span className="block text-xs text-stone-600 mt-2 line-clamp-2">{t.route}</span>
                     <span className="block mt-3 text-sm font-semibold text-[#EA580C]">View itinerary &rarr;</span>
+                    </span>
                   </Link>
                 </li>
               ))}
@@ -218,6 +242,16 @@ export default async function CountryOfferPage({ params }: PageProps) {
               </div>
             ))}
           </div>
+        </section>
+
+        {/* Build your trip form */}
+        <section aria-labelledby="build-trip-h" id="build-trip" className="scroll-mt-28">
+          <h2 id="build-trip-h" className={h2}>Build Your Trip &amp; Get a Free Quote</h2>
+          <p className={`${p} mb-4`}>
+            Tick what you need: airport arrival and departure, taxi, hotels, meals, sightseeing guide, transfers, a guide who
+            speaks your language or a tour escort. We reply with a written itinerary and quote.
+          </p>
+          <CustomTripForm packageTitle={`India tour for travellers ${o.label.toLowerCase()}`} source={`Country offer form (/offers/${o.slug})`} />
         </section>
 
         {/* How booking works */}

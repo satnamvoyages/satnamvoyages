@@ -4,6 +4,8 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { ALL_TOURS } from '@/lib/data/toursData';
 import { COUNTRY_OFFERS } from '@/lib/data/offersData';
+import { getPhotoForItineraryDay } from '@/lib/data/itineraryImages';
+import { CustomTripForm } from '@/components/CustomTripForm';
 import { SITE_URL, SITE_NAME, PHONE_TEL, PHONE_DISPLAY, PHONE_WHATSAPP, OG_IMAGE } from '@/lib/constants';
 
 // Landing page for the 2027-season Golden Triangle 4 Nights / 5 Days package, aimed at
@@ -214,13 +216,26 @@ export default function OffersPage() {
             >
               Call {PHONE_DISPLAY}
             </a>
-            <Link
-              href={`/tours/${tour.slug}`}
+            <a
+              href="#build-trip"
               className="px-6 py-3 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-sm uppercase tracking-wider border border-stone-500 transition-all"
             >
-              Full Itinerary
-            </Link>
+              Customise &amp; Get a Quote
+            </a>
           </div>
+        </div>
+      </div>
+
+      {/* Photo strip */}
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8 relative z-10">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+          {Array.from(new Set([...tour.galleryImages, ...tour.itinerary.map((d) => getPhotoForItineraryDay(d.location, d.title, d.day))]))
+            .slice(0, 4)
+            .map((src, i) => (
+              <div key={src} className="relative h-28 sm:h-36 rounded-2xl overflow-hidden border-4 border-white shadow-lg bg-stone-200">
+                <Image src={src} alt={`Golden Triangle tour photo ${i + 1}`} fill sizes="(min-width: 640px) 25vw, 50vw" className="object-cover" />
+              </div>
+            ))}
         </div>
       </div>
 
@@ -277,11 +292,20 @@ export default function OffersPage() {
           </h2>
           <ol className="space-y-4">
             {tour.itinerary.map((d) => (
-              <li key={d.day} className="bg-white border border-[#E8DFD3] rounded-2xl p-5 flex gap-4">
-                <span className="shrink-0 w-12 h-12 rounded-xl bg-[#EA580C] text-white font-headline font-extrabold flex items-center justify-center">
-                  D{d.day}
-                </span>
-                <div>
+              <li key={d.day} className="bg-white border border-[#E8DFD3] rounded-2xl overflow-hidden flex flex-col sm:flex-row">
+                <div className="relative sm:w-56 h-44 sm:h-auto shrink-0 bg-stone-200">
+                  <Image
+                    src={getPhotoForItineraryDay(d.location, d.title, d.day)}
+                    alt={`Day ${d.day}: ${d.title}`}
+                    fill
+                    sizes="(min-width: 640px) 224px, 100vw"
+                    className="object-cover"
+                  />
+                  <span className="absolute top-3 left-3 w-11 h-11 rounded-xl bg-[#EA580C] text-white font-headline font-extrabold flex items-center justify-center shadow">
+                    D{d.day}
+                  </span>
+                </div>
+                <div className="p-5">
                   <h3 className="font-bold text-[#1C1917]">
                     Day {d.day}: {d.title}
                   </h3>
@@ -300,6 +324,18 @@ export default function OffersPage() {
             </Link>
             .
           </p>
+        </section>
+
+        {/* Build your trip form */}
+        <section aria-labelledby="build-trip-h" id="build-trip" className="scroll-mt-28">
+          <h2 id="build-trip-h" className="font-headline text-2xl font-extrabold text-[#1C1917] uppercase mb-2">
+            Build Your Trip &amp; Get a Free Quote
+          </h2>
+          <p className="text-sm text-stone-700 mb-4">
+            Tick what you need: airport arrival and departure, taxi, hotels, meals, sightseeing guide, transfers, a guide who
+            speaks your language or a tour escort. We reply with a written itinerary and quote.
+          </p>
+          <CustomTripForm packageTitle="Golden Triangle Tour Offer 2027 (4 Nights / 5 Days)" source="Offers page form (/offers)" />
         </section>
 
         {/* Why private */}
@@ -410,15 +446,29 @@ export default function OffersPage() {
             Flight routes, time differences, e-Visa notes and the best months to travel, planned for where you are flying from.
           </p>
           <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {COUNTRY_OFFERS.map((c) => (
+            {COUNTRY_OFFERS.map((c, ci) => (
               <li key={c.slug}>
                 <Link
                   href={`/offers/${c.slug}`}
-                  className="block h-full bg-white border border-[#E8DFD3] rounded-2xl p-5 hover:border-[#EA580C] hover:shadow-md transition-all"
+                  className="block h-full bg-white border border-[#E8DFD3] rounded-2xl overflow-hidden hover:border-[#EA580C] hover:shadow-md transition-all"
                 >
+                  <div className="relative h-40 bg-stone-200">
+                    <Image
+                      src={
+                        Array.from(new Set(c.recommendedTourSlugs.map((sl) => ALL_TOURS.find((t) => t.slug === sl)?.primaryImage).filter(Boolean)))[ci] ??
+                        tour.primaryImage
+                      }
+                      alt={`India tours for travellers ${c.label.toLowerCase()}`}
+                      fill
+                      sizes="(min-width: 640px) 50vw, 100vw"
+                      className="object-cover"
+                    />
+                  </div>
+                  <div className="p-5">
                   <span className="block font-headline font-bold text-[#1C1917] uppercase">India Tours {c.label}</span>
                   <span className="block text-xs text-stone-600 mt-1">{c.metaDescription}</span>
                   <span className="block mt-3 text-sm font-semibold text-[#EA580C]">See the offer &rarr;</span>
+                  </div>
                 </Link>
               </li>
             ))}
@@ -439,10 +489,15 @@ export default function OffersPage() {
                     <li key={t.slug}>
                       <Link
                         href={`/tours/${t.slug}`}
-                        className="block h-full bg-white border border-[#E8DFD3] rounded-xl px-4 py-3 hover:border-[#EA580C] transition-colors"
+                        className="flex gap-3 items-center h-full bg-white border border-[#E8DFD3] rounded-xl p-2.5 hover:border-[#EA580C] transition-colors"
                       >
-                        <span className="block font-semibold text-[#1C1917] text-sm leading-snug">{t.title}</span>
-                        <span className="block text-xs text-stone-500 mt-0.5">{t.durationLabel}</span>
+                        <span className="relative w-20 h-16 rounded-lg overflow-hidden shrink-0 bg-stone-200">
+                          <Image src={t.primaryImage} alt={t.title} fill sizes="80px" className="object-cover" />
+                        </span>
+                        <span className="min-w-0">
+                          <span className="block font-semibold text-[#1C1917] text-sm leading-snug">{t.title}</span>
+                          <span className="block text-xs text-stone-500 mt-0.5">{t.durationLabel}</span>
+                        </span>
                       </Link>
                     </li>
                   ))}
