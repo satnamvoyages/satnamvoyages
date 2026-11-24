@@ -507,7 +507,7 @@ const RAW_POSTS: RawPost[] = [
         bullets: [
           'Sedan (Swift Dzire, Toyota Etios or similar): up to 3 adults with medium luggage. Fine for couples on the Golden Triangle.',
           'SUV (Toyota Innova Crysta): up to 6 or 7 passengers with more luggage space and a smoother ride. The most popular choice for families and long Rajasthan routes.',
-          'Tempo Traveller: a 12 to 17-seat minibus for groups and extended families.',
+          'Tempo Traveller: a minibus for groups and extended families, available in sizes to suit any group.',
           'Luxury cars and coaches for larger groups can be arranged on request.',
         ],
         paragraphs: [

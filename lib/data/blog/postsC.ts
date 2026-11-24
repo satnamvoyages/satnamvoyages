@@ -96,16 +96,17 @@ export const POSTS_C: RawPost[] = [
       {
         heading: 'A sample Golden Triangle and Varanasi route',
         paragraphs: [
-          'The simplest way to combine the two is to finish the Golden Triangle loop in Delhi and fly to Varanasi for two nights before flying home from Delhi.',
+          'You can fly from Delhi to Varanasi, or travel the whole way by road with one car and driver: Delhi, Jaipur and Agra, then east on the Agra–Lucknow Expressway with a night in Lucknow. This is the by-road route we run:',
         ],
         bullets: [
           'Day 1: Arrive in Delhi, New Delhi sightseeing.',
-          'Day 2: Old Delhi, then drive to Agra (about 3.5 hours).',
-          'Day 3: Taj Mahal at sunrise, Agra Fort, drive to Jaipur via Fatehpur Sikri.',
-          'Day 4: Amber Fort, City Palace and Hawa Mahal in Jaipur.',
-          'Day 5: Drive back to Delhi (about 4 hours), evening flight to Varanasi.',
-          'Day 6: Sunrise boat ride, old city lanes, Sarnath, evening Ganga Aarti.',
-          'Day 7: Morning at the ghats, flight back to Delhi for your international departure.',
+          'Day 2: Old Delhi, then drive to Jaipur.',
+          'Day 3: Amber Fort, City Palace and Hawa Mahal in Jaipur.',
+          'Day 4: Drive to Agra via Fatehpur Sikri, sunset at Mehtab Bagh.',
+          'Day 5: Taj Mahal at sunrise, Agra Fort, drive to Lucknow.',
+          'Day 6: Drive to Varanasi, evening Ganga Aarti.',
+          'Day 7: Sunrise boat ride, old city lanes and Sarnath.',
+          'Day 8: Morning at the ghats, drop at Varanasi airport or station for your onward journey.',
         ],
       },
       {
@@ -122,7 +123,7 @@ export const POSTS_C: RawPost[] = [
       },
       {
         q: 'Can I add Varanasi to a Golden Triangle tour?',
-        a: 'Yes. Most travellers complete Delhi, Agra and Jaipur by road, then fly from Delhi to Varanasi for two nights. We arrange the road portion with your own car and driver and can help plan the Varanasi leg.',
+        a: 'Yes. You can fly from Delhi for two nights, or go the whole way by road with your own car and driver via Jaipur, Agra and Lucknow, which is how our Golden Triangle with Varanasi tour runs.',
       },
       {
         q: 'Is Varanasi safe for foreign tourists?',
@@ -792,18 +793,18 @@ export const POSTS_C: RawPost[] = [
       {
         heading: 'How to get to Amritsar from Delhi',
         paragraphs: [
-          'Amritsar is about 450 km from Delhi, so most travellers fly or take the train rather than drive.',
+          'Amritsar is about 450 km from Delhi. You can fly, take a fast train, or go by road with your own car and driver.',
         ],
         bullets: [
           'Flight: direct flights take roughly 1 hour 15 minutes. Amritsar airport is about 11 km from the city.',
           'Train: fast day trains such as the Shatabdi and Vande Bharat services take around 6 hours; check current timetables and book on the official IRCTC site.',
-          'Road: about 7 to 8 hours by car on the NH44, possible as part of a longer north India itinerary that includes Chandigarh or the Himalayan foothills.',
+          'Road: about 7 to 8 hours by car on the NH44. The same chauffeur stays with you in Amritsar for the Golden Temple and Wagah border, and drives you back.',
         ],
       },
       {
         heading: 'Adding Amritsar to the Golden Triangle',
         paragraphs: [
-          'A popular plan is to complete Delhi, Agra and Jaipur by road, then fly or take the train from Delhi to Amritsar for two nights. Arrive in the morning, visit Jallianwala Bagh and the Golden Temple, see the Wagah ceremony in the afternoon, and return to the Golden Temple at night. The next morning, revisit the temple at dawn before heading back to Delhi.',
+          'A simple plan is to drive from Delhi to Amritsar for two nights, then return to Delhi and continue to Agra and Jaipur with the same car and driver. Arrive in the morning, visit Jallianwala Bagh and the Golden Temple, see the Wagah ceremony in the afternoon, and return to the Golden Temple at night. The next morning, revisit the temple at dawn before heading back to Delhi.',
           'October to March is the best time, though December and January nights are cold in Punjab and fog can affect early flights and trains.',
         ],
       },
@@ -827,7 +828,7 @@ export const POSTS_C: RawPost[] = [
       },
       {
         q: 'Can I combine Amritsar with the Golden Triangle?',
-        a: 'Yes. Complete Delhi, Agra and Jaipur by road, then fly or take a fast train from Delhi to Amritsar for two nights.',
+        a: 'Yes. Our Golden Triangle with Amritsar tour does it all by road in 8 days: two nights in Amritsar, then Delhi, Agra and Jaipur with the same car and driver.',
       },
     ],
   },

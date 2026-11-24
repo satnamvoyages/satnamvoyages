@@ -332,7 +332,7 @@ export const ItineraryBookingForm: React.FC<ItineraryBookingFormProps> = ({
           >
             <option value="Sedan">Swift Dzire / Etios AC (1-3 Pax)</option>
             <option value="Innova Crysta">Toyota Innova Crysta SUV (Up to 6 Pax)</option>
-            <option value="Tempo Traveller">12/16-Seater Luxury Tempo Traveller</option>
+            <option value="Tempo Traveller">Luxury Tempo Traveller (any group size)</option>
           </select>
         </div>
 

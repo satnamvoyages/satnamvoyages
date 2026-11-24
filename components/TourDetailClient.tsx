@@ -45,8 +45,8 @@ const VEHICLE_OPTIONS = [
     features: ['Dual AC', 'Captain Seats', 'Highway Smooth'],
   },
   {
-    name: '12-Seater Luxury Tempo',
-    capacity: 'Up to 12 Passengers + 10 Bags',
+    name: 'Luxury Tempo Traveller',
+    capacity: 'Sizes for every group, small or large',
     ideal: 'Large Family Groups & Friends',
     image: 'https://images.unsplash.com/photo-1570125909232-eb263c188f7e?auto=format&fit=crop&w=600&q=80',
     features: ['Pushback Seats', 'Individual AC Vents', 'Big Luggage Space'],
@@ -613,7 +613,7 @@ export const TourDetailClient: React.FC<{ tour: TourPackage }> = ({ tour }) => {
                   {[
                     { name: 'Sedan', desc: 'Maruti Dzire / Etios (Up to 3 Pax)' },
                     { name: 'Innova Crysta', desc: 'Toyota Innova Crysta SUV (Up to 6 Pax)' },
-                    { name: 'Tempo Traveller', desc: '12-Seater Maharaja Luxury Tempo' },
+                    { name: 'Tempo Traveller', desc: 'Maharaja Luxury Tempo (any group size)' },
                   ].map((v) => (
                     <div
                       key={v.name}

@@ -99,7 +99,7 @@ export const POSTS_B: RawPost[] = [
         heading: 'Getting around: car, train or flights?',
         paragraphs: [
           'A private car and driver is the most comfortable way to do the Golden Triangle and Rajasthan sections. You keep the same vehicle and driver throughout, your luggage stays in the car, and you can stop wherever you like. Trains are excellent between some city pairs, such as Delhi to Agra, but you still need taxis at each end. For long jumps such as Udaipur to Delhi or Delhi to Varanasi, a domestic flight saves a full day.',
-          'Satnam Voyages can combine all three: a private car for the road sections, and flight or train bookings where they make more sense. Message us your dates and we will suggest the best split and send a written quote.',
+          'Satnam Voyages looks after the road sections with your own private car and chauffeur, and can plan the route around any flights or trains you book. Message us your dates and we will suggest the best plan and send a written quote.',
         ],
       },
     ],

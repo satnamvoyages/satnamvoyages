@@ -32,9 +32,8 @@ const TITLE = 'Golden Triangle Tour Offer: 4N/5D India';
 const DESCRIPTION =
   'Golden Triangle tour 2027 for international travellers: 4 nights, 5 days in Delhi, Agra and Jaipur with airport pickup and a private chauffeur. Free quote.';
 
-// TODO(owner): add real seasonal perk here, e.g. 'Free sunset visit to Mehtab Bagh for bookings made before 31 January 2027'.
 // Only add perks you will actually honour. The perks section is hidden while this list is empty.
-const OFFER_PERKS: string[] = [];
+const OFFER_PERKS: string[] = ['Free Delhi Airport pickup on arrival, with a name board and help with your luggage'];
 
 export const metadata: Metadata = {
   title: TITLE,

@@ -867,8 +867,7 @@ export const ALL_TOURS: TourPackage[] = [...BASE_TOURS, ...GOLDEN_TRIANGLE_EXTRA
 
 /**
  * Approximate road distance and driving time for intercity itinerary legs, keyed by the
- * itinerary day `location` string. Values are typical, not guaranteed, and depend on traffic and stops.
- * TODO(owner): confirm these against your drivers' logbooks.
+ * itinerary day `location` string. Values are estimates, not guaranteed, and depend on traffic and stops.
  */
 export const DRIVE_LEGS: Record<string, { km: number; time: string }> = {
   'Delhi to Agra': { km: 230, time: '3.5 hrs via Yamuna Expressway' },

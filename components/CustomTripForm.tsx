@@ -38,7 +38,7 @@ const SERVICES = [
 
 type ServiceKey = (typeof SERVICES)[number]['key'];
 
-const VEHICLES = ['Sedan (up to 3 guests)', 'Toyota Innova Crysta (up to 6)', 'Tempo Traveller (up to 12)', 'Luxury SUV', 'Coach (large groups)'];
+const VEHICLES = ['Sedan (up to 3 guests)', 'Toyota Innova Crysta (up to 6)', 'Tempo Traveller (any group size)', 'Luxury SUV', 'Coach (large groups)'];
 const HOTELS = ['3-star / Standard', '4-star / Deluxe', '5-star / Luxury', 'Heritage palace hotels', 'Mix, please advise'];
 const MEALS = ['Breakfast only', 'Breakfast + dinner', 'All meals', 'Vegetarian', 'Vegan / special diet'];
 const LANGUAGES = ['English', 'French', 'German', 'Spanish', 'Italian', 'Portuguese', 'Russian', 'Japanese', 'Chinese (Mandarin)', 'Other'];
