@@ -15,7 +15,7 @@ export function generateStaticParams() {
   return POPULAR_CAB_ROUTES.map((r) => ({ route: r.slug }));
 }
 
-const inr = (n: number) => `₹${n.toLocaleString('en-IN')}`;
+// Fares change with season and availability, so these pages show no prices; quotes are given on request.
 
 function routeName(r: PopularRoute) {
   return r.slug === 'delhi-airport-transfer' ? 'Delhi Airport Taxi Transfer' : `${r.from} to ${r.to} Taxi`;
@@ -23,15 +23,15 @@ function routeName(r: PopularRoute) {
 
 function pageTitle(r: PopularRoute) {
   // Layout template appends " | Satnam Voyages" — keep this part ≤ 43 chars.
-  const full = `${routeName(r)} Fare from ${inr(r.sedanFareINR)}`;
-  return full.length <= 43 ? full : `${r.from} to ${r.to} Cab ${inr(r.sedanFareINR)}`;
+  const full = `${routeName(r)} & Cab Booking`;
+  return full.length <= 43 ? full : routeName(r);
 }
 
 function pageDescription(r: PopularRoute) {
   const d =
     r.slug === 'delhi-airport-transfer'
-      ? `Private Delhi IGI Airport taxi to Central Delhi or Gurgaon from ${inr(r.sedanFareINR)}. Flight tracking, name-card pickup, sedan, Innova or Tempo Traveller.`
-      : `${r.from} to ${r.to} cab: ${r.distanceKm} km, about ${r.driveTime.split(' (')[0]}. One-way fares from ${inr(r.sedanFareINR)} sedan, ${inr(r.suvFareINR)} Innova. Tolls at actuals.`;
+      ? 'Private Delhi IGI Airport taxi to Central Delhi or Gurgaon. Flight tracking, name-card pickup, sedan, Innova or Tempo Traveller. Get a quote on WhatsApp.'
+      : `${r.from} to ${r.to} cab: ${r.distanceKm} km, about ${r.driveTime.split(' (')[0]}. Private sedan, Innova Crysta or Tempo Traveller. Get today's fare on WhatsApp.`;
   return d.length > 160 ? d.slice(0, 157).replace(/\s+\S*$/, '') + '…' : d;
 }
 
@@ -65,10 +65,10 @@ export default async function CabRoutePage({ params }: PageProps) {
   const suv = CAB_FLEET.find((v) => v.category === 'SUV');
   const tempo = CAB_FLEET.find((v) => v.category === 'Tempo Traveller');
 
-  const fares = [
-    { vehicle: sedan, label: 'Sedan', fare: r.sedanFareINR },
-    { vehicle: suv, label: 'Innova Crysta (SUV)', fare: r.suvFareINR },
-    { vehicle: tempo, label: 'Tempo Traveller', fare: r.tempoFareINR },
+  const vehicles = [
+    { vehicle: sedan, label: 'Sedan' },
+    { vehicle: suv, label: 'Innova Crysta (SUV)' },
+    { vehicle: tempo, label: 'Tempo Traveller' },
   ];
 
   const waText = encodeURIComponent(`Hello ${SITE_NAME}, I'd like to book a ${r.from} to ${r.to} cab.`);
@@ -85,20 +85,6 @@ export default async function CabRoutePage({ params }: PageProps) {
         description: r.description,
         provider: { '@id': `${SITE_URL}/#agency` },
         areaServed: cityNodes(r),
-        offers: fares.map((f) => ({
-          '@type': 'Offer',
-          name: `${r.from} to ${r.to} one-way — ${f.label}`,
-          url: pageUrl,
-          priceCurrency: 'INR',
-          price: f.fare,
-          priceSpecification: {
-            '@type': 'PriceSpecification',
-            price: f.fare,
-            priceCurrency: 'INR',
-            valueAddedTaxIncluded: false,
-          },
-          availability: 'https://schema.org/InStock',
-        })),
       },
       {
         '@type': 'BreadcrumbList',
@@ -129,8 +115,8 @@ export default async function CabRoutePage({ params }: PageProps) {
           <p className="mt-3 text-stone-300 text-sm sm:text-base">
             {r.distanceKm} km · about {r.driveTime} · via {r.highway}
           </p>
-          <p className="mt-2 text-2xl font-extrabold text-orange-400 font-headline">
-            One-way from {inr(r.sedanFareINR)} <span className="text-sm font-semibold text-stone-300">(sedan)</span>
+          <p className="mt-2 text-lg font-bold text-orange-400 font-headline">
+            One-way, round trip or multi-day hire. Message us for today&apos;s fare.
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
             <a
@@ -152,10 +138,10 @@ export default async function CabRoutePage({ params }: PageProps) {
       </div>
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-10">
-        {/* Fare table */}
-        <section aria-labelledby="fares">
-          <h2 id="fares" className="font-headline text-2xl font-extrabold text-[#1C1917] uppercase mb-4">
-            {r.from} to {r.to} Cab Fares
+        {/* Vehicle options (no fixed fares: quoted per trip) */}
+        <section aria-labelledby="vehicles">
+          <h2 id="vehicles" className="font-headline text-2xl font-extrabold text-[#1C1917] uppercase mb-4">
+            Vehicles for {r.from} to {r.to}
           </h2>
           <div className="overflow-x-auto bg-white rounded-2xl border border-[#E8DFD3]">
             <table className="w-full text-sm text-left">
@@ -163,36 +149,36 @@ export default async function CabRoutePage({ params }: PageProps) {
                 <tr>
                   <th scope="col" className="px-4 py-3">Vehicle</th>
                   <th scope="col" className="px-4 py-3">Seats</th>
-                  <th scope="col" className="px-4 py-3">One-way fare</th>
-                  <th scope="col" className="px-4 py-3">Driver night allowance</th>
+                  <th scope="col" className="px-4 py-3">Luggage</th>
                 </tr>
               </thead>
               <tbody>
-                {fares.map((f) => (
-                  <tr key={f.label} className="border-t border-stone-100">
+                {vehicles.map((v) => (
+                  <tr key={v.label} className="border-t border-stone-100">
                     <th scope="row" className="px-4 py-3 font-semibold text-[#1C1917]">
-                      {f.label}
-                      {f.vehicle && <span className="block text-xs font-normal text-stone-500">{f.vehicle.models}</span>}
+                      {v.label}
+                      {v.vehicle && <span className="block text-xs font-normal text-stone-500">{v.vehicle.models}</span>}
                     </th>
-                    <td className="px-4 py-3">{f.vehicle?.seats ?? '—'}</td>
-                    <td className="px-4 py-3 font-bold text-[#EA580C]">{inr(f.fare)}</td>
-                    <td className="px-4 py-3">
-                      {r.slug === 'delhi-airport-transfer'
-                        ? 'Not applicable'
-                        : f.vehicle
-                          ? `${inr(f.vehicle.driverAllowancePerDayINR)} / night (extra)`
-                          : '—'}
-                    </td>
+                    <td className="px-4 py-3">{v.vehicle?.seats ?? '—'}</td>
+                    <td className="px-4 py-3">{v.vehicle ? `${v.vehicle.luggageCount} bags` : '—'}</td>
                   </tr>
                 ))}
               </tbody>
             </table>
           </div>
           <p className="mt-3 text-xs text-stone-600">
-            Fares are for a one-way drop and exclude tolls, parking and state entry tax, which are billed at actuals with
-            receipts. Round trips and multi-day hire are charged per km on a {sedan?.minKmPerDay ?? 250} km per day minimum —
-            see <Link href="/cabs" className="underline text-[#C2410C]">all per-km rates</Link>.
+            Fares depend on your travel dates, vehicle and season, so we quote each trip and confirm the fare in writing before
+            you book. Tolls, parking and state entry tax are billed at actuals with receipts
+            {r.slug === 'delhi-airport-transfer' ? '.' : ', and a driver night allowance applies for overnight trips.'}
           </p>
+          <a
+            href={`https://wa.me/${PHONE_WHATSAPP}?text=${waText}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-4 inline-block px-6 py-3 rounded-xl bg-[#EA580C] hover:bg-[#C2410C] text-white font-bold text-sm uppercase tracking-wider transition-all"
+          >
+            Get Today&apos;s Fare on WhatsApp
+          </a>
         </section>
 
         {/* Route */}
@@ -253,7 +239,7 @@ export default async function CabRoutePage({ params }: PageProps) {
                 >
                   <span className="block font-semibold text-[#1C1917] text-sm">{routeName(o)}</span>
                   <span className="block text-xs text-stone-500">
-                    {o.distanceKm} km · from {inr(o.sedanFareINR)}
+                    {o.distanceKm} km · about {o.driveTime.split(' (')[0]}
                   </span>
                 </Link>
               </li>

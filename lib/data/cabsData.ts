@@ -152,7 +152,7 @@ export interface PopularRoute {
 }
 
 const ALLOWANCE_NOTE =
-  'Driver night allowance is charged extra per night (₹350 for sedans, ₹400 for Innova Crysta, ₹600 for Tempo Traveller) and is shown separately on your quote.';
+  'Driver night allowance is charged extra for each overnight stay and is shown separately on your quote.';
 
 export const POPULAR_CAB_ROUTES: PopularRoute[] = [
   {
@@ -168,7 +168,7 @@ export const POPULAR_CAB_ROUTES: PopularRoute[] = [
     attractions: ['Taj Mahal (closed Fridays)', 'Agra Fort', 'Mehtab Bagh sunset view', 'Itmad-ud-Daula (Baby Taj)', 'Mathura & Vrindavan temples (short detour)', 'Fatehpur Sikri (about 40 km beyond Agra)'],
     relatedTourSlug: 'same-day-delhi-agra-tour',
     faqs: [
-      { q: 'Is the fare for a one-way drop or a round trip?', a: 'The listed fare is a one-way drop. For a same-day return the fare is calculated on the 250 km daily minimum at the per-km rate of your chosen vehicle, which is usually better value than two one-way trips.' },
+      { q: 'Do you offer one-way drops and same-day returns?', a: 'Yes. We offer one-way drops, same-day returns and multi-day hire. A same-day return is usually better value than two one-way trips; tell us your plan and we will quote the best option.' },
       { q: 'Can I do Delhi to Agra and back in one day?', a: 'Yes. With a 6 am departure you get roughly 6 hours in Agra for the Taj Mahal and Agra Fort and are back in Delhi by late evening. Avoid Fridays, when the Taj Mahal is closed.' },
       { q: 'Is driver allowance included?', a: ALLOWANCE_NOTE + ' A same-day return has no night allowance.' },
       { q: 'Is it safe to drive the Yamuna Expressway at night?', a: 'The expressway is patrolled, but it is known for dense fog from late December to January. In fog our drivers reduce speed or pause at a service area, so allow extra time on winter evenings.' },
@@ -205,7 +205,7 @@ export const POPULAR_CAB_ROUTES: PopularRoute[] = [
     attractions: ['Rock Garden', 'Sukhna Lake', 'Rose Garden', 'Capitol Complex (Le Corbusier, UNESCO)', 'Murthal dhabas (en route)', 'Pinjore Gardens'],
     faqs: [
       { q: 'Can I continue from Chandigarh to Shimla in the same cab?', a: 'Yes. Most travellers book Delhi–Shimla directly; the cab passes Chandigarh and climbs via Parwanoo. Booking it as one trip avoids a second one-way charge.' },
-      { q: 'Is the fare one-way or round trip?', a: 'The listed fare is one-way. A round trip is charged on a 250 km per day minimum at the vehicle per-km rate.' },
+      { q: 'Is the fare one-way or round trip?', a: 'We offer both one-way drops and round trips. Share your dates and we will quote either option.' },
       { q: 'Is driver allowance included?', a: ALLOWANCE_NOTE },
       { q: 'Can we stop at Murthal for food?', a: 'Yes, meal stops are included. Just tell the driver when you would like to stop.' },
     ],
@@ -223,7 +223,7 @@ export const POPULAR_CAB_ROUTES: PopularRoute[] = [
     attractions: ['Har Ki Pauri Ganga Aarti (Haridwar)', 'Mansa Devi & Chandi Devi temples', 'Laxman Jhula & Ram Jhula (Rishikesh)', 'Triveni Ghat evening aarti', 'River rafting at Shivpuri', 'Beatles Ashram'],
     relatedTourSlug: 'rishikesh-haridwar-tour',
     faqs: [
-      { q: 'Can I be dropped at my Rishikesh hotel or ashram?', a: 'Yes. Drops anywhere in Haridwar or Rishikesh, including Tapovan and Laxman Jhula, are included in the listed fare where vehicles are allowed.' },
+      { q: 'Can I be dropped at my Rishikesh hotel or ashram?', a: 'Yes. Drops anywhere in Haridwar or Rishikesh, including Tapovan and Laxman Jhula, are included in the drop where vehicles are allowed.' },
       { q: 'Can I travel during the Kanwar Yatra?', a: 'During the Kanwar Yatra (usually July) the highway is diverted and the drive takes much longer. We can still plan the trip, but confirm dates with us first.' },
       { q: 'Is driver allowance included?', a: ALLOWANCE_NOTE },
       { q: 'Will you drive at night?', a: 'The plains section is fine at night. Beyond Rishikesh towards the hills we avoid night driving for safety.' },
@@ -243,7 +243,7 @@ export const POPULAR_CAB_ROUTES: PopularRoute[] = [
     relatedTourSlug: 'shimla-manali-tour',
     faqs: [
       { q: 'Do I have to pay a Himachal entry tax?', a: 'Yes. Himachal Pradesh charges an entry tax on out-of-state tourist vehicles at the border barrier. It is billed at actuals with the official receipt.' },
-      { q: 'Is the fare one-way or round trip?', a: 'The listed fare is a one-way drop. For a multi-day hill holiday the cab stays with you and is charged per day on a 250 km minimum.' },
+      { q: 'Is the fare one-way or round trip?', a: 'Both are available. For a multi-day hill holiday the cab and chauffeur stay with you for the whole trip, quoted per day.' },
       { q: 'Is driver allowance included?', a: ALLOWANCE_NOTE },
       { q: 'Do you drive hill roads at night?', a: 'We plan to reach Shimla before dark. Hill sections are not driven late at night, for safety.' },
       { q: 'Can the cab drop me on Mall Road?', a: 'Private vehicles are restricted on Mall Road and the Ridge. The driver drops you at the closest permitted point, or at your hotel if it has vehicle access.' },
@@ -266,7 +266,7 @@ export const POPULAR_CAB_ROUTES: PopularRoute[] = [
       { q: 'Do I need a permit?', a: 'Not for Manali town. Himachal entry tax is payable at the border and billed at actuals. Rohtang Pass needs a separate online permit with limited daily quotas; we can apply for it for you.' },
       { q: 'Is driver allowance included?', a: ALLOWANCE_NOTE },
       { q: 'Can I travel overnight?', a: 'Overnight travel is possible only with two drivers on board, which costs extra. Otherwise we drive the hill sections in daylight.' },
-      { q: 'Is the fare one-way?', a: 'Yes, the listed fare is a one-way drop. Return trips and local Manali sightseeing are charged per day.' },
+      { q: 'Can I book a one-way drop to Manali?', a: 'Yes. We offer one-way drops, return trips and local Manali sightseeing; return trips and sightseeing are quoted per day.' },
     ],
   },
   {
@@ -281,7 +281,7 @@ export const POPULAR_CAB_ROUTES: PopularRoute[] = [
     attractions: ['Mall Road & Camel’s Back Road (Mussoorie)', 'Kempty Falls', 'Gun Hill', 'Robber’s Cave (Dehradun)', 'Forest Research Institute', 'Landour'],
     relatedTourSlug: 'rishikesh-mussoorie-tour',
     faqs: [
-      { q: 'Is the fare up to Dehradun or Mussoorie?', a: 'The listed fare covers a drop in either Dehradun or Mussoorie.' },
+      { q: 'Can you drop us in Dehradun or Mussoorie?', a: 'Yes. We drop in either Dehradun or Mussoorie; tell us your hotel and we will include it in your quote.' },
       { q: 'Can I add Rishikesh on the way?', a: 'Yes. Tell us when booking and we will quote Delhi–Rishikesh–Mussoorie as one trip.' },
       { q: 'Is driver allowance included?', a: ALLOWANCE_NOTE },
       { q: 'Do you drive up to Mussoorie at night?', a: 'We prefer to complete the Dehradun–Mussoorie climb before dark.' },
@@ -299,7 +299,7 @@ export const POPULAR_CAB_ROUTES: PopularRoute[] = [
     relatedTourSlug: 'jaipur-jodhpur-jaisalmer-tour',
     faqs: [
       { q: 'Can I stop at Pushkar and Ajmer?', a: 'Yes. Ajmer is on the way and Pushkar is a short detour. We include them if you tell us when booking.' },
-      { q: 'Is the fare one-way?', a: 'Yes, the listed fare is one-way. Multi-city Rajasthan trips are better value as a per-day booking.' },
+      { q: 'Can I book a one-way cab?', a: 'Yes, one-way drops are available. Multi-city Rajasthan trips are usually better value as a per-day booking with the same chauffeur.' },
       { q: 'Is driver allowance included?', a: ALLOWANCE_NOTE },
       { q: 'Do you drive at night in Rajasthan?', a: 'Highway driving after dark is possible, but we plan arrivals by evening because of stray cattle on some stretches.' },
     ],

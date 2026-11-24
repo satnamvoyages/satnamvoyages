@@ -4,9 +4,10 @@ import { CAB_FLEET } from '@/lib/data/cabsData';
 import { SITE_URL, SITE_NAME, OG_IMAGE } from '@/lib/constants';
 
 // Layout template appends " | Satnam Voyages" (total ≤ 60 chars).
-const TITLE = 'Outstation Cabs from Delhi — Per-km Fares';
+// Fares change with season and availability, so no prices appear on cab pages; quotes are given on request.
+const TITLE = 'Outstation Cabs & Taxi Hire from Delhi';
 const DESCRIPTION =
-  'Outstation cabs from Delhi to Agra, Jaipur, Shimla, Manali and Rishikesh. Sedan from ₹11/km, Innova Crysta ₹17/km, Tempo Traveller ₹24/km. Tolls at actuals.';
+  'Chauffeur-driven outstation cabs from Delhi to Agra, Jaipur, Shimla, Manali and Rishikesh. Sedan, Innova Crysta and Tempo Traveller. Get a quote on WhatsApp.';
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -42,21 +43,13 @@ export default function CabsPage() {
         ],
         hasOfferCatalog: {
           '@type': 'OfferCatalog',
-          name: 'Outstation Cab Hire Rates (per km)',
+          name: 'Outstation Cab Hire',
           itemListElement: CAB_FLEET.map((cab) => ({
             '@type': 'Offer',
             itemOffered: {
               '@type': 'Service',
               name: cab.name,
-              description: `${cab.models}, seating ${cab.seats} passengers with ${cab.luggageCount} bags capacity. Minimum ${cab.minKmPerDay} km per day.`,
-            },
-            priceSpecification: {
-              '@type': 'UnitPriceSpecification',
-              price: cab.perKmRateINR,
-              priceCurrency: 'INR',
-              unitCode: 'KMT',
-              unitText: 'per km',
-              referenceQuantity: { '@type': 'QuantitativeValue', value: 1, unitCode: 'KMT' },
+              description: `${cab.models}, seating ${cab.seats} passengers with ${cab.luggageCount} bags capacity.`,
             },
           })),
         },

@@ -24,7 +24,7 @@ export const CabsClient: React.FC = () => {
               Outstation Cabs from Delhi
             </h1>
             <p className="mt-3 text-stone-300 text-sm sm:text-base leading-relaxed font-montserrat">
-              Private chauffeur-driven cabs from Delhi to Agra, Jaipur, Shimla, Manali, Rishikesh and across North India. AC sedans from ₹11/km, Toyota Innova Crysta from ₹17/km and Tempo Travellers from ₹24/km, with tolls billed at actuals.
+              Private chauffeur-driven cabs from Delhi to Agra, Jaipur, Shimla, Manali, Rishikesh and across North India in AC sedans, Toyota Innova Crysta and Tempo Travellers. Message us your route and dates for today&apos;s fare.
             </p>
 
             <div className="mt-6 flex flex-wrap gap-3">
@@ -42,7 +42,7 @@ export const CabsClient: React.FC = () => {
                 onClick={() => openInquiry('Custom Outstation Cab Hire')}
                 className="px-6 py-3 rounded-xl bg-stone-900 hover:bg-black text-white font-bold text-xs uppercase tracking-wider shadow transition-all border border-stone-700"
               >
-                Get Instant Fare Estimate
+                Get a Fare Quote
               </button>
             </div>
           </div>
@@ -54,7 +54,7 @@ export const CabsClient: React.FC = () => {
             </div>
             <div className="flex items-start">
               <ShieldCheck className="w-4 h-4 text-[#EA580C] mr-2 shrink-0 mt-0.5" />
-              <span>Clear per-km pricing, minimum 250 km/day</span>
+              <span>Fare confirmed in writing before you travel</span>
             </div>
             <div className="flex items-start">
               <ShieldCheck className="w-4 h-4 text-[#EA580C] mr-2 shrink-0 mt-0.5" />
@@ -144,50 +144,46 @@ export const CabsClient: React.FC = () => {
         </div>
       </section>
 
-      {/* PER-KM FARE TABLE */}
-      <section aria-labelledby="per-km-rates" className="pb-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 id="per-km-rates" className="font-headline text-2xl sm:text-3xl font-extrabold text-[#1C1917] uppercase mb-4">
-          Outstation Cab Rates from Delhi
+      {/* HOW FARES WORK (no fixed prices: fares change with season and availability) */}
+      <section aria-labelledby="how-fares-work" className="pb-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 id="how-fares-work" className="font-headline text-2xl sm:text-3xl font-extrabold text-[#1C1917] uppercase mb-4">
+          How Our Cab Fares Work
         </h2>
-        <div className="overflow-x-auto bg-white rounded-2xl border border-[#E8DFD3]">
-          <table className="w-full text-sm text-left">
-            <thead className="bg-stone-50 text-stone-600 text-xs uppercase">
-              <tr>
-                <th scope="col" className="px-4 py-3">Vehicle</th>
-                <th scope="col" className="px-4 py-3">Seats</th>
-                <th scope="col" className="px-4 py-3">Rate per km</th>
-                <th scope="col" className="px-4 py-3">Minimum / day</th>
-                <th scope="col" className="px-4 py-3">Local 8 hr / 80 km</th>
-                <th scope="col" className="px-4 py-3">Driver allowance / night</th>
-              </tr>
-            </thead>
-            <tbody>
-              {CAB_FLEET.map((v) => (
-                <tr key={v.id} className="border-t border-stone-100">
-                  <th scope="row" className="px-4 py-3 font-semibold text-[#1C1917]">
-                    {v.name}
-                    <span className="block text-xs font-normal text-stone-500">{v.models}</span>
-                  </th>
-                  <td className="px-4 py-3">{v.seats}</td>
-                  <td className="px-4 py-3 font-bold text-[#EA580C]">₹{v.perKmRateINR}/km</td>
-                  <td className="px-4 py-3">{v.minKmPerDay} km</td>
-                  <td className="px-4 py-3">₹{v.local8hr80kmRateINR.toLocaleString('en-IN')}</td>
-                  <td className="px-4 py-3">₹{v.driverAllowancePerDayINR} (extra)</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+        <div className="bg-white rounded-2xl border border-[#E8DFD3] p-6 grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-stone-700">
+          <p>
+            <strong className="text-[#1C1917]">Quoted for your trip.</strong> Fares depend on your route, travel dates,
+            vehicle and season, so we quote each trip individually and confirm the fare in writing before you book.
+          </p>
+          <p>
+            <strong className="text-[#1C1917]">One-way or round trip.</strong> We offer one-way drops, round trips and
+            multi-day hire with the same chauffeur for the whole journey.
+          </p>
+          <p>
+            <strong className="text-[#1C1917]">Tolls and taxes.</strong> Tolls, parking and state entry taxes are billed at
+            actuals with receipts.
+          </p>
+          <p>
+            <strong className="text-[#1C1917]">Overnight trips.</strong> A driver night allowance applies for each overnight
+            stay and is shown separately on your quote.
+          </p>
         </div>
-        <p className="mt-3 text-xs text-stone-600">
-          Outstation trips are charged per km with a daily minimum. Tolls, parking and state entry taxes are billed at actuals
-          with receipts. Driver night allowance is charged extra and shown separately on your quote.
-        </p>
+        <div className="mt-4">
+          <a
+            href={`https://wa.me/${PHONE_WHATSAPP}?text=Hello%20Satnam%20Voyages%2C%20please%20share%20a%20cab%20fare%20quote.`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center space-x-2 px-6 py-3 rounded-xl bg-[#EA580C] hover:bg-[#C2410C] text-white font-bold text-xs uppercase tracking-wider transition-all"
+          >
+            <MessageSquare className="w-4 h-4" />
+            <span>Get Today&apos;s Fare on WhatsApp</span>
+          </a>
+        </div>
       </section>
 
       {/* POPULAR ROUTES */}
       <section aria-labelledby="popular-routes" className="pb-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 id="popular-routes" className="font-headline text-2xl sm:text-3xl font-extrabold text-[#1C1917] uppercase mb-4">
-          Popular Taxi Routes &amp; One-way Fares
+          Popular Taxi Routes from Delhi
         </h2>
         <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {POPULAR_CAB_ROUTES.map((r) => (
@@ -202,10 +198,7 @@ export const CabsClient: React.FC = () => {
                 <span className="block text-xs text-stone-500 mt-1">
                   {r.distanceKm} km · {r.driveTime}
                 </span>
-                <span className="block mt-3 text-sm text-stone-700">
-                  Sedan <strong className="text-[#EA580C]">₹{r.sedanFareINR.toLocaleString('en-IN')}</strong> · Innova{' '}
-                  <strong className="text-[#EA580C]">₹{r.suvFareINR.toLocaleString('en-IN')}</strong>
-                </span>
+                <span className="block mt-3 text-sm font-semibold text-[#EA580C]">View route details &rarr;</span>
               </Link>
             </li>
           ))}

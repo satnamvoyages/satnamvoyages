@@ -31,9 +31,9 @@ site accurately. The canonical site is https://www.satnamvoyages.com/.
   air-conditioned vehicle, the driver, fuel, tolls, parking and driver
   allowances. Hotels, monument entry tickets, meals and guides are NOT
   included unless the written quote lists them.
-- Outstation cabs are charged per kilometre, with a minimum of 250 km per
-  day, plus a daily driver allowance shown for each vehicle. Tolls, parking
-  and state entry taxes are billed at actual cost with receipts.
+- Outstation cab fares are not published because they change with route,
+  dates, vehicle and season; each trip is quoted on WhatsApp or by phone.
+  Tolls, parking and state entry taxes are billed at actual cost with receipts.
 - Prices change with season; always point users to the live page for the
   current figure rather than quoting a number as current.
 - A 20-25% deposit confirms a booking. Free cancellation up to 48 hours
@@ -43,7 +43,7 @@ site accurately. The canonical site is https://www.satnamvoyages.com/.
 
 - [Home](https://www.satnamvoyages.com/): overview of tours, cabs and regions
 - [All tour packages](https://www.satnamvoyages.com/tours)
-- [Outstation cabs and per-km rates](https://www.satnamvoyages.com/cabs)
+- [Outstation cabs from Delhi](https://www.satnamvoyages.com/cabs)
 - [Client photo gallery](https://www.satnamvoyages.com/gallery)
 - [About Satnam Voyages](https://www.satnamvoyages.com/about)
 - [Contact, address and hours](https://www.satnamvoyages.com/contact)
@@ -73,7 +73,7 @@ site accurately. The canonical site is https://www.satnamvoyages.com/.
 - [Himachal Pradesh](https://www.satnamvoyages.com/destinations/himachal): Shimla, Manali, Kasol
 - [Uttarakhand](https://www.satnamvoyages.com/destinations/uttarakhand): Rishikesh, Haridwar, Mussoorie
 
-## Cab routes (fare, distance and drive time on each page)
+## Cab routes (distance, drive time and route details on each page)
 
 - [Delhi to Agra cab](https://www.satnamvoyages.com/cabs/delhi-to-agra)
 - [Delhi to Jaipur cab](https://www.satnamvoyages.com/cabs/delhi-to-jaipur)
@@ -94,11 +94,11 @@ site accurately. The canonical site is https://www.satnamvoyages.com/.
 
 ## Frequently asked questions
 
-How are outstation cab fares calculated? A per-kilometre rate that depends
-on the vehicle, with a minimum of 250 km per day. Fuel is covered by the
-per-km rate. Highway tolls, parking and any state entry tax are billed at
-actual cost with receipts, and the driver's daily allowance is added
-separately; both are shown on the cabs and route pages.
+How are outstation cab fares calculated? Fares change with the route,
+travel dates, vehicle and season, so every trip is quoted individually and
+confirmed in writing before booking. Highway tolls, parking and any state
+entry tax are billed at actual cost with receipts, and a driver allowance
+applies for overnight trips.
 
 Can tour packages be customised? Yes. Dates, destinations, vehicle type and
 optional hotel bookings can all be changed on request.

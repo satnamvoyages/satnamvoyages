@@ -11,7 +11,7 @@ export const GLOBAL_FAQS: FAQItem[] = [
     id: 'faq-2',
     category: 'Cabs',
     question: 'How are outstation cab fares calculated at Satnam Voyages?',
-    answer: 'Outstation cab fares are based on transparent per-kilometer rates (e.g., ₹11/km for Dzire/Etios, ₹17/km for Innova Crysta) with a standard daily minimum of 250 km. Fares include fuel and standard taxes. The driver allowance (₹350–₹800 per day depending on vehicle) is charged extra, and toll taxes, state border entry taxes and parking are billed at actual cost against official FASTag receipts. Every charge is listed in your written quote before you book.'
+    answer: 'Cab fares depend on your route, travel dates, vehicle and season, so we quote every trip individually. The quoted fare includes fuel and standard taxes. A driver allowance applies for overnight trips, and toll taxes, state border entry taxes and parking are billed at actual cost against official FASTag receipts. Every charge is listed in your written quote before you book.'
   },
   {
     id: 'faq-3',
