@@ -15,15 +15,9 @@ const REGION_TABS = [
 ];
 
 export const DestinationClient: React.FC<{ destination: DestinationRegion }> = ({ destination }) => {
-  const { openInquiry, currency } = useAppContext();
+  const { openInquiry } = useAppContext();
   const regionalTours = ALL_TOURS.filter((tour) => destination.associatedPackageSlugs.includes(tour.slug));
   const regionName = destination.name.split('—')[0].trim();
-  const formatPrice = (inr: number, usd: number) =>
-    currency === 'USD' ? `$${usd.toLocaleString()}` : `₹${inr.toLocaleString('en-IN')}`;
-  const lowest = regionalTours.reduce<(typeof regionalTours)[number] | null>(
-    (min, t) => (!min || t.startingPriceINR < min.startingPriceINR ? t : min),
-    null
-  );
 
   return (
     <div className="min-h-screen bg-[#FAF6F0] pb-20 font-montserrat">
@@ -52,7 +46,7 @@ export const DestinationClient: React.FC<{ destination: DestinationRegion }> = (
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <span className="inline-block px-3 py-1 rounded-full bg-[#EA580C] text-white text-xs font-bold uppercase tracking-wider mb-3 font-headline">
-            {regionalTours.length} private packages{lowest ? ` · from ${formatPrice(lowest.startingPriceINR, lowest.startingPriceUSD)} per person` : ''}
+            {regionalTours.length} private packages · free custom quote
           </span>
           <h1 className="font-headline text-3xl sm:text-5xl font-extrabold tracking-tight text-white mb-3 uppercase">
             {destination.headline ?? destination.name}
@@ -66,7 +60,7 @@ export const DestinationClient: React.FC<{ destination: DestinationRegion }> = (
             href="#region-packages"
             className="mt-5 inline-flex items-center px-5 py-2.5 rounded-xl bg-[#EA580C] hover:bg-[#C2410C] text-white font-bold text-xs uppercase tracking-wider font-headline"
           >
-            See {regionName} packages &amp; prices
+            See {regionName} tour packages
             <ArrowRight className="w-4 h-4 ml-1.5" />
           </a>
 
@@ -175,7 +169,7 @@ export const DestinationClient: React.FC<{ destination: DestinationRegion }> = (
                 Handcrafted Itineraries
               </span>
               <h2 className="font-headline text-2xl sm:text-3xl font-extrabold text-[#1C1917] uppercase">
-                {regionName} Tour Packages &amp; Prices
+                {regionName} Tour Packages
               </h2>
             </div>
             <Link href="/tours" className="inline-flex items-center text-[#EA580C] hover:text-[#C2410C] font-bold text-xs uppercase tracking-wider mt-2 md:mt-0">
@@ -215,11 +209,8 @@ export const DestinationClient: React.FC<{ destination: DestinationRegion }> = (
                 <div className="p-5 pt-0">
                   <div className="pt-3 border-t border-[#E8DFD3] flex items-center justify-between gap-2">
                     <div>
-                      <span className="text-[10px] text-stone-400 uppercase font-bold block">From</span>
-                      <span className="text-base font-extrabold text-[#1C1917] font-headline">
-                        {formatPrice(tour.startingPriceINR, tour.startingPriceUSD)}
-                      </span>
-                      <span className="text-[10px] text-stone-500 ml-1">/ person</span>
+                      <span className="text-[10px] text-stone-400 uppercase font-bold block">Private tour</span>
+                      <span className="text-sm font-extrabold text-[#1C1917] font-headline">Free Quote</span>
                     </div>
                     <Link
                       href={`/tours/${tour.slug}`}

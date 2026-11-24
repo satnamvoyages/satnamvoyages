@@ -29,23 +29,22 @@ export default function TermsPage() {
         </section>
 
         <section>
-          <h2>Quotes and prices</h2>
+          <h2>Quotes</h2>
           <ul>
             <li>
-              Prices shown on the website are starting prices. Your written quote states the final
-              price, the vehicle, and exactly what is included and excluded.
+              We do not publish fixed prices because costs change with season, dates and vehicle.
+              Your written quote states the price, the vehicle, and exactly what is included and excluded.
             </li>
             <li>
-              Tour package prices cover the private vehicle, driver, fuel, tolls, parking and
+              Tour package quotes cover the private vehicle, driver, fuel, tolls, parking and
               driver allowances unless the quote says otherwise. Hotels, monument entry tickets,
               meals and guides are included only when your quote lists them.
             </li>
             <li>
-              Outstation cab hire is charged per kilometre with a minimum daily distance, plus a
-              daily driver allowance, as shown on the <Link href="/cabs">cabs page</Link> and in
-              your quote.
+              Outstation cab hire is quoted per trip, with any driver night allowance, tolls and
+              parking listed in your quote (see the <Link href="/cabs">cabs page</Link>).
             </li>
-            <li>Prices can change with season, fuel costs and government taxes until a booking is confirmed.</li>
+            <li>Quotes can change with season, fuel costs and government taxes until a booking is confirmed.</li>
           </ul>
         </section>
 

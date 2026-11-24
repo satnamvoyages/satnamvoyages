@@ -3,8 +3,8 @@ import { ToursDirectoryClient } from '@/components/ToursDirectoryClient';
 import { ALL_TOURS } from '@/lib/data/toursData';
 import { SITE_URL, OG_IMAGE } from '@/lib/constants';
 
-const TITLE = 'Private India Tour Packages from Delhi';
-const DESCRIPTION = `Compare ${ALL_TOURS.length} private chauffeur-driven tours from Delhi: Golden Triangle, Rajasthan, Himachal, Uttarakhand and same-day trips, with prices.`;
+const TITLE = 'India Tour Packages: Private Tours from Delhi';
+const DESCRIPTION = `${ALL_TOURS.length} private India tour packages from Delhi for international travellers: Golden Triangle, Rajasthan, same day Taj Mahal and Himalayan tours. Free quote.`;
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -35,13 +35,6 @@ export default function ToursPage() {
         url: `${SITE_URL}/tours/${tour.slug}`,
         image: tour.primaryImage,
         touristType: 'Cultural Tourism',
-        offers: {
-          '@type': 'Offer',
-          url: `${SITE_URL}/tours/${tour.slug}`,
-          price: tour.startingPriceINR,
-          priceCurrency: 'INR',
-          availability: 'https://schema.org/InStock',
-        },
       },
     })),
   };

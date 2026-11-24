@@ -22,13 +22,11 @@ import {
   Route,
   Sun,
 } from 'lucide-react';
-import type { TourPackage, Currency } from '@/lib/types';
+import type { TourPackage } from '@/lib/types';
 import { ItineraryBookingForm } from './ItineraryBookingForm';
 import { getPhotoForItineraryDay, getBentoGalleryPhotos } from '@/lib/data/itineraryImages';
 import { CLIENT_MOMENTS } from '@/lib/data/clientPhotosData';
 import { DRIVE_LEGS, tourVisitsAgra, getRelatedTours } from '@/lib/data/toursData';
-import { POPULAR_CAB_ROUTES, CAB_FLEET } from '@/lib/data/cabsData';
-import { useAppContext } from './Providers';
 import { PHONE_TEL, PHONE_DISPLAY, PHONE_WHATSAPP } from '@/lib/constants';
 
 const VEHICLE_OPTIONS = [
@@ -55,44 +53,7 @@ const VEHICLE_OPTIONS = [
   },
 ];
 
-/**
- * Per-vehicle fares shown on same-day tours, read from the cab fare data.
- * TODO(owner): confirm that these one-way route fares and local 8hr/80km rates are what you
- * want to show next to the same-day tours, or replace them with dedicated round-trip prices.
- */
-function getPerCarFares(slug: string) {
-  const sedan = CAB_FLEET.find((v) => v.category === 'Sedan');
-  const suv = CAB_FLEET.find((v) => v.category === 'SUV');
-  const tempo = CAB_FLEET.find((v) => v.category === 'Tempo Traveller');
-  if (slug === 'delhi-sightseeing-old-and-new') {
-    if (!sedan || !suv || !tempo) return null;
-    return {
-      heading: 'Delhi city cab hire (8 hours / 80 km, per vehicle)',
-      note: 'Local full-day hire with driver. Fuel and parking included; monument tickets extra.',
-      rows: [
-        { vehicle: 'Sedan (Dzire / Etios)', inr: sedan.local8hr80kmRateINR },
-        { vehicle: 'SUV (Innova Crysta)', inr: suv.local8hr80kmRateINR },
-        { vehicle: 'Tempo Traveller (12 seater)', inr: tempo.local8hr80kmRateINR },
-      ],
-    };
-  }
-  const to = slug === 'same-day-delhi-agra-tour' ? 'Agra' : slug === 'same-day-delhi-jaipur-tour' ? 'Jaipur' : null;
-  if (!to) return null;
-  const route = POPULAR_CAB_ROUTES.find((r) => r.from === 'Delhi' && r.to === to);
-  if (!route) return null;
-  return {
-    heading: `Delhi to ${to} cab fares (one way, per vehicle)`,
-    note: `${route.distanceKm} km, about ${route.driveTime}. Prefer just the car? These are our point-to-point fares; ask us for a same-day return quote.`,
-    rows: [
-      { vehicle: 'Sedan (Dzire / Etios)', inr: route.sedanFareINR },
-      { vehicle: 'SUV (Innova Crysta)', inr: route.suvFareINR },
-      { vehicle: 'Tempo Traveller (12 seater)', inr: route.tempoFareINR },
-    ],
-  };
-}
-
 export const TourDetailClient: React.FC<{ tour: TourPackage }> = ({ tour }) => {
-  const { currency } = useAppContext();
   const [openDays, setOpenDays] = useState<Set<number>>(() => new Set([1]));
   const allDaysOpen = openDays.size === tour.itinerary.length;
   const [selectedTier, setSelectedTier] = useState<'Standard' | 'Deluxe' | 'Luxury'>('Deluxe');
@@ -103,27 +64,6 @@ export const TourDetailClient: React.FC<{ tour: TourPackage }> = ({ tour }) => {
 
   const visitsAgra = useMemo(() => tourVisitsAgra(tour), [tour]);
   const relatedTours = useMemo(() => getRelatedTours(tour.slug, 4), [tour.slug]);
-  const perCarFares = useMemo(() => getPerCarFares(tour.slug), [tour.slug]);
-
-  // Hotels are not included in the package price, so the hotel preference does not change the estimate.
-  const calculatedPrice = useMemo(() => {
-    let vehicleMultiplier = 1;
-    if (selectedVehicle === 'Sedan') vehicleMultiplier = 0.9;
-    if (selectedVehicle === 'Tempo Traveller') vehicleMultiplier = 1.35;
-
-    const baseInr = tour.startingPriceINR;
-    const baseUsd = tour.startingPriceUSD;
-
-    return {
-      inr: Math.round(baseInr * vehicleMultiplier),
-      usd: Math.round(baseUsd * vehicleMultiplier),
-    };
-  }, [tour, selectedVehicle]);
-
-  const formatPrice = (inr: number, usd: number) => {
-    if (currency === 'USD') return `$${usd.toLocaleString()}`;
-    return `₹${inr.toLocaleString('en-IN')}`;
-  };
 
   const scrollToBookingForm = () => {
     const el = document.getElementById('itinerary-booking-form-section');
@@ -131,7 +71,7 @@ export const TourDetailClient: React.FC<{ tour: TourPackage }> = ({ tour }) => {
   };
 
   const whatsappInquiryUrl = `https://wa.me/${PHONE_WHATSAPP}?text=${encodeURIComponent(
-    `Hello Satnam Voyages! I am interested in booking "${tour.title}" (${tour.durationLabel}) with a ${selectedVehicle} (hotel preference: ${selectedTier}). Please share availability and best price.`
+    `Hello Satnam Voyages! I am interested in booking "${tour.title}" (${tour.durationLabel}) with a ${selectedVehicle} (hotel preference: ${selectedTier}). Please share availability and a quote.`
   )}`;
 
   const relevantMoments = CLIENT_MOMENTS.slice(0, 3);
@@ -178,12 +118,9 @@ export const TourDetailClient: React.FC<{ tour: TourPackage }> = ({ tour }) => {
 
             <div className="flex items-center sm:items-end lg:flex-col lg:items-end justify-between gap-3 bg-[#FAF6F0] p-4 rounded-2xl border border-[#E8DFD3] shrink-0">
               <div className="lg:text-right">
-                <span className="text-[10px] text-stone-500 uppercase font-bold block font-headline tracking-wider">From</span>
-                <span className="text-2xl sm:text-3xl font-extrabold text-[#1C1917] font-headline">
-                  {formatPrice(tour.startingPriceINR, tour.startingPriceUSD)}
-                </span>
-                <span className="text-xs text-stone-500 ml-1">per person</span>
-                <span className="text-[10px] text-stone-400 block">Car, chauffeur, fuel &amp; tolls. Hotels and tickets extra.</span>
+                <span className="text-[10px] text-stone-500 uppercase font-bold block font-headline tracking-wider">Private tour</span>
+                <span className="text-xl sm:text-2xl font-extrabold text-[#1C1917] font-headline">Free Custom Quote</span>
+                <span className="text-[10px] text-stone-400 block">Car, chauffeur, fuel &amp; tolls included. Hotels on request.</span>
               </div>
               <button
                 onClick={scrollToBookingForm}
@@ -488,40 +425,6 @@ export const TourDetailClient: React.FC<{ tour: TourPackage }> = ({ tour }) => {
               </div>
             </section>
 
-            {/* PER-CAR FARES (same-day tours) */}
-            {perCarFares && (
-              <section className="bg-white rounded-3xl p-6 sm:p-8 border border-[#E8DFD3] shadow-sm space-y-4">
-                <div>
-                  <span className="text-xs font-bold uppercase tracking-wider text-[#EA580C] block font-headline mb-1">
-                    Price per vehicle
-                  </span>
-                  <h2 className="font-headline text-2xl font-extrabold text-[#1C1917] uppercase">{perCarFares.heading}</h2>
-                </div>
-                <div className="overflow-x-auto">
-                  <table className="w-full text-xs sm:text-sm font-montserrat border border-[#E8DFD3] rounded-xl overflow-hidden">
-                    <thead className="bg-[#FAF6F0] text-stone-700">
-                      <tr>
-                        <th scope="col" className="text-left p-3 font-headline uppercase text-[11px]">Vehicle</th>
-                        <th scope="col" className="text-right p-3 font-headline uppercase text-[11px]">Fare per vehicle</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {perCarFares.rows.map((r) => (
-                        <tr key={r.vehicle} className="border-t border-[#E8DFD3]">
-                          <td className="p-3 text-stone-800">{r.vehicle}</td>
-                          <td className="p-3 text-right font-bold text-[#1C1917]">₹{r.inr.toLocaleString('en-IN')}</td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
-                </div>
-                <p className="text-xs text-stone-500">{perCarFares.note}</p>
-                <Link href="/cabs" className="inline-block text-xs font-bold text-[#EA580C] hover:text-[#C2410C] uppercase tracking-wider font-headline">
-                  See all cab fares →
-                </Link>
-              </section>
-            )}
-
             {/* FLEET OPTIONS */}
             <section className="bg-white rounded-3xl p-6 sm:p-8 border border-[#E8DFD3] shadow-sm space-y-6">
               <div>
@@ -600,9 +503,6 @@ export const TourDetailClient: React.FC<{ tour: TourPackage }> = ({ tour }) => {
                 durationLabel={tour.durationLabel}
                 defaultTier={selectedTier}
                 defaultVehicle={selectedVehicle}
-                estimatedPriceINR={calculatedPrice.inr}
-                estimatedPriceUSD={calculatedPrice.usd}
-                currency={currency}
                 isCompactSidebar={false}
               />
             </section>
@@ -660,9 +560,6 @@ export const TourDetailClient: React.FC<{ tour: TourPackage }> = ({ tour }) => {
                         <div className="min-w-0">
                           <span className="block text-sm font-bold text-[#1C1917] font-headline uppercase leading-snug">{t.title}</span>
                           <span className="block text-xs text-stone-500 mt-0.5">{t.durationLabel}</span>
-                          <span className="block text-xs font-semibold text-[#EA580C] mt-0.5">
-                            From {formatPrice(t.startingPriceINR, t.startingPriceUSD)}
-                          </span>
                         </div>
                       </Link>
                     </li>
@@ -677,17 +574,10 @@ export const TourDetailClient: React.FC<{ tour: TourPackage }> = ({ tour }) => {
             <div className="bg-white rounded-3xl p-6 border border-[#E8DFD3] shadow-md space-y-6">
               <div>
                 <span className="text-[11px] font-bold uppercase tracking-wider text-[#EA580C] block font-headline">
-                  Live Price Customizer
+                  Plan Your Private Tour
                 </span>
                 <h3 className="font-headline text-xl font-extrabold text-[#1C1917] uppercase">Select Travel Preferences</h3>
-                <p className="mt-3 text-sm text-stone-700">
-                  Estimated:{' '}
-                  <strong className="text-2xl font-extrabold text-[#1C1917] font-headline">
-                    {formatPrice(calculatedPrice.inr, calculatedPrice.usd)}
-                  </strong>{' '}
-                  <span className="text-xs text-stone-500">per person</span>
-                </p>
-                <p className="text-[11px] text-stone-400">Includes car, chauffeur, fuel &amp; tolls. Hotels and entry tickets extra.</p>
+                <p className="mt-2 text-xs text-stone-600">Choose your preferences and we&apos;ll send a written quote for your dates. Car, chauffeur, fuel &amp; tolls are included; hotels and entry tickets on request.</p>
               </div>
 
               <div>
@@ -817,9 +707,8 @@ export const TourDetailClient: React.FC<{ tour: TourPackage }> = ({ tour }) => {
       {/* Sticky Mobile Bottom CTA Bar */}
       <div className="lg:hidden fixed bottom-14 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-t border-[#E8DFD3] px-4 py-2.5 shadow-lg flex items-center justify-between font-montserrat">
         <div>
-          <span className="text-[10px] text-stone-400 uppercase font-bold block font-headline">Starting Quote</span>
-          <span className="text-base font-extrabold text-[#1C1917] font-headline">{formatPrice(calculatedPrice.inr, calculatedPrice.usd)}</span>
-          <span className="text-[10px] text-stone-500 ml-1">/ person</span>
+          <span className="text-[10px] text-stone-400 uppercase font-bold block font-headline">Private tour</span>
+          <span className="text-base font-extrabold text-[#1C1917] font-headline">Free Quote</span>
         </div>
 
         <div className="flex space-x-2">

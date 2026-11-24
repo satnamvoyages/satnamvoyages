@@ -4,9 +4,9 @@ import { GLOBAL_FAQS } from '@/lib/data/faqsData';
 import { SITE_URL, OG_IMAGE } from '@/lib/constants';
 
 // The layout's title template doesn't apply to the root page, so include the brand explicitly.
-const HOME_TITLE = 'Satnam Voyages | Private Tours & Outstation Cabs from Delhi';
+const HOME_TITLE = 'India Tour Packages & Golden Triangle Tours | Satnam Voyages';
 const HOME_DESCRIPTION =
-  'Private Golden Triangle, Rajasthan, Himachal and Uttarakhand tours plus chauffeur-driven outstation cabs from Delhi. Fixed per-km rates, 24/7 WhatsApp support.';
+  'Private India tour packages for international travellers: Golden Triangle, Rajasthan and same day Taj Mahal tours with your own English-speaking driver.';
 
 export const metadata: Metadata = {
   title: HOME_TITLE,

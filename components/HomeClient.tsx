@@ -122,11 +122,11 @@ export const HomeClient: React.FC = () => {
 
         <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-32 md:py-40 text-center">
           <h1 className="font-headline text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-white uppercase leading-tight drop-shadow-[0_8px_32px_rgba(0,0,0,0.9)] max-w-4xl mx-auto">
-            DISCOVER INDIA IN COMFORT &amp; LUXURY
+            Private India Tours &amp; Golden Triangle Tour Packages
           </h1>
 
           <p className="mt-4 sm:mt-6 font-headline text-lg sm:text-2xl md:text-3xl font-bold text-white uppercase tracking-wide drop-shadow-[0_4px_16px_rgba(0,0,0,0.8)] max-w-3xl mx-auto">
-            Bespoke Private Journeys &amp; Chauffeured Outstation Fleets
+            Delhi &bull; Agra &bull; Jaipur &bull; Rajasthan &mdash; with your own English-speaking chauffeur
           </p>
 
           <div className="mt-8 sm:mt-10 flex flex-wrap items-center justify-center gap-4">
@@ -138,6 +138,35 @@ export const HomeClient: React.FC = () => {
               <span>Book Your Journey</span>
               <ArrowRight className="w-4 h-4" />
             </button>
+          </div>
+        </div>
+      </section>
+
+      {/* GOLDEN TRIANGLE 4N/5D OFFER STRIP */}
+      <section aria-labelledby="gt-offer" className="bg-[#141210] text-white border-b border-stone-800">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col md:flex-row md:items-center justify-between gap-4">
+          <div>
+            <span className="text-xs font-bold uppercase tracking-wider text-orange-400 block mb-1 font-headline">2027 Season Offer</span>
+            <h2 id="gt-offer" className="font-headline uppercase text-xl sm:text-2xl font-extrabold">
+              Golden Triangle Tour: 4 Nights / 5 Days
+            </h2>
+            <p className="text-sm text-stone-300 mt-1 max-w-2xl">
+              Delhi, Agra (Taj Mahal at sunrise) and Jaipur with your own car and English-speaking chauffeur, airport pickup to airport drop.
+            </p>
+          </div>
+          <div className="flex flex-wrap gap-3">
+            <Link
+              href="/offers"
+              className="px-6 py-3 rounded-xl bg-[#EA580C] hover:bg-[#C2410C] text-white font-bold text-xs uppercase tracking-wider font-headline"
+            >
+              See the Offer
+            </Link>
+            <Link
+              href="/blog"
+              className="px-6 py-3 rounded-xl border border-stone-600 hover:bg-stone-800 text-white font-bold text-xs uppercase tracking-wider font-headline"
+            >
+              2027 Travel Guides
+            </Link>
           </div>
         </div>
       </section>

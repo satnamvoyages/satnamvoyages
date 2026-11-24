@@ -60,24 +60,13 @@ export default async function TourDetailPage({ params }: PageProps) {
     '@context': 'https://schema.org',
     '@graph': [
       {
-        '@type': ['Product', 'TouristTrip'],
+        '@type': 'TouristTrip',
         '@id': `${url}#trip`,
         name: tour.title,
         description: tour.metaDescription ?? fallbackDescription(tour),
         url,
         image: Array.from(new Set([tour.primaryImage, ...tour.galleryImages])),
-        brand: { '@type': 'Brand', name: SITE_NAME },
         touristType: ['Cultural Tourism', 'Heritage Tourism'],
-        offers: {
-          '@type': 'Offer',
-          url,
-          price: tour.startingPriceINR,
-          priceCurrency: 'INR',
-          availability: 'https://schema.org/InStock',
-          validFrom: '2026-11-24',
-          priceValidUntil: '2027-12-31',
-          seller: { '@id': AGENCY_ID },
-        },
         itinerary: {
           '@type': 'ItemList',
           numberOfItems: tour.itinerary.length,

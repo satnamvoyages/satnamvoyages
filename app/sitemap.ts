@@ -2,6 +2,8 @@ import type { MetadataRoute } from 'next';
 import { ALL_TOURS } from '@/lib/data/toursData';
 import { DESTINATIONS } from '@/lib/data/destinationsData';
 import { POPULAR_CAB_ROUTES } from '@/lib/data/cabsData';
+import { BLOG_POSTS } from '@/lib/data/blogData';
+import { COUNTRY_OFFERS } from '@/lib/data/offersData';
 import { SITE_URL } from '@/lib/constants';
 
 // Real "last content change" date. Do NOT use `new Date()` here: that stamps
@@ -19,6 +21,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const staticPaths = [
     '/',
     '/tours',
+    '/offers',
+    '/blog',
     '/cabs',
     '/gallery',
     '/about',
@@ -33,5 +37,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...ALL_TOURS.map((tour) => page(`/tours/${tour.slug}`)),
     ...Object.values(DESTINATIONS).map((dest) => page(`/destinations/${dest.slug}`)),
     ...POPULAR_CAB_ROUTES.map((route) => page(`/cabs/${route.slug}`)),
+    ...COUNTRY_OFFERS.map((offer) => page(`/offers/${offer.slug}`)),
+    ...BLOG_POSTS.map((post) => ({ url: `${SITE_URL}/blog/${post.slug}`, lastModified: new Date(post.dateModified) })),
   ];
 }

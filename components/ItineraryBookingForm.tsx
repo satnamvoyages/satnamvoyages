@@ -18,7 +18,6 @@ import {
   Loader2,
   AlertCircle
 } from 'lucide-react';
-import { Currency } from '@/lib/types';
 
 interface ItineraryBookingFormProps {
   tourTitle: string;
@@ -26,9 +25,6 @@ interface ItineraryBookingFormProps {
   durationLabel: string;
   defaultTier?: 'Standard' | 'Deluxe' | 'Luxury';
   defaultVehicle?: 'Sedan' | 'Innova Crysta' | 'Tempo Traveller';
-  estimatedPriceINR: number;
-  estimatedPriceUSD: number;
-  currency: Currency;
   isCompactSidebar?: boolean;
 }
 
@@ -38,9 +34,6 @@ export const ItineraryBookingForm: React.FC<ItineraryBookingFormProps> = ({
   durationLabel,
   defaultTier = 'Deluxe',
   defaultVehicle = 'Innova Crysta',
-  estimatedPriceINR,
-  estimatedPriceUSD,
-  currency,
   isCompactSidebar = false,
 }) => {
   const [formData, setFormData] = useState({
@@ -61,11 +54,6 @@ export const ItineraryBookingForm: React.FC<ItineraryBookingFormProps> = ({
   const [submitted, setSubmitted] = useState(false);
   const [bookingRef, setBookingRef] = useState('');
   const [emailStatus, setEmailStatus] = useState<'sent' | 'local' | 'error'>('sent');
-
-  const formatPrice = (inr: number, usd: number) => {
-    if (currency === 'USD') return `$${usd.toLocaleString()}`;
-    return `₹${inr.toLocaleString('en-IN')}`;
-  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -176,10 +164,6 @@ export const ItineraryBookingForm: React.FC<ItineraryBookingFormProps> = ({
           <div className="flex justify-between">
             <span className="text-stone-500">Hotel &amp; Vehicle:</span>
             <span className="font-semibold text-stone-800">{formData.tier} • {formData.vehicle}</span>
-          </div>
-          <div className="flex justify-between">
-            <span className="text-stone-500">Estimated Total (excl. hotels):</span>
-            <span className="font-bold text-[#EA580C]">{formatPrice(estimatedPriceINR * formData.adults, estimatedPriceUSD * formData.adults)}</span>
           </div>
         </div>
 
@@ -397,14 +381,11 @@ export const ItineraryBookingForm: React.FC<ItineraryBookingFormProps> = ({
         ></textarea>
       </div>
 
-      {/* Price Summary & Submit CTA */}
+      {/* Quote note & Submit CTA */}
       <div className="pt-2 border-t border-[#E8DFD3] flex flex-col sm:flex-row items-center justify-between gap-4">
         <div>
-          <span className="text-[11px] text-stone-500 block">Estimated total for {formData.adults} {formData.adults === 1 ? 'adult' : 'adults'}:</span>
-          <span className="text-xl sm:text-2xl font-extrabold text-[#1C1917] font-headline">
-            {formatPrice(estimatedPriceINR * formData.adults, estimatedPriceUSD * formData.adults)}
-          </span>
-          <span className="text-[10px] text-stone-400 block">Private car, chauffeur, fuel &amp; tolls. Hotels and entry tickets quoted separately.</span>
+          <span className="text-base sm:text-lg font-extrabold text-[#1C1917] font-headline block">Free written quote for {formData.adults} {formData.adults === 1 ? 'adult' : 'adults'}</span>
+          <span className="text-[10px] text-stone-400 block">Private car, chauffeur, fuel &amp; tolls included. Hotels and entry tickets on request.</span>
         </div>
 
         <button

@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { InfoPage, JsonLd, breadcrumbJsonLd } from '../_components/InfoPage';
 import { SITE_URL, SITE_NAME, ADDRESS, OG_IMAGE } from '@/lib/constants';
 
-const TITLE = 'About Us: Private Tours & Chauffeur Cabs from Delhi';
+const TITLE = 'About Us: Private India Tours from Delhi';
 const DESCRIPTION =
   'Satnam Voyages is a Delhi-based company running private chauffeur-driven tours and outstation cabs across the Golden Triangle, Rajasthan, Himachal and Uttarakhand.';
 

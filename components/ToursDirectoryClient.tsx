@@ -17,12 +17,10 @@ const SECTION_HEADINGS: Record<string, string> = {
 };
 
 export const ToursDirectoryClient: React.FC = () => {
-  const { openInquiry, currency } = useAppContext();
-  const formatPrice = (inr: number, usd: number) =>
-    currency === 'USD' ? `$${usd.toLocaleString()}` : `₹${inr.toLocaleString('en-IN')}`;
+  const { openInquiry } = useAppContext();
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
   const [searchQuery, setSearchQuery] = useState('');
-  const [sortBy, setSortBy] = useState<'featured' | 'price-asc' | 'price-desc' | 'duration'>('featured');
+  const [sortBy, setSortBy] = useState<'featured' | 'duration' | 'duration-desc'>('featured');
 
   const categories = ['All', ...Object.keys(SECTION_HEADINGS).filter((c) => ALL_TOURS.some((t) => t.category === c))];
 
@@ -34,8 +32,7 @@ export const ToursDirectoryClient: React.FC = () => {
       tour.overview.toLowerCase().includes(searchQuery.toLowerCase());
     return matchesCategory && matchesSearch;
   }).sort((a, b) => {
-    if (sortBy === 'price-asc') return a.startingPriceINR - b.startingPriceINR;
-    if (sortBy === 'price-desc') return b.startingPriceINR - a.startingPriceINR;
+    if (sortBy === 'duration-desc') return b.durationDays - a.durationDays;
     if (sortBy === 'duration') return a.durationDays - b.durationDays;
     return (b.featured ? 1 : 0) - (a.featured ? 1 : 0);
   });
@@ -94,11 +91,8 @@ export const ToursDirectoryClient: React.FC = () => {
                 <div className="p-5 pt-0">
                   <div className="pt-3 border-t border-stone-100 flex items-center justify-between gap-2">
                     <div>
-                      <span className="text-[10px] text-stone-400 uppercase font-bold block">From</span>
-                      <span className="text-base font-extrabold text-[#1C1917] font-headline">
-                        {formatPrice(tour.startingPriceINR, tour.startingPriceUSD)}
-                      </span>
-                      <span className="text-[10px] text-stone-500 ml-1">/ person</span>
+                      <span className="text-[10px] text-stone-400 uppercase font-bold block">Private tour</span>
+                      <span className="text-sm font-extrabold text-[#1C1917] font-headline">Free Quote</span>
                     </div>
                     <div className="flex items-center space-x-2">
                       <Link
@@ -164,9 +158,8 @@ export const ToursDirectoryClient: React.FC = () => {
                 className="w-full py-3 px-3.5 rounded-xl bg-[#201D1A] border border-stone-700 text-white text-sm focus:outline-none focus:ring-2 focus:ring-[#EA580C]"
               >
                 <option value="featured">Sort: Featured &amp; Recommended</option>
-                <option value="price-asc">Price: Low to High</option>
-                <option value="price-desc">Price: High to Low</option>
                 <option value="duration">Duration: Shortest to Longest</option>
+                <option value="duration-desc">Duration: Longest to Shortest</option>
               </select>
             </div>
           </div>
@@ -201,7 +194,7 @@ export const ToursDirectoryClient: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
         <div className="flex items-center justify-between mb-6 text-xs text-stone-500 font-medium font-montserrat">
           <span>Showing {filteredTours.length} of {ALL_TOURS.length} packages</span>
-          <span>Prices per person: private car, chauffeur, fuel &amp; tolls. Hotels extra.</span>
+          <span>Every tour: private car, chauffeur, fuel &amp; tolls. Hotels on request.</span>
         </div>
 
         {filteredTours.length === 0 ? (

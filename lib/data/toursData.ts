@@ -1,11 +1,13 @@
 import type { TourPackage } from '../types';
+import { GOLDEN_TRIANGLE_EXTRA_TOURS, GOLDEN_TRIANGLE_EXTRA_DRIVE_LEGS } from './tours/goldenTriangleExtra';
+import { MORE_TOURS_2027, MORE_TOURS_2027_DRIVE_LEGS } from './tours/moreTours2027';
 
-export const ALL_TOURS: TourPackage[] = [
+const BASE_TOURS: TourPackage[] = [
   {
     id: 'tour-1',
     slug: 'golden-triangle-tour',
-    seoTitle: 'Golden Triangle Tour 6 Days from Delhi',
-    metaDescription: 'Private 6-day Golden Triangle tour from Delhi to Agra and Jaipur with a dedicated chauffeur-driven AC car. From ₹18,500 per person. Hotels optional.',
+    seoTitle: 'Golden Triangle Tour India: 6-Day Private',
+    metaDescription: 'Private Golden Triangle tour of India: Delhi, Agra (Taj Mahal) and Jaipur in 6 days with your own English-speaking chauffeur and airport pickup. Free quote.',
     title: 'Golden Triangle Tour — Delhi • Agra • Jaipur',
     subtitle: 'The timeless classic Indian royal heritage and architectural circuit',
     category: 'Golden Triangle',
@@ -100,8 +102,8 @@ export const ALL_TOURS: TourPackage[] = [
   {
     id: 'tour-2',
     slug: 'golden-triangle-ranthambore',
-    seoTitle: 'Golden Triangle & Ranthambore 8-Day Tour',
-    metaDescription: '8-day private tour of Delhi, Agra, Ranthambore and Jaipur with two tiger safaris and a dedicated chauffeur. From ₹27,900 per person.',
+    seoTitle: 'Golden Triangle Tour with Ranthambore Safari',
+    metaDescription: '8-day private Golden Triangle tour of India with Ranthambore tiger safaris: Delhi, Agra, Jaipur and two jeep safaris with your own chauffeur. Free quote.',
     title: 'Golden Triangle + Ranthambore',
     subtitle: 'Mughal wonders, royal palaces, and Bengal tiger safaris in the wild',
     category: 'Golden Triangle',
@@ -154,8 +156,8 @@ export const ALL_TOURS: TourPackage[] = [
   {
     id: 'tour-3',
     slug: 'delhi-sightseeing-old-and-new',
-    seoTitle: 'Old & New Delhi Full-Day Private Tour',
-    metaDescription: 'Full-day private Delhi tour by AC car: Chandni Chowk, Jama Masjid, India Gate, Humayun’s Tomb and Qutub Minar. From ₹2,200 with hotel pickup.',
+    seoTitle: 'Delhi Private Day Tour: Old & New Delhi',
+    metaDescription: 'Full-day private Delhi city tour by AC car with hotel pickup: Chandni Chowk, Jama Masjid, India Gate, Humayun’s Tomb and Qutub Minar. Free quote.',
     title: 'Delhi Sightseeing Old and New',
     subtitle: 'A full spectrum journey through 1,000 years of imperial history',
     category: 'Same Day',
@@ -197,8 +199,8 @@ export const ALL_TOURS: TourPackage[] = [
   {
     id: 'tour-4',
     slug: 'same-day-delhi-agra-tour',
-    seoTitle: 'Same Day Agra Tour from Delhi by Car',
-    metaDescription: 'Same-day Taj Mahal and Agra Fort trip from Delhi by private car via the Yamuna Expressway, about 3.5 hours each way. Taj Mahal is closed on Fridays.',
+    seoTitle: 'Same Day Taj Mahal Tour from Delhi by Car',
+    metaDescription: 'Private same day Taj Mahal and Agra Fort tour from Delhi by car via the Yamuna Expressway, about 3.5 hours each way. Hotel pickup. Taj closed Fridays.',
     title: 'Same Day Delhi • Agra Tour',
     subtitle: 'Swift same-day return private excursion to the Taj Mahal & Agra Fort',
     category: 'Same Day',
@@ -241,7 +243,7 @@ export const ALL_TOURS: TourPackage[] = [
     id: 'tour-5',
     slug: 'same-day-delhi-jaipur-tour',
     seoTitle: 'Same Day Jaipur Tour from Delhi by Car',
-    metaDescription: 'Same-day Jaipur trip from Delhi by private car, about 4 hours each way. Visit Amber Fort, Hawa Mahal, Jal Mahal and City Palace, back the same night.',
+    metaDescription: 'Private same day Jaipur tour from Delhi by car, about 4 hours each way: Amber Fort, Hawa Mahal, Jal Mahal and City Palace, back in Delhi the same night.',
     title: 'Same Day Delhi • Jaipur Tour',
     subtitle: 'Speedy express day-trip to Rajasthan’s royal Pink City',
     category: 'Same Day',
@@ -283,8 +285,8 @@ export const ALL_TOURS: TourPackage[] = [
   {
     id: 'tour-6',
     slug: 'delhi-agra-jaipur-udaipur-tour',
-    seoTitle: 'Delhi Agra Jaipur Udaipur 9-Day Tour',
-    metaDescription: '9-day private tour from Delhi to Agra, Jaipur, Pushkar and Udaipur with a dedicated chauffeur-driven AC car. From ₹34,500 per person.',
+    seoTitle: 'Golden Triangle with Udaipur: 9-Day Tour',
+    metaDescription: '9-day private India tour: Golden Triangle (Delhi, Agra, Jaipur) plus Pushkar and Udaipur, the City of Lakes, with your own chauffeur-driven AC car. Free quote.',
     title: 'Delhi • Agra • Jaipur • Udaipur Tour',
     subtitle: 'The Grand Royal Odyssey: Golden Triangle combined with the City of Lakes',
     category: 'Rajasthan',
@@ -329,8 +331,8 @@ export const ALL_TOURS: TourPackage[] = [
   {
     id: 'tour-7',
     slug: 'jaipur-jodhpur-jaisalmer-tour',
-    seoTitle: 'Jaipur Jodhpur Jaisalmer 7-Day Tour',
-    metaDescription: '7-day private Rajasthan desert tour: Jaipur, Jodhpur’s Mehrangarh Fort and a night near Jaisalmer’s Sam dunes. From ₹26,500 per person.',
+    seoTitle: 'Rajasthan Desert Tour: Jodhpur & Jaisalmer',
+    metaDescription: '7-day private Rajasthan desert tour package: Jaipur, Jodhpur’s Mehrangarh Fort and a night near Jaisalmer’s Sam sand dunes with your own chauffeur.',
     title: 'Jaipur • Jodhpur • Jaisalmer Tour',
     subtitle: 'The Desert Kingdom: Golden sands, blue city alleys, and desert dunes',
     category: 'Rajasthan',
@@ -372,8 +374,8 @@ export const ALL_TOURS: TourPackage[] = [
   {
     id: 'tour-8',
     slug: 'jaipur-jodhpur-udaipur-tour',
-    seoTitle: 'Jaipur Jodhpur Udaipur 8-Day Tour',
-    metaDescription: '8-day private tour of Jaipur, Pushkar, Jodhpur, Ranakpur and Udaipur with a dedicated chauffeur-driven AC car. From ₹28,900 per person.',
+    seoTitle: 'Jaipur Jodhpur Udaipur Tour: 8 Days',
+    metaDescription: '8-day private Rajasthan tour package: Jaipur, Pushkar, Jodhpur, Ranakpur Jain temple and Udaipur with a dedicated chauffeur-driven AC car. Free quote.',
     title: 'Jaipur • Jodhpur • Udaipur Tour',
     subtitle: 'The Royal Trinity: Pink Palaces, Blue Fortresses, and Romantic Lakes',
     category: 'Rajasthan',
@@ -416,8 +418,8 @@ export const ALL_TOURS: TourPackage[] = [
   {
     id: 'tour-9',
     slug: 'rajasthan-heritage-tour',
-    seoTitle: 'Rajasthan Heritage Tour 12 Days by Car',
-    metaDescription: '12-day private Rajasthan road trip from Delhi: Mandawa, Bikaner, Jaisalmer, Jodhpur, Udaipur, Pushkar and Jaipur. From ₹46,000 per person.',
+    seoTitle: 'Rajasthan Tour Package: 12 Days by Car',
+    metaDescription: '12-day private Rajasthan tour package from Delhi: Mandawa, Bikaner, Jaisalmer, Jodhpur, Udaipur, Pushkar and Jaipur with your own chauffeur. Free quote.',
     title: 'Rajasthan Heritage Tour',
     subtitle: 'Comprehensive grand circuit of Rajputana castles, havelis, and desert sand dunes',
     category: 'Rajasthan',
@@ -466,7 +468,7 @@ export const ALL_TOURS: TourPackage[] = [
     id: 'tour-10',
     slug: 'shimla-manali-tour',
     seoTitle: 'Shimla Manali Tour 6 Days from Delhi',
-    metaDescription: '6-day private Shimla and Manali tour from Delhi with Kufri, Kullu and Solang Valley by chauffeur-driven car. From ₹19,500 per person.',
+    metaDescription: '6-day private Shimla and Manali tour package from Delhi with Kufri, Kullu and Solang Valley by chauffeur-driven car. Get a free quote on WhatsApp.',
     title: 'Shimla • Manali Tour',
     subtitle: 'Himalayan views, apple orchards, and snow-capped pine valleys',
     category: 'Himachal',
@@ -508,7 +510,7 @@ export const ALL_TOURS: TourPackage[] = [
     id: 'tour-11',
     slug: 'shimla-manali-kasol-tour',
     seoTitle: 'Shimla Manali Kasol 7-Day Tour',
-    metaDescription: '7-day private Himachal tour from Delhi covering Shimla, Manali, Solang Valley and Kasol by chauffeur-driven car. From ₹23,500 per person.',
+    metaDescription: '7-day private Himachal tour package from Delhi covering Shimla, Manali, Solang Valley and Kasol by chauffeur-driven car. Get a free quote on WhatsApp.',
     title: 'Shimla • Manali • Kasol Tour',
     subtitle: 'The Ultimate Himachal Trail: Colonial retreats, snow valleys, and Parvati hippie vibes',
     category: 'Himachal',
@@ -551,7 +553,7 @@ export const ALL_TOURS: TourPackage[] = [
     id: 'tour-12',
     slug: 'manali-kasol-manikaran-tour',
     seoTitle: 'Manali Kasol Manikaran 5-Day Tour',
-    metaDescription: '5-day private tour from Delhi to Manali, Solang Valley, Kasol and Manikaran Sahib by chauffeur-driven car. From ₹17,500 per person.',
+    metaDescription: '5-day private tour from Delhi to Manali, Solang Valley, Kasol and Manikaran Sahib by chauffeur-driven car. Get a free quote on WhatsApp.',
     title: 'Manali • Kasol • Manikaran Tour',
     subtitle: 'Nature, spirituality, hot springs, and serene alpine forests',
     category: 'Himachal',
@@ -592,7 +594,7 @@ export const ALL_TOURS: TourPackage[] = [
     id: 'tour-13',
     slug: 'rishikesh-haridwar-tour',
     seoTitle: 'Haridwar Rishikesh Tour 3 Days from Delhi',
-    metaDescription: '3-day private Haridwar and Rishikesh trip from Delhi with Ganga Aarti at Har Ki Pauri and Laxman Jhula. From ₹9,800 per person.',
+    metaDescription: '3-day private Haridwar and Rishikesh tour from Delhi with the Ganga Aarti at Har Ki Pauri, ashrams and Laxman Jhula. Get a free quote on WhatsApp.',
     title: 'Rishikesh • Haridwar Tour',
     subtitle: 'Sacred Ganga, divine evening Aarti, and the Yoga Capital of the World',
     category: 'Uttarakhand',
@@ -652,7 +654,7 @@ export const ALL_TOURS: TourPackage[] = [
     id: 'tour-14',
     slug: 'rishikesh-haridwar-mussoorie-tour',
     seoTitle: 'Haridwar Rishikesh Mussoorie 5-Day Tour',
-    metaDescription: '5-day private tour from Delhi to Haridwar, Rishikesh, Dehradun and Mussoorie by chauffeur-driven car. From ₹17,200 per person.',
+    metaDescription: '5-day private tour from Delhi to Haridwar, Rishikesh, Dehradun and Mussoorie by chauffeur-driven car. Get a free quote on WhatsApp.',
     title: 'Rishikesh • Haridwar • Mussoorie Tour',
     subtitle: 'Divinity meets the Queen of Hills: Sacred Ganga and misty Himalayan ridges',
     category: 'Uttarakhand',
@@ -693,7 +695,7 @@ export const ALL_TOURS: TourPackage[] = [
     id: 'tour-15',
     slug: 'rishikesh-mussoorie-tour',
     seoTitle: 'Rishikesh Mussoorie 4-Day Tour from Delhi',
-    metaDescription: '4-day private tour from Delhi to Rishikesh’s ghats and ashrams and Mussoorie’s hill views by chauffeur-driven car. From ₹13,900 per person.',
+    metaDescription: '4-day private tour from Delhi to Rishikesh’s ghats and ashrams and Mussoorie’s hill views by chauffeur-driven car. Get a free quote on WhatsApp.',
     title: 'Rishikesh • Mussoorie Tour',
     subtitle: 'The Perfect Weekend Escapade: Himalayan foothills, waterfalls, and yoga serenity',
     category: 'Uttarakhand',
@@ -732,7 +734,7 @@ export const ALL_TOURS: TourPackage[] = [
     id: 'tour-16',
     slug: 'gwalior-orchha-khajuraho-tour',
     seoTitle: 'Gwalior Orchha Khajuraho 5-Day Tour',
-    metaDescription: '5-day private heritage tour of Gwalior Fort, Orchha’s cenotaphs and the UNESCO Khajuraho temples by chauffeur-driven car. From ₹21,500 per person.',
+    metaDescription: '5-day private heritage tour of Gwalior Fort, Orchha’s cenotaphs and the UNESCO Khajuraho temples by chauffeur-driven car. Get a free quote.',
     title: 'Gwalior • Orchha • Khajuraho Tour',
     subtitle: 'Central India’s UNESCO Temple Art, Fortresses, and Medieval Palaces',
     category: 'Rajasthan', // Central heritage
@@ -768,8 +770,100 @@ export const ALL_TOURS: TourPackage[] = [
     ],
     featured: false,
     bestSeason: 'October to March'
+  },
+  {
+    id: 'tour-17',
+    slug: 'golden-triangle-tour-5-days',
+    seoTitle: 'Golden Triangle Tour 4 Nights 5 Days India',
+    metaDescription: 'Private Golden Triangle tour, 4 nights 5 days: Delhi, Taj Mahal at sunrise, Fatehpur Sikri and Jaipur with your own English-speaking chauffeur. Free quote.',
+    title: 'Golden Triangle Tour 4 Nights / 5 Days — Delhi • Agra • Jaipur',
+    subtitle: 'India’s classic first-timer circuit in five unhurried days, with airport pickup and drop',
+    category: 'Golden Triangle',
+    durationDays: 5,
+    durationNights: 4,
+    durationLabel: '5 Days / 4 Nights',
+    // Prices are not displayed anywhere on the site; every trip is quoted individually.
+    startingPriceINR: 0,
+    startingPriceUSD: 0,
+    rating: 0,
+    reviewsCount: 0,
+    primaryImage: 'https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=1200&q=80', // Taj Mahal
+    galleryImages: [
+      'https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1599661046289-e31897846e41?auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1587474260584-136574528ed5?auto=format&fit=crop&w=800&q=80',
+    ],
+    route: 'Delhi ➔ Agra ➔ Fatehpur Sikri ➔ Jaipur ➔ Delhi',
+    overview: 'The Golden Triangle in five days: New and Old Delhi, the Taj Mahal at sunrise, Agra Fort, the abandoned Mughal capital of Fatehpur Sikri, and the forts and palaces of Jaipur. Your private chauffeur meets you at Delhi Airport and drops you back there for your flight, so you never deal with trains, taxis or touts. Licensed local guides can be added on request.',
+    highlights: [
+      'Sunrise visit to the Taj Mahal (closed on Fridays, so we plan around it)',
+      'Airport pickup on arrival and airport drop on departure',
+      'Private AC sedan or SUV with the same English-speaking chauffeur all five days',
+      'Old Delhi cycle-rickshaw ride through Chandni Chowk',
+      'UNESCO sites: Qutub Minar, Humayun’s Tomb, Agra Fort, Fatehpur Sikri and Amber Fort'
+    ],
+    inclusions: [
+      'Private air-conditioned vehicle (Dzire/Innova) with English-speaking chauffeur',
+      'Delhi Airport pickup on Day 1 and Delhi Airport drop on Day 5',
+      'All fuel costs, highway tolls, state border permits, and parking charges',
+      'Driver lodging, meals, and daily allowances',
+      'Bottled mineral water in the cab',
+      'Dedicated 24/7 concierge and itinerary coordination'
+    ],
+    exclusions: [
+      'Monument entrance tickets & camera fees (available as add-on)',
+      'Hotel accommodation (we can book Standard, Deluxe or Luxury hotels at extra cost)',
+      'Personal expenses, laundry, and guide tips',
+      'International and domestic flights'
+    ],
+    itinerary: [
+      {
+        day: 1,
+        title: 'Arrival in Delhi & New Delhi Sightseeing',
+        location: 'Delhi',
+        description: 'Your chauffeur meets you at Delhi Airport (IGI) with a name board. After check-in and rest, see New Delhi: India Gate, Rashtrapati Bhavan, Humayun’s Tomb and Qutub Minar.',
+        highlights: ['Airport pickup', 'India Gate', 'Humayun’s Tomb', 'Qutub Minar'],
+        stayCity: 'Delhi'
+      },
+      {
+        day: 2,
+        title: 'Old Delhi & Drive to Agra',
+        location: 'Delhi to Agra',
+        description: 'Morning in Old Delhi: Jama Masjid, a Red Fort photo stop and a cycle-rickshaw ride through Chandni Chowk. After lunch, drive to Agra on the Yamuna Expressway. Evening free, or a sunset view of the Taj from Mehtab Bagh.',
+        highlights: ['Jama Masjid', 'Chandni Chowk rickshaw ride', 'Mehtab Bagh sunset'],
+        stayCity: 'Agra'
+      },
+      {
+        day: 3,
+        title: 'Sunrise Taj Mahal, Agra Fort, Fatehpur Sikri & Jaipur',
+        location: 'Agra to Jaipur',
+        description: 'See the Taj Mahal at sunrise, then Agra Fort. Drive towards Jaipur with a stop at Fatehpur Sikri, the 16th-century Mughal capital. The Taj Mahal is closed on Fridays, so if Day 3 falls on a Friday we swap the order of Agra and Jaipur.',
+        highlights: ['Sunrise Taj Mahal', 'Agra Fort', 'Fatehpur Sikri'],
+        stayCity: 'Jaipur'
+      },
+      {
+        day: 4,
+        title: 'Jaipur: Amber Fort, City Palace & Hawa Mahal',
+        location: 'Jaipur',
+        description: 'Morning at Amber Fort above Maota Lake, with a photo stop at Jal Mahal on the way. Afternoon at City Palace, the Jantar Mantar observatory and the Hawa Mahal facade, with time for the bazaars.',
+        highlights: ['Amber Fort', 'City Palace', 'Hawa Mahal', 'Jantar Mantar'],
+        stayCity: 'Jaipur'
+      },
+      {
+        day: 5,
+        title: 'Jaipur to Delhi Airport Drop',
+        location: 'Jaipur to Delhi',
+        description: 'After breakfast, drive back to Delhi on the Delhi-Mumbai Expressway (about 4 hours). Drop at Delhi Airport (IGI) for your onward flight, or at your Delhi hotel.',
+        highlights: ['Expressway drive', 'Delhi Airport drop'],
+        stayCity: 'Departure'
+      }
+    ],
+    featured: true,
+    bestSeason: 'October to March'
   }
 ];
+
+export const ALL_TOURS: TourPackage[] = [...BASE_TOURS, ...GOLDEN_TRIANGLE_EXTRA_TOURS, ...MORE_TOURS_2027];
 
 /**
  * Approximate road distance and driving time for intercity itinerary legs, keyed by the
@@ -791,6 +885,8 @@ export const DRIVE_LEGS: Record<string, { km: number; time: string }> = {
   'Jodhpur to Jaisalmer': { km: 285, time: '5 hrs' },
   'Jaisalmer to Jodhpur': { km: 285, time: '5 hrs' },
   'Rishikesh to Delhi': { km: 240, time: '5 hrs' },
+  ...GOLDEN_TRIANGLE_EXTRA_DRIVE_LEGS,
+  ...MORE_TOURS_2027_DRIVE_LEGS,
 };
 
 /** Tours whose itinerary includes Agra (the Taj Mahal is closed on Fridays). */

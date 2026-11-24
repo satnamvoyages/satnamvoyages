@@ -45,7 +45,7 @@ html .font-playfair,html .font-accent{font-family:var(--font-playfair),Georgia,s
 
 const DEFAULT_TITLE = `${SITE_NAME} | Private India Tours & Outstation Cabs`;
 const DEFAULT_DESCRIPTION =
-  'Delhi-based private tours and chauffeur-driven outstation cabs: Golden Triangle, Rajasthan, Himachal and Uttarakhand, with English-speaking drivers.';
+  'Private India tour packages from Delhi for international travellers: Golden Triangle, Rajasthan, same day Taj Mahal tours and English-speaking drivers.';
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
@@ -54,9 +54,13 @@ export const metadata: Metadata = {
   },
   description: DEFAULT_DESCRIPTION,
   keywords: [
-    'Golden Triangle tour package',
+    'India tour packages',
+    'Golden Triangle tour India',
+    'Golden Triangle tour 5 days',
     'Delhi Agra Jaipur tour',
     'Rajasthan tour packages',
+    'same day Taj Mahal tour from Delhi',
+    'private car and driver India',
     'Uttarakhand tour packages',
     'Himachal tour packages',
     'outstation cabs Delhi',
@@ -110,7 +114,7 @@ const organizationJsonLd = {
         'Delhi-based travel agency offering private chauffeur-driven tours of the Golden Triangle, Rajasthan, Himachal Pradesh and Uttarakhand, plus outstation cab hire.',
       telephone: PHONE_TEL,
       email: CONTACT_EMAIL,
-      priceRange: 'INR 1100-46000',
+      priceRange: '$$',
       currenciesAccepted: 'INR, USD',
       address: {
         '@type': 'PostalAddress',
