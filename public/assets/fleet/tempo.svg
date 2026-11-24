@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-label="TEMPO TRAVELLER illustration">
+<defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2A2420"/><stop offset="1" stop-color="#141210"/></linearGradient></defs>
+<rect width="800" height="450" fill="url(#g)"/>
+<rect x="0" y="330" width="800" height="4" fill="#3A332D"/>
+<g fill="none" stroke="#EA580C" stroke-width="10" stroke-linejoin="round" stroke-linecap="round"><path d="M130 300 L130 150 L560 150 L620 200 L670 220 L670 300 Z"/><path d="M170 175 h70 v45 h-70 z M270 175 h70 v45 h-70 z M370 175 h70 v45 h-70 z M470 175 h60 v45 h-60 z"/><circle cx="235" cy="305" r="32" fill="#141210"/><circle cx="570" cy="305" r="32" fill="#141210"/></g>
+<text x="400" y="400" text-anchor="middle" font-family="Montserrat,Arial,sans-serif" font-size="26" font-weight="700" letter-spacing="4" fill="#E7E5E4">TEMPO TRAVELLER</text>
+</svg>

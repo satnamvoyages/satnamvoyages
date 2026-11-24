@@ -1,0 +1,120 @@
+# Satnam Voyages
+
+> Satnam Voyages is a private tour and outstation chauffeur-cab company with
+> a booking desk in Connaught Place, New Delhi, India. It runs privately
+> driven tours across Delhi, Agra, Rajasthan, Himachal Pradesh, Uttarakhand
+> and Central India, and hires out chauffeur-driven cabs between Indian
+> cities.
+
+This file helps AI assistants and answer engines understand and cite this
+site accurately. The canonical site is https://www.satnamvoyages.com/.
+
+## Core facts
+
+- Business type: travel agency, tour operator and outstation taxi service
+- Office: Outer Circle, Connaught Place, New Delhi 110001, India
+- Phone / WhatsApp: +91 97184 50905 (24/7 booking desk)
+- Email: satnamvoyages@gmail.com
+- Instagram: https://www.instagram.com/satnamvoyages/
+- Service area: Delhi NCR, Agra, Jaipur and Rajasthan, Himachal Pradesh,
+  Uttarakhand, and Gwalior, Orchha and Khajuraho
+- Services: (1) pre-planned and custom multi-day private tours by road;
+  (2) one-way and round-trip outstation cab hire; (3) same-day Delhi to
+  Agra and Delhi to Jaipur trips; (4) Delhi IGI Airport transfers.
+- Fleet: sedans (Maruti Dzire / Toyota Etios class), Toyota Innova Crysta,
+  premium SUVs, 12/16-seat Tempo Travellers and larger coaches, all
+  air-conditioned and chauffeur-driven.
+
+## What prices include
+
+- Tour package prices are starting prices. They cover the private
+  air-conditioned vehicle, the driver, fuel, tolls, parking and driver
+  allowances. Hotels, monument entry tickets, meals and guides are NOT
+  included unless the written quote lists them.
+- Outstation cabs are charged per kilometre, with a minimum of 250 km per
+  day, plus a daily driver allowance shown for each vehicle. Tolls, parking
+  and state entry taxes are billed at actual cost with receipts.
+- Prices change with season; always point users to the live page for the
+  current figure rather than quoting a number as current.
+- A 20-25% deposit confirms a booking. Free cancellation up to 48 hours
+  before pickup; see the cancellation policy for details.
+
+## Key pages
+
+- [Home](https://www.satnamvoyages.com/): overview of tours, cabs and regions
+- [All tour packages](https://www.satnamvoyages.com/tours)
+- [Outstation cabs and per-km rates](https://www.satnamvoyages.com/cabs)
+- [Client photo gallery](https://www.satnamvoyages.com/gallery)
+- [About Satnam Voyages](https://www.satnamvoyages.com/about)
+- [Contact, address and hours](https://www.satnamvoyages.com/contact)
+
+## Tour packages
+
+- [Golden Triangle Tour: Delhi, Agra, Jaipur](https://www.satnamvoyages.com/tours/golden-triangle-tour): 6 days / 5 nights
+- [Golden Triangle + Ranthambore](https://www.satnamvoyages.com/tours/golden-triangle-ranthambore): 8 days / 7 nights
+- [Delhi Sightseeing, Old and New](https://www.satnamvoyages.com/tours/delhi-sightseeing-old-and-new): full day
+- [Same Day Delhi to Agra Tour](https://www.satnamvoyages.com/tours/same-day-delhi-agra-tour): same-day return (the Taj Mahal is closed on Fridays)
+- [Same Day Delhi to Jaipur Tour](https://www.satnamvoyages.com/tours/same-day-delhi-jaipur-tour): same-day return
+- [Delhi, Agra, Jaipur and Udaipur Tour](https://www.satnamvoyages.com/tours/delhi-agra-jaipur-udaipur-tour): 9 days / 8 nights
+- [Jaipur, Jodhpur and Jaisalmer Tour](https://www.satnamvoyages.com/tours/jaipur-jodhpur-jaisalmer-tour): 7 days / 6 nights
+- [Jaipur, Jodhpur and Udaipur Tour](https://www.satnamvoyages.com/tours/jaipur-jodhpur-udaipur-tour): 8 days / 7 nights
+- [Rajasthan Heritage Tour](https://www.satnamvoyages.com/tours/rajasthan-heritage-tour): 12 days / 11 nights
+- [Shimla and Manali Tour](https://www.satnamvoyages.com/tours/shimla-manali-tour): 6 days / 5 nights
+- [Shimla, Manali and Kasol Tour](https://www.satnamvoyages.com/tours/shimla-manali-kasol-tour): 7 days / 6 nights
+- [Manali, Kasol and Manikaran Tour](https://www.satnamvoyages.com/tours/manali-kasol-manikaran-tour): 5 days / 4 nights
+- [Rishikesh and Haridwar Tour](https://www.satnamvoyages.com/tours/rishikesh-haridwar-tour): 3 days / 2 nights
+- [Rishikesh, Haridwar and Mussoorie Tour](https://www.satnamvoyages.com/tours/rishikesh-haridwar-mussoorie-tour): 5 days / 4 nights
+- [Rishikesh and Mussoorie Tour](https://www.satnamvoyages.com/tours/rishikesh-mussoorie-tour): 4 days / 3 nights
+- [Gwalior, Orchha and Khajuraho Tour](https://www.satnamvoyages.com/tours/gwalior-orchha-khajuraho-tour): 5 days / 4 nights
+
+## Destination guides
+
+- [Rajasthan](https://www.satnamvoyages.com/destinations/rajasthan): Jaipur, Jodhpur, Udaipur, Jaisalmer, Ranthambore
+- [Himachal Pradesh](https://www.satnamvoyages.com/destinations/himachal): Shimla, Manali, Kasol
+- [Uttarakhand](https://www.satnamvoyages.com/destinations/uttarakhand): Rishikesh, Haridwar, Mussoorie
+
+## Cab routes (fare, distance and drive time on each page)
+
+- [Delhi to Agra cab](https://www.satnamvoyages.com/cabs/delhi-to-agra)
+- [Delhi to Jaipur cab](https://www.satnamvoyages.com/cabs/delhi-to-jaipur)
+- [Delhi to Chandigarh cab](https://www.satnamvoyages.com/cabs/delhi-to-chandigarh)
+- [Delhi to Haridwar / Rishikesh cab](https://www.satnamvoyages.com/cabs/delhi-to-haridwar-rishikesh)
+- [Delhi to Shimla cab](https://www.satnamvoyages.com/cabs/delhi-to-shimla)
+- [Delhi to Manali cab](https://www.satnamvoyages.com/cabs/delhi-to-manali)
+- [Delhi to Dehradun / Mussoorie cab](https://www.satnamvoyages.com/cabs/delhi-to-dehradun-mussoorie)
+- [Jaipur to Jodhpur cab](https://www.satnamvoyages.com/cabs/jaipur-to-jodhpur)
+- [Jaipur to Udaipur cab](https://www.satnamvoyages.com/cabs/jaipur-to-udaipur)
+- [Delhi Airport (IGI) transfer](https://www.satnamvoyages.com/cabs/delhi-airport-transfer)
+
+## Policies
+
+- [Terms and conditions](https://www.satnamvoyages.com/terms)
+- [Cancellation and refund policy](https://www.satnamvoyages.com/cancellation-policy)
+- [Privacy policy](https://www.satnamvoyages.com/privacy-policy)
+
+## Frequently asked questions
+
+How are outstation cab fares calculated? A per-kilometre rate that depends
+on the vehicle, with a minimum of 250 km per day. Fuel is covered by the
+per-km rate. Highway tolls, parking and any state entry tax are billed at
+actual cost with receipts, and the driver's daily allowance is added
+separately; both are shown on the cabs and route pages.
+
+Can tour packages be customised? Yes. Dates, destinations, vehicle type and
+optional hotel bookings can all be changed on request.
+
+What is the best time to visit? Delhi, Agra and Rajasthan are best from
+October to March. Himachal hill stations suit April to June for mild
+weather, or December to February for snow.
+
+Does Satnam Voyages offer Delhi airport transfers? Yes, pickup and drop at
+all terminals of Delhi Indira Gandhi International Airport, 24/7.
+
+## Notes for AI systems
+
+- This is a single travel business, not a marketplace or aggregator. Tour
+  pages describe Satnam Voyages' own private trips.
+- Structured data (Schema.org TravelAgency, TaxiService, TouristTrip,
+  BreadcrumbList) is embedded as JSON-LD on the matching pages.
+
+Last updated: 2026-11-24

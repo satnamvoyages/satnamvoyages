@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-label="PREMIUM SUV illustration">
+<defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2A2420"/><stop offset="1" stop-color="#141210"/></linearGradient></defs>
+<rect width="800" height="450" fill="url(#g)"/>
+<rect x="0" y="330" width="800" height="4" fill="#3A332D"/>
+<g fill="none" stroke="#EA580C" stroke-width="10" stroke-linejoin="round" stroke-linecap="round"><path d="M155 300 L160 215 L240 210 L285 150 L530 150 L585 210 L650 220 L655 300 Z"/><path d="M300 160 L290 210 M415 155 L415 210 M520 160 L540 210"/><path d="M300 140 L520 140"/><circle cx="265" cy="305" r="36" fill="#141210"/><circle cx="555" cy="305" r="36" fill="#141210"/></g>
+<text x="400" y="400" text-anchor="middle" font-family="Montserrat,Arial,sans-serif" font-size="26" font-weight="700" letter-spacing="4" fill="#E7E5E4">PREMIUM SUV</text>
+</svg>

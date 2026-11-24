@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-label="SEDAN illustration">
+<defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2A2420"/><stop offset="1" stop-color="#141210"/></linearGradient></defs>
+<rect width="800" height="450" fill="url(#g)"/>
+<rect x="0" y="330" width="800" height="4" fill="#3A332D"/>
+<g fill="none" stroke="#EA580C" stroke-width="10" stroke-linejoin="round" stroke-linecap="round"><path d="M170 300 L190 250 L280 245 L340 195 L480 195 L560 245 L640 255 L650 300 Z"/><path d="M355 205 L340 245 M465 205 L480 245 M410 200 L410 245"/><circle cx="270" cy="305" r="30" fill="#141210"/><circle cx="550" cy="305" r="30" fill="#141210"/></g>
+<text x="400" y="400" text-anchor="middle" font-family="Montserrat,Arial,sans-serif" font-size="26" font-weight="700" letter-spacing="4" fill="#E7E5E4">SEDAN</text>
+</svg>
