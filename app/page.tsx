@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { HomeClient } from '@/components/HomeClient';
 import { GLOBAL_FAQS } from '@/lib/data/faqsData';
-import { SITE_URL } from '@/lib/constants';
+import { SITE_URL, OG_IMAGE } from '@/lib/constants';
 
 // The layout's title template doesn't apply to the root page, so include the brand explicitly.
 const HOME_TITLE = 'Satnam Voyages | Private Tours & Outstation Cabs from Delhi';
@@ -16,6 +16,7 @@ export const metadata: Metadata = {
     title: HOME_TITLE,
     description: HOME_DESCRIPTION,
     url: SITE_URL,
+    images: [OG_IMAGE],
   },
 };
 

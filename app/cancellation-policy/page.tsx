@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { InfoPage, JsonLd, breadcrumbJsonLd } from '../_components/InfoPage';
-import { SITE_URL, CONTACT_EMAIL, PHONE_DISPLAY } from '@/lib/constants';
+import { SITE_URL, CONTACT_EMAIL, PHONE_DISPLAY, OG_IMAGE } from '@/lib/constants';
 
 const TITLE = 'Cancellation & Refund Policy';
 const DESCRIPTION =
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   title: TITLE,
   description: DESCRIPTION,
   alternates: { canonical: '/cancellation-policy' },
-  openGraph: { title: TITLE, description: DESCRIPTION, url: `${SITE_URL}/cancellation-policy` },
+  openGraph: { title: TITLE, description: DESCRIPTION, url: `${SITE_URL}/cancellation-policy`, images: [OG_IMAGE] },
 };
 
 export default function CancellationPolicyPage() {

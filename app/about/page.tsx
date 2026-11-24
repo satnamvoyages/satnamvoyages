@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { InfoPage, JsonLd, breadcrumbJsonLd } from '../_components/InfoPage';
-import { SITE_URL, SITE_NAME, ADDRESS } from '@/lib/constants';
+import { SITE_URL, SITE_NAME, ADDRESS, OG_IMAGE } from '@/lib/constants';
 
 const TITLE = 'About Us: Private Tours & Chauffeur Cabs from Delhi';
 const DESCRIPTION =
@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   title: TITLE,
   description: DESCRIPTION,
   alternates: { canonical: '/about' },
-  openGraph: { title: TITLE, description: DESCRIPTION, url: `${SITE_URL}/about` },
+  openGraph: { title: TITLE, description: DESCRIPTION, url: `${SITE_URL}/about`, images: [OG_IMAGE] },
 };
 
 export default function AboutPage() {

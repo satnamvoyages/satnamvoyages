@@ -14,6 +14,7 @@ import {
   GEO,
   MAP_URL,
   SOCIAL_PROFILES,
+  OG_IMAGE,
 } from '@/lib/constants';
 import { Montserrat, Playfair_Display } from 'next/font/google';
 
@@ -45,13 +46,6 @@ html .font-playfair,html .font-accent{font-family:var(--font-playfair),Georgia,s
 const DEFAULT_TITLE = `${SITE_NAME} | Private India Tours & Outstation Cabs`;
 const DEFAULT_DESCRIPTION =
   'Delhi-based private tours and chauffeur-driven outstation cabs: Golden Triangle, Rajasthan, Himachal and Uttarakhand, with English-speaking drivers.';
-const OG_IMAGE = {
-  url: '/og-image.jpg',
-  width: 1200,
-  height: 630,
-  alt: 'Satnam Voyages chauffeur with travellers beside a Tempo Traveller',
-};
-
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {

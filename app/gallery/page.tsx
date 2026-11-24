@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { GalleryClient } from '@/components/GalleryClient';
-import { SITE_URL, SITE_NAME } from '@/lib/constants';
+import { SITE_URL, SITE_NAME, OG_IMAGE } from '@/lib/constants';
 
 const GALLERY_TITLE = 'Client Photo Gallery: Real Trips Across India';
 const GALLERY_DESCRIPTION =
@@ -14,6 +14,7 @@ export const metadata: Metadata = {
     title: GALLERY_TITLE,
     description: GALLERY_DESCRIPTION,
     url: `${SITE_URL}/gallery`,
+    images: [OG_IMAGE],
   },
 };
 

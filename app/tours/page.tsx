@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { ToursDirectoryClient } from '@/components/ToursDirectoryClient';
 import { ALL_TOURS } from '@/lib/data/toursData';
-import { SITE_URL } from '@/lib/constants';
+import { SITE_URL, OG_IMAGE } from '@/lib/constants';
 
 const TITLE = 'Private India Tour Packages from Delhi';
 const DESCRIPTION = `Compare ${ALL_TOURS.length} private chauffeur-driven tours from Delhi: Golden Triangle, Rajasthan, Himachal, Uttarakhand and same-day trips, with prices.`;
@@ -14,6 +14,7 @@ export const metadata: Metadata = {
     title: TITLE,
     description: DESCRIPTION,
     url: `${SITE_URL}/tours`,
+    images: [OG_IMAGE],
   },
 };
 

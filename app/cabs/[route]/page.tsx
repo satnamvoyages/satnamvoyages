@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { CAB_FLEET, POPULAR_CAB_ROUTES, getCabRoute, type PopularRoute } from '@/lib/data/cabsData';
 import { ALL_TOURS } from '@/lib/data/toursData';
-import { SITE_URL, SITE_NAME, PHONE_TEL, PHONE_DISPLAY, PHONE_WHATSAPP } from '@/lib/constants';
+import { SITE_URL, SITE_NAME, PHONE_TEL, PHONE_DISPLAY, PHONE_WHATSAPP, OG_IMAGE } from '@/lib/constants';
 
 interface PageProps {
   params: Promise<{ route: string }>;
@@ -45,7 +45,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     title,
     description,
     alternates: { canonical: `${SITE_URL}/cabs/${r.slug}` },
-    openGraph: { title, description, url: `${SITE_URL}/cabs/${r.slug}` },
+    openGraph: { title, description, url: `${SITE_URL}/cabs/${r.slug}`, images: [OG_IMAGE] },
   };
 }
 

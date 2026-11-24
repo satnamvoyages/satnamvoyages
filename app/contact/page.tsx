@@ -10,6 +10,7 @@ import {
   ADDRESS,
   MAP_URL,
   INSTAGRAM_URL,
+  OG_IMAGE,
 } from '@/lib/constants';
 
 const TITLE = 'Contact Us: Delhi Office, Phone & WhatsApp';
@@ -20,7 +21,7 @@ export const metadata: Metadata = {
   title: TITLE,
   description: DESCRIPTION,
   alternates: { canonical: '/contact' },
-  openGraph: { title: TITLE, description: DESCRIPTION, url: `${SITE_URL}/contact` },
+  openGraph: { title: TITLE, description: DESCRIPTION, url: `${SITE_URL}/contact`, images: [OG_IMAGE] },
 };
 
 const fullAddress = `${ADDRESS.street}, ${ADDRESS.locality}, ${ADDRESS.region} ${ADDRESS.postalCode}, India`;

@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { InfoPage, JsonLd, breadcrumbJsonLd } from '../_components/InfoPage';
-import { SITE_URL, SITE_NAME, CONTACT_EMAIL } from '@/lib/constants';
+import { SITE_URL, SITE_NAME, CONTACT_EMAIL, OG_IMAGE } from '@/lib/constants';
 
 const TITLE = 'Terms & Conditions';
 const DESCRIPTION =
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   title: TITLE,
   description: DESCRIPTION,
   alternates: { canonical: '/terms' },
-  openGraph: { title: TITLE, description: DESCRIPTION, url: `${SITE_URL}/terms` },
+  openGraph: { title: TITLE, description: DESCRIPTION, url: `${SITE_URL}/terms`, images: [OG_IMAGE] },
 };
 
 export default function TermsPage() {

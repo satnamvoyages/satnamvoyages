@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { CabsClient } from '@/components/CabsClient';
 import { CAB_FLEET } from '@/lib/data/cabsData';
-import { SITE_URL, SITE_NAME } from '@/lib/constants';
+import { SITE_URL, SITE_NAME, OG_IMAGE } from '@/lib/constants';
 
 // Layout template appends " | Satnam Voyages" (total ≤ 60 chars).
 const TITLE = 'Outstation Cabs from Delhi — Per-km Fares';
@@ -16,6 +16,7 @@ export const metadata: Metadata = {
     title: TITLE,
     description: DESCRIPTION,
     url: `${SITE_URL}/cabs`,
+    images: [OG_IMAGE],
   },
 };
 

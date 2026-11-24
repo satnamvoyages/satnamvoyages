@@ -27,3 +27,12 @@ export const MAP_URL =
 export const SOCIAL_PROFILES: string[] = ['https://www.instagram.com/satnamvoyages/'];
 
 export const INSTAGRAM_URL = 'https://www.instagram.com/satnamvoyages/';
+
+// Default social share image. Pages that define their own `openGraph` must include it,
+// because Next.js replaces (not merges) the layout's openGraph object.
+export const OG_IMAGE = {
+  url: '/og-image.jpg',
+  width: 1200,
+  height: 630,
+  alt: 'Satnam Voyages chauffeur with travellers beside a Tempo Traveller',
+};

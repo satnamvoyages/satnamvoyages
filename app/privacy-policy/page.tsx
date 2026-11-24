@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { InfoPage, JsonLd, breadcrumbJsonLd } from '../_components/InfoPage';
-import { SITE_URL, SITE_NAME, CONTACT_EMAIL, PHONE_DISPLAY } from '@/lib/constants';
+import { SITE_URL, SITE_NAME, CONTACT_EMAIL, PHONE_DISPLAY, OG_IMAGE } from '@/lib/constants';
 
 const TITLE = 'Privacy Policy';
 const DESCRIPTION =
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   title: TITLE,
   description: DESCRIPTION,
   alternates: { canonical: '/privacy-policy' },
-  openGraph: { title: TITLE, description: DESCRIPTION, url: `${SITE_URL}/privacy-policy` },
+  openGraph: { title: TITLE, description: DESCRIPTION, url: `${SITE_URL}/privacy-policy`, images: [OG_IMAGE] },
 };
 
 export default function PrivacyPolicyPage() {
