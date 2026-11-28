@@ -5,6 +5,7 @@ import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
 import { MobileBottomNav } from '@/components/MobileBottomNav';
 import { FloatingActions } from '@/components/FloatingActions';
+import { ContactClickTracker } from '@/components/ContactClickTracker';
 import {
   SITE_URL,
   SITE_NAME,
@@ -233,6 +234,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <Footer />
             <MobileBottomNav />
             <FloatingActions />
+            <ContactClickTracker />
           </div>
         </Providers>
       </body>

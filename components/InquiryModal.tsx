@@ -4,6 +4,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { X, Send, MessageCircle, Calendar, Users, Car, CheckCircle2, Mail, Loader2, AlertCircle } from 'lucide-react';
 import { ALL_TOURS } from '@/lib/data/toursData';
 import { PHONE_WHATSAPP } from '@/lib/constants';
+import { trackLead } from '@/lib/analytics';
 
 interface InquiryModalProps {
   isOpen: boolean;
@@ -90,6 +91,7 @@ export const InquiryModal: React.FC<InquiryModalProps> = ({
       const data = await response.json().catch(() => ({}));
       if (response.ok && data.emailSent) {
         setEmailStatus('sent');
+        trackLead('inquiry_modal');
       } else {
         setEmailStatus('local');
       }

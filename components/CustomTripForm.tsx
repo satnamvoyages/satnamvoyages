@@ -17,6 +17,7 @@ import {
   MessageSquare,
 } from 'lucide-react';
 import { PHONE_WHATSAPP } from '@/lib/constants';
+import { trackLead } from '@/lib/analytics';
 
 /**
  * "Build your trip" request form for the offer pages. The guest ticks the services they want
@@ -125,7 +126,7 @@ export const CustomTripForm: React.FC<{ packageTitle: string; source: string }> 
     const r = `SV-${new Date().getFullYear()}-${Math.floor(1000 + Math.random() * 9000)}`;
     setRef(r);
     try {
-      await fetch('/api/send-inquiry', {
+      const response = await fetch('/api/send-inquiry', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -145,6 +146,8 @@ export const CustomTripForm: React.FC<{ packageTitle: string; source: string }> 
           source,
         }),
       });
+      const data = await response.json().catch(() => ({}));
+      if (response.ok && data.emailSent) trackLead('custom_trip_form', packageTitle);
     } catch {
       // The guest still gets the WhatsApp fallback below.
     }

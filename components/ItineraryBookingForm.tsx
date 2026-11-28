@@ -18,6 +18,7 @@ import {
   Loader2,
   AlertCircle
 } from 'lucide-react';
+import { trackLead } from '@/lib/analytics';
 
 interface ItineraryBookingFormProps {
   tourTitle: string;
@@ -89,6 +90,7 @@ export const ItineraryBookingForm: React.FC<ItineraryBookingFormProps> = ({
       const data = await response.json();
       if (data.emailSent) {
         setEmailStatus('sent');
+        trackLead('itinerary_booking_form', tourTitle);
       } else {
         setEmailStatus('local');
       }
