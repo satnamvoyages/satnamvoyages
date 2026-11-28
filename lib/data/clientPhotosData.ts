@@ -109,8 +109,11 @@ export function tagsFromText(text: string): PhotoTag[] {
   return tags;
 }
 
+/** Path of guest photo n (public/client/client(n).jpeg). */
+export const guestPhoto = (n: number) => `/client/client(${n}).jpeg`;
+
 /** Real guest photo at Maota Lake below Amber Fort; the hero for Jaipur-named tours. */
-export const JAIPUR_GUEST_HERO = '/client/client(11).jpeg';
+export const JAIPUR_GUEST_HERO = guestPhoto(11);
 
 /** Descriptive alt for an image if it is one of our guest photos, otherwise the fallback. */
 export function clientPhotoAlt(src: string, fallback: string): string {

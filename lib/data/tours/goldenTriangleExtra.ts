@@ -1,3 +1,4 @@
+import { guestPhoto } from '../clientPhotosData';
 import type { TourPackage } from '../../types';
 
 // Golden Triangle variants added for 2027 (one tour per target search phrase).
@@ -297,7 +298,7 @@ export const GOLDEN_TRIANGLE_EXTRA_TOURS: TourPackage[] = [
     startingPriceUSD: 0,
     rating: 0,
     reviewsCount: 0,
-    primaryImage: big(IMG.tajDetail),
+    primaryImage: guestPhoto(7), // real guest photo: guests at a Sikh gurdwara
     galleryImages: [small(IMG.tajDetail), small(IMG.amber), small(IMG.humayun), small(IMG.agraFort)],
     route: 'Delhi ➔ Amritsar ➔ Delhi ➔ Agra ➔ Jaipur ➔ Delhi',
     overview: 'This tour pairs the Golden Triangle with Amritsar, home of the Golden Temple, the holiest shrine of the Sikh faith, and travels the whole way by road with the same private car and chauffeur. You drive north from Delhi on the NH44, see the temple lit up at night and again at dawn, eat at the free community kitchen, and watch the flag-lowering ceremony at the Wagah-Attari border with Pakistan. Back in Delhi, the same chauffeur takes you on to the Taj Mahal and Jaipur.',
@@ -577,7 +578,7 @@ export const GOLDEN_TRIANGLE_EXTRA_TOURS: TourPackage[] = [
     startingPriceUSD: 0,
     rating: 0,
     reviewsCount: 0,
-    primaryImage: big(IMG.amber),
+    primaryImage: guestPhoto(20), // real guest photo: group beside the Tempo Traveller
     galleryImages: [small(IMG.amber), small(IMG.taj), small(IMG.humayun), small(IMG.cityPalaceJaipur)],
     route: 'Delhi ➔ Agra ➔ Fatehpur Sikri ➔ Jaipur ➔ Delhi',
     overview: 'Travelling as an extended family, a group of friends, a wedding party or a church or school group? This Golden Triangle tour keeps everyone together in one air-conditioned Tempo Traveller with pushback seats and space for luggage, driven by an experienced English-speaking chauffeur. The pace allows for elderly travellers and children, with comfort stops on the expressways. For larger groups we can run two vehicles or arrange a coach on request.',

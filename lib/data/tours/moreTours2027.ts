@@ -1,4 +1,4 @@
-import { JAIPUR_GUEST_HERO } from '../clientPhotosData';
+import { JAIPUR_GUEST_HERO, guestPhoto } from '../clientPhotosData';
 import type { TourPackage } from '../../types';
 
 // 2027 keyword-led packages for international travellers.
@@ -118,7 +118,7 @@ export const MORE_TOURS_2027: TourPackage[] = [
     startingPriceUSD: 0,
     rating: 0,
     reviewsCount: 0,
-    primaryImage: big(IMG.tajDetail),
+    primaryImage: guestPhoto(19), // real guest photo: airport pickup
     galleryImages: [small(IMG.tajDetail), small(IMG.taj), small(IMG.agraFort)],
     route: 'Delhi IGI Airport ➔ Agra (Taj Mahal, Agra Fort) ➔ Agra hotel or back to Delhi / IGI Airport',
     overview:
@@ -275,7 +275,7 @@ export const MORE_TOURS_2027: TourPackage[] = [
     startingPriceUSD: 0,
     rating: 0,
     reviewsCount: 0,
-    primaryImage: big(IMG.jaisalmerFort),
+    primaryImage: guestPhoto(22), // real guest photo: Ranakpur Jain temple
     galleryImages: [small(IMG.jaisalmerFort), small(IMG.jaisalmer), small(IMG.mehrangarh), small(IMG.pichola)],
     route: 'Delhi ➔ Mandawa ➔ Bikaner ➔ Jaisalmer ➔ Jodhpur ➔ Ranakpur ➔ Udaipur',
     overview:
@@ -406,7 +406,7 @@ export const MORE_TOURS_2027: TourPackage[] = [
     startingPriceUSD: 0,
     rating: 0,
     reviewsCount: 0,
-    primaryImage: big(IMG.tajDetail),
+    primaryImage: guestPhoto(13), // real guest photo: guests met on arrival
     galleryImages: [small(IMG.tajDetail), small(IMG.indiaGate), small(IMG.amber), small(IMG.hawaMahal)],
     route: 'Delhi (2 nights) ➔ Agra (2 nights) ➔ Jaipur (2 nights) ➔ Delhi',
     overview:
@@ -513,7 +513,7 @@ export const MORE_TOURS_2027: TourPackage[] = [
     startingPriceUSD: 0,
     rating: 0,
     reviewsCount: 0,
-    primaryImage: big(IMG.pichola),
+    primaryImage: guestPhoto(22), // real guest photo: Ranakpur Jain temple
     galleryImages: [small(IMG.pichola), small(IMG.cityPalaceUdaipur), small(IMG.mehrangarh)],
     route: 'Udaipur Airport ➔ Udaipur ➔ Kumbhalgarh ➔ Ranakpur ➔ Udaipur',
     overview:

@@ -1,4 +1,4 @@
-import { JAIPUR_GUEST_HERO } from './clientPhotosData';
+import { JAIPUR_GUEST_HERO, guestPhoto } from './clientPhotosData';
 import type { TourPackage } from '../types';
 import { GOLDEN_TRIANGLE_EXTRA_TOURS, GOLDEN_TRIANGLE_EXTRA_DRIVE_LEGS } from './tours/goldenTriangleExtra';
 import { MORE_TOURS_2027, MORE_TOURS_2027_DRIVE_LEGS } from './tours/moreTours2027';
@@ -344,7 +344,7 @@ const BASE_TOURS: TourPackage[] = [
     startingPriceUSD: 330,
     rating: 4.93,
     reviewsCount: 195,
-    primaryImage: JAIPUR_GUEST_HERO, // real guest photo at Amber Fort, Jaipur
+    primaryImage: guestPhoto(31), // real guest photo: Rajasthan desert tea stop
     galleryImages: [
       'https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=800&q=80',
       'https://images.unsplash.com/photo-1599661046289-e31897846e41?auto=format&fit=crop&w=800&q=80',
@@ -387,7 +387,7 @@ const BASE_TOURS: TourPackage[] = [
     startingPriceUSD: 360,
     rating: 4.91,
     reviewsCount: 220,
-    primaryImage: JAIPUR_GUEST_HERO, // real guest photo at Amber Fort, Jaipur
+    primaryImage: guestPhoto(22), // real guest photo: Ranakpur Jain temple
     galleryImages: [
       'https://images.unsplash.com/photo-1599661046289-e31897846e41?auto=format&fit=crop&w=800&q=80',
       'https://images.unsplash.com/photo-1615836245337-f5b9b2303f10?auto=format&fit=crop&w=800&q=80',
@@ -431,7 +431,7 @@ const BASE_TOURS: TourPackage[] = [
     startingPriceUSD: 575,
     rating: 4.98,
     reviewsCount: 165,
-    primaryImage: 'https://images.unsplash.com/photo-1599661046289-e31897846e41?auto=format&fit=crop&w=1200&q=80',
+    primaryImage: guestPhoto(31), // real guest photo: Rajasthan desert tea stop
     galleryImages: [
       'https://images.unsplash.com/photo-1599661046289-e31897846e41?auto=format&fit=crop&w=800&q=80',
       'https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=800&q=80',
@@ -606,7 +606,7 @@ const BASE_TOURS: TourPackage[] = [
     startingPriceUSD: 120,
     rating: 4.96,
     reviewsCount: 460,
-    primaryImage: 'https://images.unsplash.com/photo-1511754863001-18d44abd0a93?auto=format&fit=crop&w=1200&q=80', // Rishikesh Ram Jhula
+    primaryImage: guestPhoto(26), // real guest photo: yoga session
     galleryImages: [
       'https://images.unsplash.com/photo-1511754863001-18d44abd0a93?auto=format&fit=crop&w=800&q=80',
       'https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=800&q=80',
