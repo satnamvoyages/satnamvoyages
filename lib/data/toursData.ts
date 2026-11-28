@@ -25,7 +25,7 @@ const BASE_TOURS: TourPackage[] = [
       'https://images.unsplash.com/photo-1587474260584-136574528ed5?auto=format&fit=crop&w=800&q=80',
     ],
     route: 'Delhi ➔ Agra ➔ Fatehpur Sikri ➔ Jaipur ➔ Delhi',
-    overview: 'A classic first trip through northern India. From the vibrant Mughal monuments of Delhi and the world-wonder Taj Mahal in Agra to the pink sandstone palaces and hilltop fortresses of Jaipur, travel with a dedicated private chauffeur. Licensed local guides can be added on request.',
+    overview: 'The slower version of the Golden Triangle. Compared with our 5-day tour, it adds a second full day in Jaipur and the Chand Baori stepwell at Abhaneri on the drive from Agra. That gives you Amber Fort and City Palace on one day, then Jal Mahal, a sunset at Nahargarh Fort and the Johari Bazaar textile and gem markets on the next, without rushing. Delhi and the sunrise Taj Mahal are covered as on the shorter tour, with the same private chauffeur throughout. Licensed local guides can be added on request.',
     highlights: [
       'Sunrise visit to the Taj Mahal (closed on Fridays)',
       'Chauffeur-driven private AC sedan or SUV across the Yamuna Expressway',

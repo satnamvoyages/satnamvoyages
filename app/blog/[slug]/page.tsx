@@ -2,10 +2,12 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { BLOG_POSTS, getBlogPost } from '@/lib/data/blogData';
+import { BLOG_POSTS, getBlogPost, getRelatedPosts } from '@/lib/data/blogData';
 import { ALL_TOURS } from '@/lib/data/toursData';
 import { SITE_URL, SITE_NAME, PHONE_WHATSAPP, OG_IMAGE } from '@/lib/constants';
 import { JsonLd } from '@/app/_components/InfoPage';
+import { GuestPhotos } from '@/app/_components/GuestPhotos';
+import { pickClientPhotos, tagsFromText } from '@/lib/data/clientPhotosData';
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -57,7 +59,8 @@ export default async function BlogPostPage({ params }: PageProps) {
   const relatedTours = post.relatedTourSlugs
     .map((s) => ALL_TOURS.find((t) => t.slug === s))
     .filter((t): t is (typeof ALL_TOURS)[number] => Boolean(t));
-  const otherPosts = BLOG_POSTS.filter((p) => p.slug !== post.slug).slice(0, 3);
+  const otherPosts = getRelatedPosts(post.slug, 4);
+  const guestPhotos = pickClientPhotos(tagsFromText(`${post.slug} ${post.title} ${post.keywords.join(' ')}`), post.slug);
   const waText = encodeURIComponent(`Hello ${SITE_NAME}, I read "${post.title}" and would like help planning my India trip.`);
 
   const jsonLd = {
@@ -151,6 +154,8 @@ export default async function BlogPostPage({ params }: PageProps) {
             </section>
           ))}
         </div>
+
+        <GuestPhotos photos={guestPhotos} />
 
         {/* CTA */}
         <div className="mt-12 rounded-2xl bg-[#141210] p-6 sm:p-8 text-white">

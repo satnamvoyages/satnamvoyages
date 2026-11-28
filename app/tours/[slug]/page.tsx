@@ -2,12 +2,20 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { TourDetailClient } from '@/components/TourDetailClient';
 import { ALL_TOURS } from '@/lib/data/toursData';
+import { getGuidesForTour } from '@/lib/data/blogData';
 import { SITE_URL, SITE_NAME } from '@/lib/constants';
 import type { TourPackage } from '@/lib/types';
 
 interface PageProps {
   params: Promise<{ slug: string }>;
 }
+
+/** Region hub page for each tour category, so tour pages link up to their hub. */
+const REGION_HUBS: Record<string, { href: string; label: string }> = {
+  Rajasthan: { href: '/destinations/rajasthan', label: 'Rajasthan tour packages' },
+  Himachal: { href: '/destinations/himachal', label: 'Himachal Pradesh tour packages' },
+  Uttarakhand: { href: '/destinations/uttarakhand', label: 'Uttarakhand tour packages' },
+};
 
 /** Must match the agency node's @id in app/layout.tsx. */
 const AGENCY_ID = `${SITE_URL}/#agency`;
@@ -56,6 +64,11 @@ export default async function TourDetailPage({ params }: PageProps) {
 
   const url = `${SITE_URL}/tours/${tour.slug}`;
 
+  // Server-side so the blog data stays out of the client bundle.
+  const sameCategory = ALL_TOURS.filter((t) => t.category === tour.category && t.slug !== tour.slug).map((t) => t.slug);
+  const guides = getGuidesForTour(tour.slug, sameCategory, 3).map((p) => ({ slug: p.slug, title: p.title, excerpt: p.excerpt }));
+  const region = REGION_HUBS[tour.category];
+
   const tourJsonLd = {
     '@context': 'https://schema.org',
     '@graph': [
@@ -93,7 +106,7 @@ export default async function TourDetailPage({ params }: PageProps) {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(tourJsonLd) }} />
-      <TourDetailClient tour={tour} />
+      <TourDetailClient tour={tour} guides={guides} region={region} />
     </>
   );
 }

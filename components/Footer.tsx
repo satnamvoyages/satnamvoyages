@@ -3,9 +3,9 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Phone, Mail, MapPin, MessageSquare, Instagram } from 'lucide-react';
+import { Phone, Mail, MapPin, MessageSquare, Instagram, Star } from 'lucide-react';
 import { useAppContext } from './Providers';
-import { PHONE_TEL, PHONE_DISPLAY, PHONE_WHATSAPP, CONTACT_EMAIL, ADDRESS, INSTAGRAM_URL } from '@/lib/constants';
+import { PHONE_TEL, PHONE_DISPLAY, PHONE_WHATSAPP, CONTACT_EMAIL, ADDRESS, INSTAGRAM_URL, TRIPADVISOR_URL } from '@/lib/constants';
 
 // Every tour is linked here so each one gets a site-wide internal link.
 const tourGroups = [
@@ -113,6 +113,15 @@ export const Footer: React.FC = () => {
               className="inline-flex items-center text-xs text-stone-300 hover:text-[#EA580C] transition-colors"
             >
               <Instagram className="w-4 h-4 mr-2" /> @satnamvoyages on Instagram
+            </a>
+
+            <a
+              href={TRIPADVISOR_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center text-xs text-stone-300 hover:text-[#EA580C] transition-colors"
+            >
+              <Star className="w-4 h-4 mr-2" /> Read our reviews on Tripadvisor
             </a>
 
             <ul className="pt-2 space-y-1.5 text-xs text-stone-400">

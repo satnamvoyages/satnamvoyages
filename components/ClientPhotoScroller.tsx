@@ -7,7 +7,7 @@ import { ChevronLeft, ChevronRight, X, Camera } from 'lucide-react';
 import { CLIENT_MOMENTS, ClientMoment } from '@/lib/data/clientPhotosData';
 
 const momentAlt = (moment: ClientMoment) =>
-  `Satnam Voyages travellers on a private tour, photo ${moment.id.replace('cm-', '')}`;
+  moment.alt;
 
 export const ClientPhotoScroller: React.FC = () => {
   const trackRef = useRef<HTMLDivElement | null>(null);

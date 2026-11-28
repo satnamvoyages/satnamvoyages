@@ -10,7 +10,7 @@ import { SITE_URL } from '@/lib/constants';
 // every URL with the build time on each deploy, which tells search engines
 // nothing. When you materially edit a page's content, bump this date (or give
 // that page its own date below).
-const CONTENT_UPDATED = new Date('2026-11-24');
+const CONTENT_UPDATED = new Date('2026-11-28');
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const page = (path: string): MetadataRoute.Sitemap[number] => ({

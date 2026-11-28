@@ -10,6 +10,7 @@ import {
   ADDRESS,
   MAP_URL,
   INSTAGRAM_URL,
+  TRIPADVISOR_URL,
   OG_IMAGE,
 } from '@/lib/constants';
 
@@ -93,6 +94,12 @@ export default function ContactPage() {
               <h3>Instagram</h3>
               <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer">
                 @satnamvoyages
+              </a>
+            </div>
+            <div>
+              <h3>Guest reviews</h3>
+              <a href={TRIPADVISOR_URL} target="_blank" rel="noopener noreferrer">
+                Read our reviews on Tripadvisor
               </a>
             </div>
           </section>

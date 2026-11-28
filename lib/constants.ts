@@ -23,8 +23,11 @@ export const MAP_URL =
   'https://www.google.com/maps/search/?api=1&query=Satnam+Voyages+Connaught+Place+New+Delhi';
 
 // Official off-site profiles. Add Google Business Profile, Facebook,
-// TripAdvisor, Justdial etc. here as they are created/claimed.
-export const SOCIAL_PROFILES: string[] = ['https://www.instagram.com/satnamvoyages/'];
+// Justdial etc. here as they are created/claimed.
+export const TRIPADVISOR_URL =
+  'https://www.tripadvisor.com/Attraction_Review-g304551-d34662373-Reviews-Satnam_Voyages-New_Delhi_National_Capital_Territory_of_Delhi.html';
+
+export const SOCIAL_PROFILES: string[] = ['https://www.instagram.com/satnamvoyages/', TRIPADVISOR_URL];
 
 export const INSTAGRAM_URL = 'https://www.instagram.com/satnamvoyages/';
 

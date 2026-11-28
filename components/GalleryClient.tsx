@@ -9,7 +9,7 @@ import { CLIENT_MOMENTS, ClientMoment } from '@/lib/data/clientPhotosData';
 import { GALLERY_ITEMS } from './GallerySection';
 
 const momentAlt = (moment: ClientMoment) =>
-  `Satnam Voyages travellers on a private tour, photo ${moment.id.replace('cm-', '')}`;
+  moment.alt;
 
 export const GalleryClient: React.FC = () => {
   const [activeTab, setActiveTab] = useState<'clients' | 'destinations'>(CLIENT_MOMENTS.length > 0 ? 'clients' : 'destinations');

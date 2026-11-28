@@ -21,7 +21,7 @@ import { GLOBAL_FAQS } from "@/lib/data/faqsData";
 import { GallerySection } from "./GallerySection";
 import { ClientPhotoScroller } from "./ClientPhotoScroller";
 import { useAppContext } from "./Providers";
-import { PHONE_WHATSAPP } from "@/lib/constants";
+import { PHONE_WHATSAPP, TRIPADVISOR_URL } from "@/lib/constants";
 
 const REGION_CARDS = [
   {
@@ -452,6 +452,15 @@ export const HomeClient: React.FC = () => {
             <span>See Our Travellers</span>
             <ArrowRight className="w-4 h-4 ml-2" />
           </Link>
+          <a
+            href={TRIPADVISOR_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-6 sm:ml-3 inline-flex items-center px-7 py-3.5 rounded-xl border border-stone-600 hover:border-amber-400 text-white font-bold text-xs uppercase tracking-wider transition-all"
+          >
+            <span>Read Our Tripadvisor Reviews</span>
+            <ArrowRight className="w-4 h-4 ml-2" />
+          </a>
         </div>
       </section>
 

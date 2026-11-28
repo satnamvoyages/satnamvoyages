@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { InfoPage, JsonLd, breadcrumbJsonLd } from '../_components/InfoPage';
+import { GuestPhotos } from '../_components/GuestPhotos';
+import { pickClientPhotos } from '@/lib/data/clientPhotosData';
 import { SITE_URL, SITE_NAME, ADDRESS, OG_IMAGE } from '@/lib/constants';
 
 const TITLE = 'About Us: Private India Tours from Delhi';
@@ -80,6 +82,11 @@ export default function AboutPage() {
             time, along with domestic travellers heading to the hills. You can see photos from real
             trips in our <Link href="/gallery">client gallery</Link>.
           </p>
+          <GuestPhotos
+            photos={pickClientPhotos(['jaipur', 'ranakpur', 'welcome'], 'about', 3, 1)}
+            heading="Some of our guests"
+            intro="Guests with their Satnam Voyages drivers in Jaipur, at Ranakpur and on arrival."
+          />
         </section>
 
         <section>

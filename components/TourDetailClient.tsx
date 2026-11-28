@@ -25,9 +25,9 @@ import {
 import type { TourPackage } from '@/lib/types';
 import { ItineraryBookingForm } from './ItineraryBookingForm';
 import { getPhotoForItineraryDay, getBentoGalleryPhotos } from '@/lib/data/itineraryImages';
-import { CLIENT_MOMENTS } from '@/lib/data/clientPhotosData';
+import { pickClientPhotos, tagsFromText } from '@/lib/data/clientPhotosData';
 import { DRIVE_LEGS, tourVisitsAgra, getRelatedTours } from '@/lib/data/toursData';
-import { PHONE_TEL, PHONE_DISPLAY, PHONE_WHATSAPP } from '@/lib/constants';
+import { PHONE_TEL, PHONE_DISPLAY, PHONE_WHATSAPP, TRIPADVISOR_URL } from '@/lib/constants';
 
 const VEHICLE_OPTIONS = [
   {
@@ -53,7 +53,15 @@ const VEHICLE_OPTIONS = [
   },
 ];
 
-export const TourDetailClient: React.FC<{ tour: TourPackage }> = ({ tour }) => {
+interface TourDetailProps {
+  tour: TourPackage;
+  /** Blog guides relevant to this tour, chosen on the server. */
+  guides?: { slug: string; title: string; excerpt: string }[];
+  /** Region hub page this tour belongs to, if any. */
+  region?: { href: string; label: string };
+}
+
+export const TourDetailClient: React.FC<TourDetailProps> = ({ tour, guides = [], region }) => {
   const [openDays, setOpenDays] = useState<Set<number>>(() => new Set([1]));
   const allDaysOpen = openDays.size === tour.itinerary.length;
   const [selectedTier, setSelectedTier] = useState<'Standard' | 'Deluxe' | 'Luxury'>('Deluxe');
@@ -74,7 +82,14 @@ export const TourDetailClient: React.FC<{ tour: TourPackage }> = ({ tour }) => {
     `Hello Satnam Voyages! I am interested in booking "${tour.title}" (${tour.durationLabel}) with a ${selectedVehicle} (hotel preference: ${selectedTier}). Please share availability and a quote.`
   )}`;
 
-  const relevantMoments = CLIENT_MOMENTS.slice(0, 3);
+  const relevantMoments = useMemo(
+    () =>
+      pickClientPhotos(
+        tagsFromText(`${tour.slug} ${tour.title} ${tour.route} ${tour.itinerary.map((d) => d.location).join(' ')}`),
+        tour.slug
+      ),
+    [tour]
+  );
 
   return (
     <div className="min-h-screen bg-[#FAF6F0] pb-28 font-montserrat">
@@ -527,7 +542,7 @@ export const TourDetailClient: React.FC<{ tour: TourPackage }> = ({ tour }) => {
                     <div key={m.id} className="relative h-48 rounded-2xl overflow-hidden bg-stone-200 border border-[#E8DFD3]">
                       <Image
                         src={m.image}
-                        alt={`Satnam Voyages guests on a private tour (photo ${m.id.replace('cm-', '')})`}
+                        alt={m.alt}
                         fill
                         sizes="(min-width: 640px) 33vw, 100vw"
                         className="object-cover"
@@ -535,6 +550,13 @@ export const TourDetailClient: React.FC<{ tour: TourPackage }> = ({ tour }) => {
                     </div>
                   ))}
                 </div>
+                <p className="text-sm text-stone-700">
+                  Read what past guests say about travelling with us in our{' '}
+                  <a href={TRIPADVISOR_URL} target="_blank" rel="noopener noreferrer" className="font-semibold text-[#C2410C] underline">
+                    Tripadvisor reviews
+                  </a>
+                  .
+                </p>
               </section>
             )}
 
@@ -562,6 +584,37 @@ export const TourDetailClient: React.FC<{ tour: TourPackage }> = ({ tour }) => {
                           <span className="block text-xs text-stone-500 mt-0.5">{t.durationLabel}</span>
                         </div>
                       </Link>
+                    </li>
+                  ))}
+                </ul>
+                {region && (
+                  <p className="text-sm text-stone-700">
+                    See every itinerary in this region on our{' '}
+                    <Link href={region.href} className="font-semibold text-[#C2410C] underline">
+                      {region.label}
+                    </Link>{' '}
+                    page.
+                  </p>
+                )}
+              </section>
+            )}
+
+            {/* TRAVEL GUIDES */}
+            {guides.length > 0 && (
+              <section className="bg-white rounded-3xl p-6 sm:p-8 border border-[#E8DFD3] shadow-sm space-y-6">
+                <div>
+                  <span className="text-xs font-bold uppercase tracking-wider text-[#EA580C] block font-headline mb-1">
+                    Before you go
+                  </span>
+                  <h2 className="font-headline text-2xl font-extrabold text-[#1C1917] uppercase">Travel Guides for This Trip</h2>
+                </div>
+                <ul className="space-y-4">
+                  {guides.map((g) => (
+                    <li key={g.slug}>
+                      <Link href={`/blog/${g.slug}`} className="text-sm sm:text-base font-bold text-[#C2410C] hover:underline">
+                        {g.title}
+                      </Link>
+                      <p className="mt-1 text-sm text-stone-600 leading-relaxed">{g.excerpt}</p>
                     </li>
                   ))}
                 </ul>

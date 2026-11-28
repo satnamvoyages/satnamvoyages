@@ -767,3 +767,37 @@ export const BLOG_POSTS: BlogPost[] = [...RAW_POSTS, ...POSTS_B, ...POSTS_C].map
 export function getBlogPost(slug: string): BlogPost | undefined {
   return BLOG_POSTS.find((p) => p.slug === slug);
 }
+
+/**
+ * Other posts to link from a post. Ranked by how many related tours they share,
+ * then filled in a rotating order that starts after the current post, so every
+ * post gets inbound links from several others instead of the first few posts
+ * getting all of them.
+ */
+export function getRelatedPosts(slug: string, limit = 4): BlogPost[] {
+  const idx = BLOG_POSTS.findIndex((p) => p.slug === slug);
+  if (idx === -1) return [];
+  const tours = new Set(BLOG_POSTS[idx].relatedTourSlugs);
+  const rotated = [...BLOG_POSTS.slice(idx + 1), ...BLOG_POSTS.slice(0, idx)];
+  const shared = (p: BlogPost) => p.relatedTourSlugs.filter((s) => tours.has(s)).length;
+  // Take the best topical matches for half the slots, then rotate for the rest.
+  const topical = rotated
+    .filter((p) => shared(p) > 0)
+    .sort((a, b) => shared(b) - shared(a))
+    .slice(0, Math.ceil(limit / 2));
+  const fill = rotated.filter((p) => !topical.includes(p));
+  return [...topical, ...fill].slice(0, limit);
+}
+
+/**
+ * Guides to link from a tour page: posts that list this tour first, then posts
+ * that list another tour in the same category.
+ */
+export function getGuidesForTour(tourSlug: string, sameCategoryTourSlugs: string[], limit = 3): BlogPost[] {
+  const direct = BLOG_POSTS.filter((p) => p.relatedTourSlugs.includes(tourSlug)).sort(
+    (a, b) => a.relatedTourSlugs.indexOf(tourSlug) - b.relatedTourSlugs.indexOf(tourSlug)
+  );
+  const category = new Set(sameCategoryTourSlugs);
+  const nearby = BLOG_POSTS.filter((p) => !direct.includes(p) && p.relatedTourSlugs.some((s) => category.has(s)));
+  return [...direct, ...nearby].slice(0, limit);
+}

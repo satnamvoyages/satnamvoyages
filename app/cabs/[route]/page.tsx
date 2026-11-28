@@ -3,6 +3,8 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { CAB_FLEET, POPULAR_CAB_ROUTES, getCabRoute, type PopularRoute } from '@/lib/data/cabsData';
 import { ALL_TOURS } from '@/lib/data/toursData';
+import { GuestPhotos } from '@/app/_components/GuestPhotos';
+import { pickClientPhotos, tagsFromText, type PhotoTag } from '@/lib/data/clientPhotosData';
 import { SITE_URL, SITE_NAME, PHONE_TEL, PHONE_DISPLAY, PHONE_WHATSAPP, OG_IMAGE } from '@/lib/constants';
 
 interface PageProps {
@@ -211,6 +213,17 @@ export default async function CabRoutePage({ params }: PageProps) {
             </p>
           )}
         </section>
+
+        <GuestPhotos
+          photos={pickClientPhotos(
+            [...tagsFromText(`${r.slug} ${r.to}`), (r.slug === 'delhi-airport-transfer' ? 'airport' : 'van') as PhotoTag],
+            r.slug,
+            3,
+            r.slug === 'delhi-airport-transfer' ? 3 : 1
+          )}
+          heading="Our drivers and guests"
+          intro="Real photos of Satnam Voyages drivers with the guests they drove."
+        />
 
         {/* FAQs — rendered in HTML, not click-to-reveal */}
         <section aria-labelledby="faq">
