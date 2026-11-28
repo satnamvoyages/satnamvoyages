@@ -108,3 +108,11 @@ export function tagsFromText(text: string): PhotoTag[] {
   if (/tempo traveller|group/.test(t)) tags.push('van');
   return tags;
 }
+
+/** Real guest photo at Maota Lake below Amber Fort; the hero for Jaipur-named tours. */
+export const JAIPUR_GUEST_HERO = '/client/client(11).jpeg';
+
+/** Descriptive alt for an image if it is one of our guest photos, otherwise the fallback. */
+export function clientPhotoAlt(src: string, fallback: string): string {
+  return CLIENT_MOMENTS.find((m) => m.image === src)?.alt ?? fallback;
+}

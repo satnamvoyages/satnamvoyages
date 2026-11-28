@@ -1,3 +1,4 @@
+import { JAIPUR_GUEST_HERO } from './clientPhotosData';
 import type { TourPackage } from '../types';
 import { GOLDEN_TRIANGLE_EXTRA_TOURS, GOLDEN_TRIANGLE_EXTRA_DRIVE_LEGS } from './tours/goldenTriangleExtra';
 import { MORE_TOURS_2027, MORE_TOURS_2027_DRIVE_LEGS } from './tours/moreTours2027';
@@ -254,7 +255,7 @@ const BASE_TOURS: TourPackage[] = [
     startingPriceUSD: 80,
     rating: 4.82,
     reviewsCount: 174,
-    primaryImage: 'https://images.unsplash.com/photo-1603262110263-fb0112e7cc33?auto=format&fit=crop&w=1200&q=80', // Hawa Mahal
+    primaryImage: JAIPUR_GUEST_HERO, // real guest photo at Amber Fort, Jaipur
     galleryImages: [
       'https://images.unsplash.com/photo-1603262110263-fb0112e7cc33?auto=format&fit=crop&w=800&q=80',
       'https://images.unsplash.com/photo-1603262110263-fb0112e7cc33?auto=format&fit=crop&w=800&q=80',
@@ -343,7 +344,7 @@ const BASE_TOURS: TourPackage[] = [
     startingPriceUSD: 330,
     rating: 4.93,
     reviewsCount: 195,
-    primaryImage: 'https://images.unsplash.com/photo-1686825780583-8be7c349a4b4?auto=format&fit=crop&w=1200&q=80', // Jaisalmer fort & desert
+    primaryImage: JAIPUR_GUEST_HERO, // real guest photo at Amber Fort, Jaipur
     galleryImages: [
       'https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=800&q=80',
       'https://images.unsplash.com/photo-1599661046289-e31897846e41?auto=format&fit=crop&w=800&q=80',
@@ -386,7 +387,7 @@ const BASE_TOURS: TourPackage[] = [
     startingPriceUSD: 360,
     rating: 4.91,
     reviewsCount: 220,
-    primaryImage: 'https://images.unsplash.com/photo-1599661046289-e31897846e41?auto=format&fit=crop&w=1200&q=80', // Jaipur Amber Fort
+    primaryImage: JAIPUR_GUEST_HERO, // real guest photo at Amber Fort, Jaipur
     galleryImages: [
       'https://images.unsplash.com/photo-1599661046289-e31897846e41?auto=format&fit=crop&w=800&q=80',
       'https://images.unsplash.com/photo-1615836245337-f5b9b2303f10?auto=format&fit=crop&w=800&q=80',

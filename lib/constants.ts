@@ -3,6 +3,11 @@
 export const SITE_URL = 'https://www.satnamvoyages.com';
 export const SITE_NAME = 'Satnam Voyages';
 
+/** Absolute URL for an image path, for schema and Open Graph (local photos are stored as /client/...). */
+export function absoluteUrl(src: string): string {
+  return src.startsWith('http') ? src : `${SITE_URL}${src}`;
+}
+
 /** Last real content update. Used by the sitemap and the visible "updated" lines; bump it when page content changes. */
 export const CONTENT_UPDATED = '2026-11-28';
 export const PHONE_DISPLAY = '+91 97184 50905';

@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { ToursDirectoryClient } from '@/components/ToursDirectoryClient';
 import Link from 'next/link';
 import { ALL_TOURS, DRIVE_LEGS } from '@/lib/data/toursData';
-import { SITE_URL, OG_IMAGE } from '@/lib/constants';
+import { SITE_URL, OG_IMAGE, absoluteUrl } from '@/lib/constants';
 
 const TITLE = 'Private India Tour Packages 2027 from Delhi';
 const DESCRIPTION = `${ALL_TOURS.length} private India tour packages from Delhi for international travellers: Golden Triangle, Rajasthan, same day Taj Mahal and Himalayan tours. Free quote.`;
@@ -72,7 +72,7 @@ export default function ToursPage() {
         name: tour.title,
         description: tour.metaDescription ?? tour.overview,
         url: `${SITE_URL}/tours/${tour.slug}`,
-        image: tour.primaryImage,
+        image: absoluteUrl(tour.primaryImage),
         touristType: 'Cultural Tourism',
       },
     })),

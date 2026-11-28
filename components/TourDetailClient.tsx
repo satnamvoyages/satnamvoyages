@@ -25,7 +25,7 @@ import {
 import type { TourPackage } from '@/lib/types';
 import { ItineraryBookingForm } from './ItineraryBookingForm';
 import { getPhotoForItineraryDay, getBentoGalleryPhotos } from '@/lib/data/itineraryImages';
-import { pickClientPhotos, tagsFromText } from '@/lib/data/clientPhotosData';
+import { pickClientPhotos, tagsFromText, clientPhotoAlt } from '@/lib/data/clientPhotosData';
 import { DRIVE_LEGS, tourVisitsAgra, getRelatedTours } from '@/lib/data/toursData';
 import { PHONE_TEL, PHONE_DISPLAY, PHONE_WHATSAPP, TRIPADVISOR_URL, ADDRESS } from '@/lib/constants';
 import { GOLDEN_TRIANGLE_LENGTHS, type Faq } from '@/lib/data/tourFaqs';
@@ -89,10 +89,14 @@ export const TourDetailClient: React.FC<TourDetailProps> = ({ tour, guides = [],
 
   const relevantMoments = useMemo(
     () =>
+      // Skip the hero image so the same photo isn't shown twice on the page.
       pickClientPhotos(
         tagsFromText(`${tour.slug} ${tour.title} ${tour.route} ${tour.itinerary.map((d) => d.location).join(' ')}`),
-        tour.slug
-      ),
+        tour.slug,
+        4
+      )
+        .filter((m) => m.image !== tour.primaryImage)
+        .slice(0, 3),
     [tour]
   );
 
@@ -170,7 +174,7 @@ export const TourDetailClient: React.FC<TourDetailProps> = ({ tour, guides = [],
             >
               <Image
                 src={bentoPhotos[0]}
-                alt={tour.title}
+                alt={clientPhotoAlt(bentoPhotos[0], tour.title)}
                 fill
                 priority
                 sizes="(min-width: 768px) 50vw, 100vw"

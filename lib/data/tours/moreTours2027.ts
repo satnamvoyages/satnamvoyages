@@ -1,3 +1,4 @@
+import { JAIPUR_GUEST_HERO } from '../clientPhotosData';
 import type { TourPackage } from '../../types';
 
 // 2027 keyword-led packages for international travellers.
@@ -222,7 +223,7 @@ export const MORE_TOURS_2027: TourPackage[] = [
     startingPriceUSD: 0,
     rating: 0,
     reviewsCount: 0,
-    primaryImage: big(IMG.hawaMahal),
+    primaryImage: JAIPUR_GUEST_HERO, // real guest photo at Amber Fort, Jaipur
     galleryImages: [small(IMG.hawaMahal), small(IMG.amber), small(IMG.cityPalaceJaipur)],
     route: 'Delhi ➔ Jaipur (Amber Fort, City Palace, Hawa Mahal) ➔ Delhi',
     overview:

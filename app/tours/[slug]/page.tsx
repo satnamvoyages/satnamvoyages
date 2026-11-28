@@ -4,7 +4,7 @@ import { TourDetailClient } from '@/components/TourDetailClient';
 import { ALL_TOURS } from '@/lib/data/toursData';
 import { getGuidesForTour } from '@/lib/data/blogData';
 import { buildTourFaqs } from '@/lib/data/tourFaqs';
-import { SITE_URL, SITE_NAME, CONTENT_UPDATED } from '@/lib/constants';
+import { SITE_URL, SITE_NAME, CONTENT_UPDATED, absoluteUrl } from '@/lib/constants';
 import type { TourPackage } from '@/lib/types';
 
 interface PageProps {
@@ -53,7 +53,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       title,
       description,
       url: `${SITE_URL}/tours/${tour.slug}`,
-      images: [{ url: tour.primaryImage, width: 1200, height: 630, alt: tour.title }],
+      images: [
+        tour.primaryImage.startsWith('http')
+          ? { url: tour.primaryImage, width: 1200, height: 630, alt: tour.title }
+          : { url: absoluteUrl(tour.primaryImage), alt: tour.title },
+      ],
     },
   };
 }
@@ -86,7 +90,7 @@ export default async function TourDetailPage({ params }: PageProps) {
         name: tour.title,
         description: tour.metaDescription ?? fallbackDescription(tour),
         url,
-        image: Array.from(new Set([tour.primaryImage, ...tour.galleryImages])),
+        image: Array.from(new Set([tour.primaryImage, ...tour.galleryImages])).map(absoluteUrl),
         touristType: ['Cultural Tourism', 'Heritage Tourism'],
         itinerary: {
           '@type': 'ItemList',

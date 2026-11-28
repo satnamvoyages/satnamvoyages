@@ -6,7 +6,7 @@ import { ALL_TOURS } from '@/lib/data/toursData';
 import { COUNTRY_OFFERS } from '@/lib/data/offersData';
 import { getPhotoForItineraryDay } from '@/lib/data/itineraryImages';
 import { CustomTripForm } from '@/components/CustomTripForm';
-import { SITE_URL, SITE_NAME, PHONE_TEL, PHONE_DISPLAY, PHONE_WHATSAPP, OG_IMAGE } from '@/lib/constants';
+import { SITE_URL, SITE_NAME, PHONE_TEL, PHONE_DISPLAY, PHONE_WHATSAPP, OG_IMAGE, absoluteUrl } from '@/lib/constants';
 
 // Landing page for the 2027-season Golden Triangle 4 Nights / 5 Days package, aimed at
 // international travellers. No prices are shown anywhere on the site: every trip is quoted
@@ -144,7 +144,7 @@ export default function OffersPage() {
         name: 'Golden Triangle Tour 4 Nights / 5 Days',
         description: tour.overview,
         url: pageUrl,
-        image: tour.primaryImage,
+        image: absoluteUrl(tour.primaryImage),
         provider: { '@id': `${SITE_URL}/#agency` },
         touristType: ['International travellers', 'First-time visitors to India', 'Couples', 'Families'],
         itinerary: {
