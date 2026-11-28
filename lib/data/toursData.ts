@@ -6,9 +6,9 @@ const BASE_TOURS: TourPackage[] = [
   {
     id: 'tour-1',
     slug: 'golden-triangle-tour',
-    seoTitle: 'Golden Triangle Tour India: 6-Day Private',
+    seoTitle: 'Private Golden Triangle Tour India: 6 Days',
     metaDescription: 'Private Golden Triangle tour of India: Delhi, Agra (Taj Mahal) and Jaipur in 6 days with your own English-speaking chauffeur and airport pickup. Free quote.',
-    title: 'Golden Triangle Tour — Delhi • Agra • Jaipur',
+    title: 'Private Golden Triangle Tour: Delhi • Agra • Jaipur',
     subtitle: 'The timeless classic Indian royal heritage and architectural circuit',
     category: 'Golden Triangle',
     durationDays: 6,
@@ -25,7 +25,7 @@ const BASE_TOURS: TourPackage[] = [
       'https://images.unsplash.com/photo-1587474260584-136574528ed5?auto=format&fit=crop&w=800&q=80',
     ],
     route: 'Delhi ➔ Agra ➔ Fatehpur Sikri ➔ Jaipur ➔ Delhi',
-    overview: 'The slower version of the Golden Triangle. Compared with our 5-day tour, it adds a second full day in Jaipur and the Chand Baori stepwell at Abhaneri on the drive from Agra. That gives you Amber Fort and City Palace on one day, then Jal Mahal, a sunset at Nahargarh Fort and the Johari Bazaar textile and gem markets on the next, without rushing. Delhi and the sunrise Taj Mahal are covered as on the shorter tour, with the same private chauffeur throughout. Licensed local guides can be added on request.',
+    overview: 'Our private Golden Triangle tour covers Delhi, Agra and Jaipur in 6 days with your own English-speaking chauffeur and the same car throughout. You see Old and New Delhi, the Taj Mahal at sunrise and Agra Fort, Fatehpur Sikri and the Chand Baori stepwell at Abhaneri on the way to Jaipur, then two full days in Jaipur: Amber Fort and City Palace on one, Jal Mahal, Nahargarh Fort at sunset and the Johari Bazaar markets on the next. Short on time? The same circuit also runs in 3, 4 and 5 days (compare them below). Licensed local guides can be added on request.',
     highlights: [
       'Sunrise visit to the Taj Mahal (closed on Fridays)',
       'Chauffeur-driven private AC sedan or SUV across the Yamuna Expressway',
@@ -201,7 +201,7 @@ const BASE_TOURS: TourPackage[] = [
     slug: 'same-day-delhi-agra-tour',
     seoTitle: 'Same Day Taj Mahal Tour from Delhi by Car',
     metaDescription: 'Private same day Taj Mahal and Agra Fort tour from Delhi by car via the Yamuna Expressway, about 3.5 hours each way. Hotel pickup. Taj closed Fridays.',
-    title: 'Same Day Delhi • Agra Tour',
+    title: 'Same Day Taj Mahal Tour from Delhi by Private Car',
     subtitle: 'Swift same-day return private excursion to the Taj Mahal & Agra Fort',
     category: 'Same Day',
     durationDays: 1,
@@ -225,7 +225,7 @@ const BASE_TOURS: TourPackage[] = [
       'Optional stop at Mehtab Bagh for sunset reflection views',
       'Same evening drop-off back in Delhi/Gurgaon/Noida'
     ],
-    inclusions: ['Round-trip private AC sedan or SUV', 'Yamuna Expressway tolls, parking, and driver allowance', 'Mineral water bottles'],
+    inclusions: ['Round-trip private AC sedan or SUV with chauffeur', 'Pickup and drop at your hotel in Delhi, Gurgaon or Noida', 'Fuel, Yamuna Expressway tolls, parking, and driver allowance', 'Mineral water bottles'],
     exclusions: ['Monument tickets', 'Local guide fee (optional add-on)', 'Lunch at Agra (recommendations provided)'],
     itinerary: [
       {
@@ -418,7 +418,7 @@ const BASE_TOURS: TourPackage[] = [
   {
     id: 'tour-9',
     slug: 'rajasthan-heritage-tour',
-    seoTitle: 'Rajasthan Tour Package: 12 Days by Car',
+    seoTitle: 'Rajasthan Heritage Tour: 12 Days by Car',
     metaDescription: '12-day private Rajasthan tour package from Delhi: Mandawa, Bikaner, Jaisalmer, Jodhpur, Udaipur, Pushkar and Jaipur with your own chauffeur. Free quote.',
     title: 'Rajasthan Heritage Tour',
     subtitle: 'Comprehensive grand circuit of Rajputana castles, havelis, and desert sand dunes',

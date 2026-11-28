@@ -4,13 +4,13 @@ import { DESTINATIONS } from '@/lib/data/destinationsData';
 import { POPULAR_CAB_ROUTES } from '@/lib/data/cabsData';
 import { BLOG_POSTS } from '@/lib/data/blogData';
 import { COUNTRY_OFFERS } from '@/lib/data/offersData';
-import { SITE_URL } from '@/lib/constants';
+import { SITE_URL, CONTENT_UPDATED as CONTENT_UPDATED_ISO } from '@/lib/constants';
 
 // Real "last content change" date. Do NOT use `new Date()` here: that stamps
 // every URL with the build time on each deploy, which tells search engines
 // nothing. When you materially edit a page's content, bump this date (or give
 // that page its own date below).
-const CONTENT_UPDATED = new Date('2026-11-28');
+const CONTENT_UPDATED = new Date(CONTENT_UPDATED_ISO);
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const page = (path: string): MetadataRoute.Sitemap[number] => ({

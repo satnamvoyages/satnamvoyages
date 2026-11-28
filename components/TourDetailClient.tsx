@@ -27,7 +27,8 @@ import { ItineraryBookingForm } from './ItineraryBookingForm';
 import { getPhotoForItineraryDay, getBentoGalleryPhotos } from '@/lib/data/itineraryImages';
 import { pickClientPhotos, tagsFromText } from '@/lib/data/clientPhotosData';
 import { DRIVE_LEGS, tourVisitsAgra, getRelatedTours } from '@/lib/data/toursData';
-import { PHONE_TEL, PHONE_DISPLAY, PHONE_WHATSAPP, TRIPADVISOR_URL } from '@/lib/constants';
+import { PHONE_TEL, PHONE_DISPLAY, PHONE_WHATSAPP, TRIPADVISOR_URL, ADDRESS } from '@/lib/constants';
+import { GOLDEN_TRIANGLE_LENGTHS, type Faq } from '@/lib/data/tourFaqs';
 
 const VEHICLE_OPTIONS = [
   {
@@ -59,9 +60,13 @@ interface TourDetailProps {
   guides?: { slug: string; title: string; excerpt: string }[];
   /** Region hub page this tour belongs to, if any. */
   region?: { href: string; label: string };
+  /** FAQs built on the server from this tour's data (also used for FAQPage schema). */
+  faqs?: Faq[];
+  /** Visible "last updated" date, e.g. "28 November 2026". */
+  lastUpdated?: string;
 }
 
-export const TourDetailClient: React.FC<TourDetailProps> = ({ tour, guides = [], region }) => {
+export const TourDetailClient: React.FC<TourDetailProps> = ({ tour, guides = [], region, faqs = [], lastUpdated }) => {
   const [openDays, setOpenDays] = useState<Set<number>>(() => new Set([1]));
   const allDaysOpen = openDays.size === tour.itinerary.length;
   const [selectedTier, setSelectedTier] = useState<'Standard' | 'Deluxe' | 'Luxury'>('Deluxe');
@@ -129,6 +134,13 @@ export const TourDetailClient: React.FC<TourDetailProps> = ({ tour, guides = [],
                 <span className="font-semibold text-stone-900 mr-1">Route:</span>
                 <span className="break-words">{tour.route}</span>
               </div>
+
+              <p className="text-xs text-stone-600 pt-1">
+                Run by our office at {ADDRESS.street}, {ADDRESS.locality} ·{' '}
+                <a href={TRIPADVISOR_URL} target="_blank" rel="noopener noreferrer" className="font-semibold text-[#C2410C] underline">
+                  Read our guest reviews on Tripadvisor
+                </a>
+              </p>
             </div>
 
             <div className="flex items-center sm:items-end lg:flex-col lg:items-end justify-between gap-3 bg-[#FAF6F0] p-4 rounded-2xl border border-[#E8DFD3] shrink-0">
@@ -278,7 +290,7 @@ export const TourDetailClient: React.FC<TourDetailProps> = ({ tour, guides = [],
 
               <p className="text-stone-700 text-sm sm:text-base leading-relaxed font-montserrat">{tour.overview}</p>
 
-              <div>
+              {tour.highlights.length > 0 && <div>
                 <h3 className="text-xs font-bold uppercase tracking-wider text-stone-900 mb-3 font-headline">
                   Curated Tour Highlights
                 </h3>
@@ -290,8 +302,46 @@ export const TourDetailClient: React.FC<TourDetailProps> = ({ tour, guides = [],
                     </div>
                   ))}
                 </div>
-              </div>
+              </div>}
             </section>
+
+            {/* GOLDEN TRIANGLE: HOW MANY DAYS? */}
+            {GOLDEN_TRIANGLE_LENGTHS.some((l) => l.slug === tour.slug) && (
+              <section className="bg-white rounded-3xl p-6 sm:p-8 border border-[#E8DFD3] shadow-sm space-y-4">
+                <h2 className="font-headline text-2xl font-extrabold text-[#1C1917] uppercase">How Many Days Do You Need?</h2>
+                <p className="text-sm text-stone-700">
+                  The same Delhi, Agra and Jaipur circuit runs in four lengths. All are private, with one car and chauffeur throughout.
+                </p>
+                <div className="overflow-x-auto">
+                  <table className="w-full text-left text-sm">
+                    <thead>
+                      <tr className="border-b border-[#E8DFD3] text-xs uppercase tracking-wider text-stone-500">
+                        <th className="py-2 pr-4">Length</th>
+                        <th className="py-2 pr-4">Pace</th>
+                        <th className="py-2">What it covers</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {GOLDEN_TRIANGLE_LENGTHS.map((l) => (
+                        <tr key={l.slug} className={`border-b border-[#E8DFD3]/60 align-top ${l.slug === tour.slug ? 'bg-orange-50' : ''}`}>
+                          <td className="py-3 pr-4 font-bold whitespace-nowrap">
+                            {l.slug === tour.slug ? (
+                              <span>{l.days} (this tour)</span>
+                            ) : (
+                              <Link href={`/tours/${l.slug}`} className="text-[#C2410C] underline">
+                                {l.days} Golden Triangle tour
+                              </Link>
+                            )}
+                          </td>
+                          <td className="py-3 pr-4 text-stone-700">{l.pace}</td>
+                          <td className="py-3 text-stone-700">{l.adds}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </section>
+            )}
 
             {/* TAJ MAHAL FRIDAY CLOSURE NOTICE */}
             {visitsAgra && (
@@ -440,6 +490,44 @@ export const TourDetailClient: React.FC<TourDetailProps> = ({ tour, guides = [],
               </div>
             </section>
 
+            {/* CLIENT MOMENTS FOR THIS ITINERARY */}
+            {relevantMoments.length > 0 && (
+              <section className="bg-white rounded-3xl p-6 sm:p-8 border border-[#E8DFD3] shadow-sm space-y-6">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <span className="text-xs font-bold uppercase tracking-wider text-[#EA580C] block font-headline">
+                      Guest Memories
+                    </span>
+                    <h2 className="font-headline text-2xl font-extrabold text-[#1C1917] uppercase">Photos From Our Guests</h2>
+                  </div>
+                  <Link href="/gallery" className="text-xs font-bold text-[#EA580C] hover:text-[#C2410C] uppercase tracking-wider font-headline">
+                    View Full Gallery →
+                  </Link>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                  {relevantMoments.map((m) => (
+                    <div key={m.id} className="relative h-48 rounded-2xl overflow-hidden bg-stone-200 border border-[#E8DFD3]">
+                      <Image
+                        src={m.image}
+                        alt={m.alt}
+                        fill
+                        sizes="(min-width: 640px) 33vw, 100vw"
+                        className="object-cover"
+                      />
+                    </div>
+                  ))}
+                </div>
+                <p className="text-sm text-stone-700">
+                  Read what past guests say about travelling with us in our{' '}
+                  <a href={TRIPADVISOR_URL} target="_blank" rel="noopener noreferrer" className="font-semibold text-[#C2410C] underline">
+                    Tripadvisor reviews
+                  </a>
+                  .
+                </p>
+              </section>
+            )}
+
             {/* FLEET OPTIONS */}
             <section className="bg-white rounded-3xl p-6 sm:p-8 border border-[#E8DFD3] shadow-sm space-y-6">
               <div>
@@ -522,41 +610,19 @@ export const TourDetailClient: React.FC<TourDetailProps> = ({ tour, guides = [],
               />
             </section>
 
-            {/* CLIENT MOMENTS FOR THIS ITINERARY */}
-            {relevantMoments.length > 0 && (
-              <section className="bg-white rounded-3xl p-6 sm:p-8 border border-[#E8DFD3] shadow-sm space-y-6">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <span className="text-xs font-bold uppercase tracking-wider text-[#EA580C] block font-headline">
-                      Guest Memories
-                    </span>
-                    <h2 className="font-headline text-2xl font-extrabold text-[#1C1917] uppercase">Photos From Our Guests</h2>
-                  </div>
-                  <Link href="/gallery" className="text-xs font-bold text-[#EA580C] hover:text-[#C2410C] uppercase tracking-wider font-headline">
-                    View Full Gallery →
-                  </Link>
-                </div>
-
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                  {relevantMoments.map((m) => (
-                    <div key={m.id} className="relative h-48 rounded-2xl overflow-hidden bg-stone-200 border border-[#E8DFD3]">
-                      <Image
-                        src={m.image}
-                        alt={m.alt}
-                        fill
-                        sizes="(min-width: 640px) 33vw, 100vw"
-                        className="object-cover"
-                      />
+            {/* FAQ: plain HTML, always visible; same text as the FAQPage schema */}
+            {faqs.length > 0 && (
+              <section className="bg-white rounded-3xl p-6 sm:p-8 border border-[#E8DFD3] shadow-sm space-y-4">
+                <h2 className="font-headline text-2xl font-extrabold text-[#1C1917] uppercase">Frequently Asked Questions</h2>
+                <div className="space-y-4">
+                  {faqs.map((f) => (
+                    <div key={f.q} className="rounded-2xl border border-[#E8DFD3] bg-[#FAF6F0] p-4">
+                      <h3 className="font-bold text-[#1C1917] text-sm sm:text-base">{f.q}</h3>
+                      <p className="mt-1.5 text-sm text-stone-700 leading-relaxed">{f.a}</p>
                     </div>
                   ))}
                 </div>
-                <p className="text-sm text-stone-700">
-                  Read what past guests say about travelling with us in our{' '}
-                  <a href={TRIPADVISOR_URL} target="_blank" rel="noopener noreferrer" className="font-semibold text-[#C2410C] underline">
-                    Tripadvisor reviews
-                  </a>
-                  .
-                </p>
+                {lastUpdated && <p className="text-xs text-stone-500">Itinerary last updated {lastUpdated}.</p>}
               </section>
             )}
 

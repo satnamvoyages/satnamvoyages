@@ -16,7 +16,7 @@ const tourGroups = [
       { href: '/tours/golden-triangle-tour-5-days', label: 'Golden Triangle Tour 5 Days' },
       { href: '/tours/golden-triangle-tour-3-days', label: 'Golden Triangle Tour 3 Days' },
       { href: '/tours/golden-triangle-tour-4-days', label: 'Golden Triangle Tour 4 Days' },
-      { href: '/tours/golden-triangle-tour', label: 'Golden Triangle Tour 6 Days' },
+      { href: '/tours/golden-triangle-tour', label: 'Private Golden Triangle Tour' },
       { href: '/tours/golden-triangle-ranthambore', label: 'Golden Triangle + Ranthambore' },
       { href: '/tours/golden-triangle-varanasi-tour', label: 'Golden Triangle + Varanasi' },
       { href: '/tours/golden-triangle-amritsar-tour', label: 'Golden Triangle + Amritsar' },

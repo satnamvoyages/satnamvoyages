@@ -3,7 +3,8 @@ import { notFound } from 'next/navigation';
 import { TourDetailClient } from '@/components/TourDetailClient';
 import { ALL_TOURS } from '@/lib/data/toursData';
 import { getGuidesForTour } from '@/lib/data/blogData';
-import { SITE_URL, SITE_NAME } from '@/lib/constants';
+import { buildTourFaqs } from '@/lib/data/tourFaqs';
+import { SITE_URL, SITE_NAME, CONTENT_UPDATED } from '@/lib/constants';
 import type { TourPackage } from '@/lib/types';
 
 interface PageProps {
@@ -68,6 +69,13 @@ export default async function TourDetailPage({ params }: PageProps) {
   const sameCategory = ALL_TOURS.filter((t) => t.category === tour.category && t.slug !== tour.slug).map((t) => t.slug);
   const guides = getGuidesForTour(tour.slug, sameCategory, 3).map((p) => ({ slug: p.slug, title: p.title, excerpt: p.excerpt }));
   const region = REGION_HUBS[tour.category];
+  const faqs = buildTourFaqs(tour);
+  const lastUpdated = new Date(CONTENT_UPDATED + 'T00:00:00Z').toLocaleDateString('en-GB', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+    timeZone: 'UTC',
+  });
 
   const tourJsonLd = {
     '@context': 'https://schema.org',
@@ -93,6 +101,15 @@ export default async function TourDetailPage({ params }: PageProps) {
         provider: { '@id': AGENCY_ID },
       },
       {
+        '@type': 'FAQPage',
+        '@id': `${url}#faq`,
+        mainEntity: faqs.map((f) => ({
+          '@type': 'Question',
+          name: f.q,
+          acceptedAnswer: { '@type': 'Answer', text: f.a },
+        })),
+      },
+      {
         '@type': 'BreadcrumbList',
         itemListElement: [
           { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE_URL}/` },
@@ -106,7 +123,7 @@ export default async function TourDetailPage({ params }: PageProps) {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(tourJsonLd) }} />
-      <TourDetailClient tour={tour} guides={guides} region={region} />
+      <TourDetailClient tour={tour} guides={guides} region={region} faqs={faqs} lastUpdated={lastUpdated} />
     </>
   );
 }

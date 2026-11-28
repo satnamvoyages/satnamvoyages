@@ -7,6 +7,18 @@ import { Search, MapPin, ArrowRight, Filter, Compass, Clock, CheckCircle2 } from
 import { ALL_TOURS } from '@/lib/data/toursData';
 import type { TourPackage } from '@/lib/types';
 import { useAppContext } from './Providers';
+import { TRIPADVISOR_URL, ADDRESS } from '@/lib/constants';
+
+/** Shortcuts for the most common trip types, so visitors don't have to scan all tours. */
+const TOUR_PICKS: { label: string; slug: string }[] = [
+  { label: 'First visit to India', slug: 'golden-triangle-tour-5-days' },
+  { label: 'Only one day', slug: 'same-day-delhi-agra-tour' },
+  { label: 'Taj Mahal at sunrise', slug: 'taj-mahal-sunrise-tour-from-delhi' },
+  { label: 'Tigers on safari', slug: 'golden-triangle-ranthambore' },
+  { label: 'Travelling with seniors', slug: 'india-tour-for-senior-citizens' },
+  { label: 'A group of 6 or more', slug: 'golden-triangle-group-tour-tempo-traveller' },
+  { label: 'Luxury hotels', slug: 'luxury-rajasthan-tour' },
+];
 
 const SECTION_HEADINGS: Record<string, string> = {
   'Golden Triangle': 'Golden Triangle Tours (Delhi, Agra, Jaipur)',
@@ -129,15 +141,40 @@ export const ToursDirectoryClient: React.FC = () => {
         <div className="max-w-7xl mx-auto">
           <div className="max-w-3xl">
             <span className="text-[#EA580C] text-xs font-bold uppercase tracking-wider block mb-2 font-headline">
-              Bespoke Private Chauffeur Itineraries
+              Private tours by car and driver from Delhi
             </span>
             <h1 className="font-headline text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight uppercase">
-              All Tour Packages ({ALL_TOURS.length})
+              Private India Tour Packages ({ALL_TOURS.length} Tours)
             </h1>
             <p className="mt-3 text-stone-300 text-sm sm:text-base leading-relaxed font-montserrat">
-              Explore our complete collection of {ALL_TOURS.length} handcrafted tours across India&rsquo;s most celebrated heritage, wildlife, mountain, and spiritual circuits. Every package is fully customizable.
+              Every tour below is private: your own air-conditioned car and English-speaking chauffeur from pickup to drop, with
+              no group to keep pace with. Choose from same-day Taj Mahal trips, the Golden Triangle of Delhi, Agra and Jaipur,
+              Rajasthan&rsquo;s forts and deserts, and the Himalayan hill stations. Every itinerary can be changed, and every trip
+              gets a free written quote for your dates.
+            </p>
+            <p className="mt-3 text-xs text-stone-400">
+              Run from our office at {ADDRESS.street}, {ADDRESS.locality} ·{' '}
+              <a href={TRIPADVISOR_URL} target="_blank" rel="noopener noreferrer" className="font-semibold text-amber-400 underline">
+                Read our guest reviews on Tripadvisor
+              </a>
             </p>
           </div>
+
+          <nav aria-label="Which tour is right for you?" className="mt-6">
+            <p className="text-xs font-bold uppercase tracking-wider text-stone-400 mb-2 font-headline">Which tour is right for you?</p>
+            <ul className="flex flex-wrap gap-2">
+              {TOUR_PICKS.filter((p) => ALL_TOURS.some((t) => t.slug === p.slug)).map((p) => (
+                <li key={p.slug}>
+                  <Link
+                    href={`/tours/${p.slug}`}
+                    className="inline-block rounded-full border border-stone-600 px-3 py-1.5 text-xs text-stone-200 hover:border-[#EA580C] hover:text-white transition-colors"
+                  >
+                    {p.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
 
           <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-3">
             <div className="sm:col-span-2 relative">

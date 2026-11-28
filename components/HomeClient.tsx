@@ -241,7 +241,7 @@ export const HomeClient: React.FC = () => {
               href="/tours"
               className="inline-flex items-center text-[#EA580C] hover:text-[#C2410C] font-bold text-xs uppercase tracking-wider mt-3 md:mt-0"
             >
-              <span>View All {ALL_TOURS.length} Tour Packages</span>
+              <span>View All {ALL_TOURS.length} India Tour Packages</span>
               <ArrowRight className="w-4 h-4 ml-1.5" />
             </Link>
           </div>
@@ -326,7 +326,7 @@ export const HomeClient: React.FC = () => {
               href="/tours"
               className="px-8 py-3.5 rounded-xl bg-[#EA580C] hover:bg-[#C2410C] text-white font-bold text-xs uppercase tracking-wider shadow-md shadow-orange-600/20 transition-all inline-flex items-center space-x-2"
             >
-              <span>Explore All {ALL_TOURS.length} Tour Itineraries</span>
+              <span>See All {ALL_TOURS.length} Private India Tour Packages</span>
               <ArrowRight className="w-4 h-4 text-amber-200" />
             </Link>
           </div>

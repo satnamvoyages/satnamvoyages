@@ -2,6 +2,9 @@
 // canonical, sitemap URL, og:url and JSON-LD @id must use the www host.
 export const SITE_URL = 'https://www.satnamvoyages.com';
 export const SITE_NAME = 'Satnam Voyages';
+
+/** Last real content update. Used by the sitemap and the visible "updated" lines; bump it when page content changes. */
+export const CONTENT_UPDATED = '2026-11-28';
 export const PHONE_DISPLAY = '+91 97184 50905';
 export const PHONE_TEL = '+919718450905';
 export const PHONE_WHATSAPP = '919718450905';

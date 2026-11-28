@@ -136,8 +136,8 @@ const RAW_POSTS: RawPost[] = [
   // 2 ─────────────────────────────────────────────────────────────
   {
     slug: 'rajasthan-tour-packages-2027',
-    title: 'Rajasthan Tour Packages 2027: Itineraries from 7 to 14 Days',
-    seoTitle: 'Rajasthan Tour Packages 2027: Itineraries',
+    title: 'Rajasthan Itinerary 2027: 7, 9, 12 and 14-Day Routes by Car',
+    seoTitle: 'Rajasthan Itinerary 2027: 7 to 14 Days',
     metaDescription:
       'Compare Rajasthan tour itineraries for 2027: 7, 9, 12 and 14 days covering Jaipur, Jodhpur, Jaisalmer, Udaipur, Pushkar and Ranthambore by private car.',
     excerpt:
@@ -220,10 +220,10 @@ const RAW_POSTS: RawPost[] = [
   // 3 ─────────────────────────────────────────────────────────────
   {
     slug: 'same-day-taj-mahal-tour-from-delhi',
-    title: 'Same Day Taj Mahal Tour from Delhi: How to Do Agra in One Day',
-    seoTitle: 'Same Day Taj Mahal Tour from Delhi: Guide',
+    title: 'How to Visit Agra in One Day from Delhi: Timing, Train vs Car',
+    seoTitle: 'Agra Day Trip from Delhi: Timing & Tips',
     metaDescription:
-      'Plan a same day Taj Mahal tour from Delhi: early start, Yamuna Expressway timing, Agra Fort, lunch stops, Friday closure and what to carry. Private car tips.',
+      'How to see Agra in one day from Delhi: start time, train vs car, Yamuna Expressway timing, Agra Fort, lunch stops, the Friday closure and what to carry.',
     excerpt:
       'Yes, you can see the Taj Mahal and Agra Fort in a day trip from Delhi. Here is the timing that works, what to skip and what to carry.',
     heroImage: IMG.tajDetail,

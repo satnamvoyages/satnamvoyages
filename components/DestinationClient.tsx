@@ -5,7 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Calendar, Car, ArrowRight, CheckCircle2, MapPin } from 'lucide-react';
 import type { DestinationRegion } from '@/lib/types';
-import { ALL_TOURS } from '@/lib/data/toursData';
+import { getRegionTours } from '@/lib/data/regionTours';
 import { useAppContext } from './Providers';
 
 const REGION_TABS = [
@@ -16,7 +16,7 @@ const REGION_TABS = [
 
 export const DestinationClient: React.FC<{ destination: DestinationRegion }> = ({ destination }) => {
   const { openInquiry } = useAppContext();
-  const regionalTours = ALL_TOURS.filter((tour) => destination.associatedPackageSlugs.includes(tour.slug));
+  const regionalTours = getRegionTours(destination);
   const regionName = destination.name.split('—')[0].trim();
 
   return (
@@ -100,6 +100,75 @@ export const DestinationClient: React.FC<{ destination: DestinationRegion }> = (
         </div>
       </div>
 
+      {/* Associated Regional Tour Packages */}
+      <div id="region-packages" className="bg-[#FAF6F0] border-t border-[#E8DFD3] py-12 scroll-mt-32">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-8">
+            <div>
+              <span className="text-xs font-bold uppercase tracking-wider text-[#EA580C] block mb-1 font-headline">
+                {regionalTours.length} private tours by car and driver
+              </span>
+              <h2 className="font-headline text-2xl sm:text-3xl font-extrabold text-[#1C1917] uppercase">
+                {regionName} Tour Packages
+              </h2>
+              <p className="mt-2 text-sm text-stone-600 max-w-2xl">
+                Every tour includes a private air-conditioned car and chauffeur for the whole trip, fuel and tolls. Hotels,
+                guides and monument tickets can be added. Each trip gets a free written quote for your dates.
+              </p>
+            </div>
+            <Link href="/tours" className="inline-flex items-center text-[#EA580C] hover:text-[#C2410C] font-bold text-xs uppercase tracking-wider mt-2 md:mt-0">
+              <span>View All Tour Packages</span>
+              <ArrowRight className="w-4 h-4 ml-1.5" />
+            </Link>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {regionalTours.map((tour) => (
+              <div key={tour.id} className="bg-white rounded-2xl overflow-hidden border border-[#E8DFD3] shadow-sm hover:shadow-xl transition-all flex flex-col justify-between">
+                <Link href={`/tours/${tour.slug}`}>
+                  <div className="relative h-52 overflow-hidden bg-stone-100">
+                    <Image
+                      src={tour.primaryImage}
+                      alt={tour.title}
+                      fill
+                      sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+                      className="object-cover"
+                    />
+                    <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-[#141210]/85 backdrop-blur text-white text-xs font-bold font-headline uppercase">
+                      {tour.durationLabel}
+                    </div>
+
+                  </div>
+
+                  <div className="p-5">
+                    <h3 className="font-bold text-[#1C1917] text-base leading-snug font-headline uppercase">{tour.title}</h3>
+                    <p className="text-xs text-stone-500 mt-1 font-medium flex items-center font-montserrat">
+                      <MapPin className="w-3.5 h-3.5 text-[#EA580C] mr-1 shrink-0" />
+                      <span className="truncate">{tour.route}</span>
+                    </p>
+                    <p className="text-xs text-stone-600 mt-2 line-clamp-2 font-montserrat">{tour.overview}</p>
+                  </div>
+                </Link>
+
+                <div className="p-5 pt-0">
+                  <div className="pt-3 border-t border-[#E8DFD3] flex items-center justify-between gap-2">
+                    <div>
+                      <span className="text-[10px] text-stone-400 uppercase font-bold block">Private tour</span>
+                      <span className="text-sm font-extrabold text-[#1C1917] font-headline">Free Quote</span>
+                    </div>
+                    <Link
+                      href={`/tours/${tour.slug}`}
+                      className="px-3.5 py-2 rounded-xl bg-[#EA580C] hover:bg-[#C2410C] text-white text-xs font-bold uppercase tracking-wider transition-colors shadow-sm"
+                    >
+                      View Itinerary
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
       {/* Key Cities & Top Sights */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="mb-8">
@@ -160,71 +229,6 @@ export const DestinationClient: React.FC<{ destination: DestinationRegion }> = (
         </div>
       </div>
 
-      {/* Associated Regional Tour Packages */}
-      <div id="region-packages" className="bg-[#FAF6F0] border-t border-[#E8DFD3] py-12 scroll-mt-32">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-8">
-            <div>
-              <span className="text-xs font-bold uppercase tracking-wider text-[#EA580C] block mb-1 font-headline">
-                Handcrafted Itineraries
-              </span>
-              <h2 className="font-headline text-2xl sm:text-3xl font-extrabold text-[#1C1917] uppercase">
-                {regionName} Tour Packages
-              </h2>
-            </div>
-            <Link href="/tours" className="inline-flex items-center text-[#EA580C] hover:text-[#C2410C] font-bold text-xs uppercase tracking-wider mt-2 md:mt-0">
-              <span>View All Tour Packages</span>
-              <ArrowRight className="w-4 h-4 ml-1.5" />
-            </Link>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {regionalTours.map((tour) => (
-              <div key={tour.id} className="bg-white rounded-2xl overflow-hidden border border-[#E8DFD3] shadow-sm hover:shadow-xl transition-all flex flex-col justify-between">
-                <Link href={`/tours/${tour.slug}`}>
-                  <div className="relative h-52 overflow-hidden bg-stone-100">
-                    <Image
-                      src={tour.primaryImage}
-                      alt={tour.title}
-                      fill
-                      sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
-                      className="object-cover"
-                    />
-                    <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-[#141210]/85 backdrop-blur text-white text-xs font-bold font-headline uppercase">
-                      {tour.durationLabel}
-                    </div>
-
-                  </div>
-
-                  <div className="p-5">
-                    <h3 className="font-bold text-[#1C1917] text-base leading-snug font-headline uppercase">{tour.title}</h3>
-                    <p className="text-xs text-stone-500 mt-1 font-medium flex items-center font-montserrat">
-                      <MapPin className="w-3.5 h-3.5 text-[#EA580C] mr-1 shrink-0" />
-                      <span className="truncate">{tour.route}</span>
-                    </p>
-                    <p className="text-xs text-stone-600 mt-2 line-clamp-2 font-montserrat">{tour.overview}</p>
-                  </div>
-                </Link>
-
-                <div className="p-5 pt-0">
-                  <div className="pt-3 border-t border-[#E8DFD3] flex items-center justify-between gap-2">
-                    <div>
-                      <span className="text-[10px] text-stone-400 uppercase font-bold block">Private tour</span>
-                      <span className="text-sm font-extrabold text-[#1C1917] font-headline">Free Quote</span>
-                    </div>
-                    <Link
-                      href={`/tours/${tour.slug}`}
-                      className="px-3.5 py-2 rounded-xl bg-[#EA580C] hover:bg-[#C2410C] text-white text-xs font-bold uppercase tracking-wider transition-colors shadow-sm"
-                    >
-                      View Itinerary
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
     </div>
   );
 };
